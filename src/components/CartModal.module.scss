@@ -1,0 +1,115 @@
+/* src/components/CartModal.module.scss */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Higher than the phone icon */
+}
+
+.modalContent {
+  background-color: #497c59;
+  padding: 20px;
+  border-radius: 12px; /* Rounded corners for a softer look */
+  width: 400px; /* Adjust width as needed */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+
+  .userInfo {
+    margin-bottom: 15px; /* Space below user info */
+  }
+
+  label {
+    display: block; /* Stack labels and inputs */
+    margin-bottom: 5px; /* Space between label and input */
+  }
+
+  input {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+    margin-bottom: 15px; /* Space between inputs */
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Dark text color */
+}
+
+.cartList {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  max-height: 300px; /* Set a maximum height */
+  overflow-y: auto; /* Allow scrolling */
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee; /* Separator line */
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-weight: bold; /* Bold item name */
+}
+
+.itemPrice {
+  color: #28a745; /* Green color for prices */
+}
+
+.itemQuantity {
+  align-self: flex-end; /* Align quantity to the end */
+  font-style: italic; /* Italic for quantity */
+}
+
+.total {
+  text-align: right; /* Align total to the right */
+  font-weight: bold;
+  margin-top: 10px; /* Space above total */
+  color: #333; /* Dark text color */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between; /* Space out buttons */
+  margin-top: 20px; /* Space above buttons */
+}
+
+button {
+  padding: 10px 15px; /* Padding for buttons */
+  border: none; /* Remove border */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.cancelButton {
+  background-color: #f44336; /* Red background for cancel */
+  color: white; /* White text color */
+}
+
+.cancelButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.checkoutButton {
+  background-color: #28a745; /* Green background for checkout */
+  color: white; /* White text color */
+}
+
+.checkoutButton:hover {
+  background-color: #218838; /* Darker green on hover */
+}

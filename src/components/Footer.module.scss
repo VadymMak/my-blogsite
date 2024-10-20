@@ -1,0 +1,36 @@
+/* src/components/Footer.module.scss */
+.footer {
+  background-color: #282c34; /* Dark background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding */
+  text-align: center; /* Center the content */
+  font-size: 1.5rem;
+}
+
+.footerContent {
+  display: flex;
+  //   flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Center items */
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.socialIcons {
+  margin-top: 10px; /* Space above icons */
+  display: flex; /* Flex container for icons */
+  justify-content: center; /* Center icons */
+}
+
+.socialIcons a {
+  margin: 0 10px; /* Space between icons */
+}
+
+.socialIcons img {
+  width: 30px; /* Adjust icon size */
+  height: 30px; /* Maintain aspect ratio */
+  transition: transform 0.3s; /* Smooth transition */
+}
+
+.socialIcons img:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}

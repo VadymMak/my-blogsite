@@ -1,0 +1,37 @@
+/* src/components/Header.module.scss */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+
+  .logo img {
+    height: 100px; /* Adjust height as necessary */
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0 15px;
+
+      a {
+        color: white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.3s;
+        border: 2px solid transparent;
+
+        &:hover {
+          color: #f4f4f4;
+          border-bottom: 2px solid #f4f4f4;
+        }
+      }
+    }
+  }
+}

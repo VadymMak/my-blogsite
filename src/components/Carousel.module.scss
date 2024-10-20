@@ -1,0 +1,52 @@
+/* src/components/Carousel.module.scss */
+
+/* Background for the whole carousel */
+.carouselContainer {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px; /* Space around the carousel */
+  background-color: #f0f0f5; /* Light gray background for the carousel container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for the container */
+}
+
+/* Each item in the carousel */
+.carouselItem {
+  padding: 10px;
+}
+
+/* Card style for each item */
+.itemCard {
+  background-size: cover; /* Ensure background covers the entire card */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* No repeat for the background */
+  height: 250px;
+}
+
+/* Change on hover */
+.itemCard:hover {
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+/* Text inside each card */
+.itemCard h3 {
+  font-family: "Poppins", sans-serif; /* Use a modern and clean font */
+  font-size: 1.2rem; /* Bigger font for better emphasis */
+  font-weight: 600; /* Bold font weight */
+  color: #333;
+  text-transform: uppercase; /* Make text uppercase for a more impactful look */
+  letter-spacing: 0.05rem; /* Add some space between letters */
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  -webkit-background-clip: text; /* Clip the background to text */
+  color: transparent; /* Make text color transparent to show the gradient */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+}
+
+/* Adjust dots style */
+.slick-dots li button:before {
+  color: #333; /* Color for dots */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #007bff; /* Active dot color */
+}

@@ -1,0 +1,39 @@
+/* src/components/Contacts.module.scss */
+.contacts {
+  max-width: 100%;
+  padding: 40px 20px; /* Padding for the section */
+  background-color: #f4f4f4; /* Light background color */
+  text-align: center; /* Center the text */
+}
+
+.contactInfo {
+  display: flex; /* Flex container for contact items */
+  justify-content: space-between; /* Space items evenly */
+  margin-top: 20px; /* Space above contact items */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contactItem {
+  flex: 1; /* Flex-grow for items */
+  margin: 10px; /* Space between items */
+  min-width: 200px; /* Minimum width for items */
+}
+
+h2 {
+  color: #333; /* Dark color for headings */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+h3 {
+  color: #555; /* Slightly lighter for subheadings */
+  margin-bottom: 10px; /* Space below subheadings */
+}
+
+a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}

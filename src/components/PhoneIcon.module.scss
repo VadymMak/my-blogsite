@@ -1,0 +1,29 @@
+/* src/components/PhoneIcon.module.scss */
+.phoneIcon {
+  position: fixed;
+  bottom: 12%; /* Distance from the bottom */
+  right: 10px; /* Distance from the right */
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+  z-index: 1000; /* Ensure it’s above other content */
+
+  button {
+    // display: block;
+    // background-color: #28a745; /* Background color for visibility */
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    // padding: 10px; /* Padding around the icon */
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+
+    img {
+      height: 100px; /* Size of the phone icon */
+      width: 100px; /* Size of the phone icon */
+    }
+
+    &:hover {
+      background-color: #f4f4f4; /* Darker shade on hover */
+      transform: rotate(10deg) scale(1.1);
+    }
+  }
+}
