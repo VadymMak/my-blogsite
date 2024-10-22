@@ -1,0 +1,50 @@
+.hamburgerMenu {
+  position: relative;
+
+  &__toggle {
+    background: none;
+    border: none;
+    font-size: 30px; /* Adjust the size of the hamburger icon */
+    cursor: pointer;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%; /* Width of the menu */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it sits above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu {
+    color: white; /* Text color */
+    text-align: center;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 20px 0; /* Space between links */
+
+        a {
+          color: white; /* Link color */
+          text-decoration: none;
+          font-size: 24px; /* Font size for menu items */
+          transition: color 0.3s;
+
+          &:hover {
+            color: #007bff; /* Change color on hover */
+          }
+        }
+      }
+    }
+  }
+}

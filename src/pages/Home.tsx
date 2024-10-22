@@ -48,7 +48,7 @@ const Home = () => {
         </div>
       </section>
       {/* Phone Icon Section */}
-      <PhoneIcon /> {/* Include the PhoneIcon component */}
+      <PhoneIcon />
     </div>
   );
 };
