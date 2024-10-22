@@ -4,6 +4,7 @@ import styles from "./Home.module.scss";
 import PhoneIcon from "../components/PhoneIcon";
 import Contacts from "../components/Contacts";
 import Carousel from "../components/Carousel";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   return (
@@ -21,25 +22,13 @@ const Home = () => {
         </div>
       </section>
       {/* Second Section: About Us */}
-      <section className={styles["about-us"]}>
-        <h2>About Us</h2>
-        <p>
-          UB Market LTD has been actively operating and dynamically developing
-          in the export and import market of food products since 2020, ensuring
-          supplies to European countries. Our main priority is to provide mass
-          consumption products from reliable and quality manufacturers. We
-          guarantee our customers the highest quality products, a wide range,
-          and first-class service from a team of professionals. UB Market LTD
-          collaborates with well-known brands and verified suppliers, working
-          with both retail customers and trade outlets, local and national
-          networks.
-        </p>
+      <section className={styles.section}>
+        <AboutUs />
       </section>
-      <section className={styles.carousel}>
-        <h1>Product Carousel</h1>
+      <section className={styles.section}>
         <Carousel />
-        {/* Other components can go here */}
       </section>
+      {/* Other components can go here */}
       <section className={styles["contact-us"]}>
         <Contacts />
       </section>
