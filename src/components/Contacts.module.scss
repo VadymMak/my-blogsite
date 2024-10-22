@@ -1,13 +1,13 @@
 /* src/components/Contacts.module.scss */
 .contacts {
   position: relative;
-  padding: 60px 0; /* Padding for the section */
-  background: url("../../public//images/contact-us.jpg"); /* Light background color */
+  padding: 60px 0;
+  background: url("../../public//images/contact-us.jpg");
   background-color: rgba(0, 0, 0, 0.9);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center; /* Center the text */
+  text-align: center;
   &::before {
     content: "";
     position: absolute;
@@ -15,28 +15,23 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.8
-    ); /* Adjust the second value for darkness */
-    z-index: 1; /* Ensures the overlay is on top of the background image */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
   }
 }
 
 .contactInfo {
   position: relative;
-  display: flex; /* Flex container for contact items */
-  justify-content: space-between; /* Space items evenly */
-  margin-top: 20px; /* Space above contact items */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  z-index: 1;
 }
 
 .contacts-title {
   position: relative;
-  z-index: 3;
+  z-index: 1;
   color: #ffd700;
   font-size: 1.5rem;
 }
@@ -46,14 +41,14 @@
   flex: 1; /* Flex-grow for items */
   margin: 10px; /* Space between items */
   min-width: 200px; /* Minimum width for items */
-  z-index: 4;
+  z-index: 2;
 
   & h2 {
     position: relative;
     color: #ffd700; /* Dark color for headings */
     margin-bottom: 20px; /* Space below heading */
     font-size: 2.5rem;
-    z-index: 5;
+    z-index: 2;
   }
 
   & h3 {
