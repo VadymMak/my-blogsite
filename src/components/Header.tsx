@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <img
-          src="/images/logo.png"
+          src="/images/logo-no-background.png"
           alt="UB Market Logo"
           className={styles.logoImage}
         />
