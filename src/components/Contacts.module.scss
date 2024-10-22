@@ -1,39 +1,76 @@
 /* src/components/Contacts.module.scss */
 .contacts {
-  max-width: 100%;
-  padding: 40px 20px; /* Padding for the section */
-  background-color: #f4f4f4; /* Light background color */
+  position: relative;
+  padding: 60px 0; /* Padding for the section */
+  background: url("../../public//images/contact-us.jpg"); /* Light background color */
+  background-color: rgba(0, 0, 0, 0.9);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center; /* Center the text */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); /* Adjust the second value for darkness */
+    z-index: 1; /* Ensures the overlay is on top of the background image */
+  }
 }
 
 .contactInfo {
+  position: relative;
   display: flex; /* Flex container for contact items */
   justify-content: space-between; /* Space items evenly */
   margin-top: 20px; /* Space above contact items */
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  z-index: 3;
+}
+
+.contacts-title {
+  position: relative;
+  z-index: 3;
+  color: #ffd700;
+  font-size: 1.5rem;
 }
 
 .contactItem {
+  position: relative;
   flex: 1; /* Flex-grow for items */
   margin: 10px; /* Space between items */
   min-width: 200px; /* Minimum width for items */
-}
+  z-index: 4;
 
-h2 {
-  color: #333; /* Dark color for headings */
-  margin-bottom: 20px; /* Space below heading */
-}
+  & h2 {
+    position: relative;
+    color: #ffd700; /* Dark color for headings */
+    margin-bottom: 20px; /* Space below heading */
+    font-size: 2.5rem;
+    z-index: 5;
+  }
 
-h3 {
-  color: #555; /* Slightly lighter for subheadings */
-  margin-bottom: 10px; /* Space below subheadings */
-}
+  & h3 {
+    color: #ffd700; /* Slightly lighter for subheadings */
+    margin-bottom: 10px; /* Space below subheadings */
+  }
 
-a {
-  color: #007bff; /* Link color */
-  text-decoration: none; /* Remove underline */
-}
+  & p {
+    color: #ffd700; /* Slightly lighter for subheadings */
+  }
 
-a:hover {
-  text-decoration: underline; /* Underline on hover */
+  & a {
+    color: #ffd700; /* Link color */
+    text-decoration: none; /* Remove underline */
+
+    &:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  }
 }

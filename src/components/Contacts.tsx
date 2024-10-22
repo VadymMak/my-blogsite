@@ -5,7 +5,10 @@ import styles from "./Contacts.module.scss"; // Import your styles
 const Contacts: React.FC = () => {
   return (
     <section className={styles.contacts}>
-      <h2>Contact Us</h2>
+      <div className={styles["contacts-title"]}>
+        <h2>Contact Us</h2>
+      </div>
+
       <div className={styles.contactInfo}>
         <div className={styles.contactItem}>
           <h3>Address</h3>
