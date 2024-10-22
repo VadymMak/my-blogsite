@@ -25,9 +25,8 @@ const Home = () => {
       <section className={styles.section}>
         <AboutUs />
       </section>
-      <section className={styles.section}>
-        <Carousel />
-      </section>
+
+      <Carousel />
       {/* Other components can go here */}
       <section className={styles["contact-us"]}>
         <Contacts />
