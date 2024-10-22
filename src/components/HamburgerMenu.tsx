@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
-import useWindowSize from "../hooks/useWindowSize"; // Import the custom hook
+import React, { useState } from "react";
+import useWindowSize from "../hooks/useWindowSize";
 import styles from "./HamburgerMenu.module.scss";
 
 const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { width } = useWindowSize(); // Get window width from custom hook
+  const { width } = useWindowSize();
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
-  // Close menu if width exceeds 768px
   if (width > 768) {
     isOpen && setIsOpen(false);
   }
@@ -18,7 +17,7 @@ const HamburgerMenu: React.FC = () => {
   return (
     <div className={styles.hamburgerMenu}>
       <button className={styles.hamburgerMenu__toggle} onClick={toggleMenu}>
-        {isOpen ? "✖" : "☰"} {/* Hamburger icon */}
+        {isOpen ? "✖" : "☰"}
       </button>
       {isOpen && (
         <div className={styles.overlay}>
