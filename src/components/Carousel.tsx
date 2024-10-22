@@ -1,13 +1,24 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss"; // Import your SCSS file
+import Modal from "./Modal";
+
+interface IProduct {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+}
 
 const Carousel: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -75,6 +86,17 @@ const Carousel: React.FC = () => {
     },
   ];
 
+  const openModal = (product: IProduct) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+    console.log("clicked");
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   return (
     <section className={styles.productSection}>
       {/* Section Title */}
@@ -87,7 +109,11 @@ const Carousel: React.FC = () => {
       <div className={styles.carouselContainer}>
         <Slider {...settings}>
           {products.map((product, index) => (
-            <div key={index} className={styles.carouselItem}>
+            <div
+              key={index}
+              className={styles.carouselItem}
+              onClick={() => openModal(product)}
+            >
               <div
                 className={styles.itemContent}
                 style={{ backgroundImage: `url(${product.image})` }}
@@ -97,6 +123,11 @@ const Carousel: React.FC = () => {
             </div>
           ))}
         </Slider>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          product={selectedProduct}
+        />
       </div>
     </section>
   );
