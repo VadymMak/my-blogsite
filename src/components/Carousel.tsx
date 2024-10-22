@@ -8,24 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss"; // Import your SCSS file
 
 const Carousel: React.FC = () => {
-  // const items = [
-  //   "Sunflower Oil",
-  //   "Palm Oil and Margarine",
-  //   "Frying Oil",
-  //   "Sugar",
-  //   "Powdered Milk",
-  //   "Mayonnaise",
-  // ];
-
-  // const images = [
-  //   "/images/vegetable-oil.jpg",
-  //   "/images/palm-oil.jpg",
-  //   "/images/frying-oil.jpg",
-  //   "/images/sugar.jpg",
-  //   "/images/powdered-milk.jpg",
-  //   "/images/mayonnaise.jpg",
-  // ];
-
   const settings = {
     dots: true,
     infinite: true,
@@ -49,11 +31,11 @@ const Carousel: React.FC = () => {
   };
 
   const products = [
-    { name: "Sunflower Oil", image: "/images/vegetable-oil.jpg" },
+    { name: "Sunflower Oil", image: "/images/sun-flower.jpg" },
     { name: "Palm Oil and Margarine", image: "/images/palm-oil.jpg" },
     { name: "Frying Oil", image: "/images/frying-oil.jpg" },
     { name: "Sugar", image: "/images/sugar.jpg" },
-    { name: "Powdered Milk", image: "/images/powdered-milk.jpg" },
+    { name: "Powdered Milk", image: "/images/dry-milk.jpg" },
     { name: "Mayonnaise", image: "/images/mayonnaise.jpg" },
   ];
 

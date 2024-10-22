@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.contact}>
           <h4>Contact Us</h4>
-          <p>Email: contact@ubmarket.com</p>
-          <p>Phone: +1 234 567 890</p>
+          <p>Е-mail: ubmarket2022@gmail.com</p>
+          <p>Phone: +359 8844 69860</p>
         </div>
         <div className={styles.social}>
           <h4>Follow Us</h4>

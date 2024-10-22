@@ -3,6 +3,8 @@
   height: 500px; /* Adjust the height as needed */
   background: url("../../public/images/top.jpg") no-repeat center center;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding-top: 60px; /* Add padding to accommodate the header height */
   color: white; /* Ensure text is readable */
   text-align: center; /* Center text horizontally */
