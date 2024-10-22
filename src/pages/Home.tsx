@@ -5,22 +5,13 @@ import PhoneIcon from "../components/PhoneIcon";
 import Contacts from "../components/Contacts";
 import Carousel from "../components/Carousel";
 import AboutUs from "./AboutUs";
+import Banner from "../components/Banner";
 
 const Home = () => {
   return (
     <div className={styles.home}>
       {/* Banner Section */}
-      <section className={styles.banner}>
-        <div>
-          <div>
-            <h1>Sunflower Oil Trading</h1>
-            <p>
-              Ukrainian-Bulgarian export-import company UB Market LTD, we invite
-              you to collaborate!
-            </p>
-          </div>
-        </div>
-      </section>
+      <Banner />
       {/* Second Section: About Us */}
       <section className={styles.section}>
         <AboutUs />
