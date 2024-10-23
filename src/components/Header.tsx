@@ -2,6 +2,7 @@ import React from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import useWindowSize from "../hooks/useWindowSize";
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const { width } = useWindowSize();
@@ -20,9 +21,7 @@ const Header: React.FC = () => {
           <li>
             <a href="/">Home</a>
           </li>
-          <li>
-            <a href="/about">About Us</a>
-          </li>
+          <Link to="/about">About</Link>
           <li>
             <a href="/products">Our Products</a>
           </li>

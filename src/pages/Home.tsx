@@ -17,7 +17,6 @@ const Home = () => {
       <section className={styles.section}>
         <AboutUs />
       </section>
-
       <Carousel />
       {/* Other components can go here */}
       <section className={styles.section}>
