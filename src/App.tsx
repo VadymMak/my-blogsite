@@ -1,24 +1,30 @@
 // src/App.tsx
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Layout from "./layoutes/Layout";
+import NotFound from "./components/NotFound";
+import ProductCard from "./components/ProductCard";
 
-const App = () => {
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
-};
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "products", element: <ProductCard /> },
+      { path: "contact", element: <Contact /> },
+    ],
+  },
+  { path: "*", element: <NotFound /> }, // Fallback for unmatched routes
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
 
 export default App;

@@ -41,15 +41,34 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .container {
+    padding: 50px;
+  }
+
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Medium screens (tablets) */
 @media (max-width: 768px) {
-  .aboutUs .content {
-    max-width: 100%; // Full width on smaller screens
-    padding: 20px; // Adjust padding
-    h2 {
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1rem;
-    }
+  .container {
+    padding: 30px;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
   }
 }
