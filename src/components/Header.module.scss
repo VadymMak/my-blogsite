@@ -32,21 +32,18 @@
         padding: 0;
         margin: 0;
 
-        li {
-          margin: 0 15px; /* Space between links */
+        a {
+          margin-left: 15px;
+          text-decoration: none;
+          color: #e0e2d5; /* Text color */
+          transition: color 0.3s;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          border: 2px solid transparent;
 
-          a {
-            text-decoration: none;
-            color: #e0e2d5; /* Text color */
-            transition: color 0.3s;
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            border: 2px solid transparent;
-
-            &:hover {
-              color: #007bff; /* Change color on hover */
-              border-bottom: 2px solid #007bff;
-            }
+          &:hover {
+            color: #007bff; /* Change color on hover */
+            border-bottom: 2px solid #007bff;
           }
         }
       }

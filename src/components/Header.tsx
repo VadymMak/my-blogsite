@@ -18,16 +18,10 @@ const Header: React.FC = () => {
       </div>
       <nav className={styles.nav}>
         <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
+          <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <li>
-            <a href="/products">Our Products</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
+          <Link to="/products">Our Products</Link>
+          <Link to="/contact">Contact</Link>
         </ul>
       </nav>
       {width < 768 && <HamburgerMenu />}
