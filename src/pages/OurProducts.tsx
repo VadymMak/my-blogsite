@@ -14,7 +14,7 @@ const products: Product[] = [
     name: "Sunflower Oil",
     image: "/images/sun-flower.jpg",
     description:
-      "Sunflower Oil RDBW – Refined Deodorized Sunflower Oil under the KOROLIVSKYI SMAK brand – is a high-quality oil with the highest degree of purification, offering a neutral taste and aroma. This refined oil is the perfect choice for culinary use, especially when cooking with heat. Due to its composition, RDBW oil is suitable for frying, extended cooking, and heat processing of various dishes and ingredients, while preserving their flavor qualities. Choose KOROLIVSKYI SMAK for your kitchen and taste the difference!",
+      "Sunflower Oil RDBW – Refined Deodorized Sunflower Oil under the KOROLIVSKYI SMAK brand – is a high-quality oil with the highest degree of purification, offering a neutral taste and aroma. \n\n This refined oil is the perfect choice for culinary use, especially when cooking with heat. Due to its composition, RDBW oil is suitable for frying, extended cooking, and heat processing of various dishes and ingredients, while preserving their flavor qualities. Choose KOROLIVSKYI SMAK for your kitchen and taste the difference!",
   },
   {
     id: 2,
@@ -70,7 +70,9 @@ const OurProducts: React.FC = () => {
             </div>
             <div className={styles.productInfo}>
               <h3>{product.name}</h3>
-              <p>{product.description}</p>
+              {product.description.split("\n\n").map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
         ))}
