@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import useWindowSize from "../hooks/useWindowSize";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 
 // @ts-ignore
-import Flag from "react-world-flags";
 import LanguageDropdown from "./LanguageDropdown";
 
 interface HeaderProps {
@@ -14,16 +13,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ changeLanguage }) => {
   const { width } = useWindowSize();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleLanguageChange = (lang: string) => {
-    changeLanguage(lang);
-    setIsOpen(false); // Close dropdown after selection
-  };
 
   return (
     <header className={styles.header}>
