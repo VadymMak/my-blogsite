@@ -34,7 +34,7 @@
     z-index: 1; /* Keep overlay on top */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .content {
