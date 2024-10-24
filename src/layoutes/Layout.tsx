@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import "../../src/118n/i18n";
 
 const Layout = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
