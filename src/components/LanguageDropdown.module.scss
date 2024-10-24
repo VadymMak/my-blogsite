@@ -1,0 +1,38 @@
+// LanguageDropdown.module.scss
+.dropdown {
+  position: relative;
+
+  .dropdownToggle {
+    background-color: transparent;
+    color: #fff; /* Text color */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+    }
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    background-color: #333; /* Dropdown background */
+    border-radius: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 1000;
+
+    li {
+      color: #fff; /* Text color */
+      padding: 10px 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Item hover effect */
+      }
+    }
+  }
+}
