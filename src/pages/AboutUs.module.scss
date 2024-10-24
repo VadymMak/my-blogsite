@@ -11,7 +11,7 @@
 // AboutUs.module.scss
 
 .aboutUs {
-  min-height: 300px; /* Full viewport height */
+  min-height: 350px; /* Full viewport height */
   position: relative;
   overflow: hidden; /* Prevent overflow if content is larger */
   position: relative;
@@ -32,6 +32,9 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
     z-index: 1; /* Keep overlay on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .content {
