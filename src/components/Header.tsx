@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             <Link to="/products">Our Products</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contacts">Contacts</Link>
           </li>
         </ul>
       </nav>

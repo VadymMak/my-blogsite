@@ -31,7 +31,7 @@
 .contacts-title {
   position: relative;
   z-index: 1;
-  color: #ffd700;
+  color: #eee;
   font-size: 1.5rem;
 }
 
@@ -44,23 +44,23 @@
 
   & h2 {
     position: relative;
-    color: #ffd700; /* Dark color for headings */
+    color: #eee; /* Dark color for headings */
     margin-bottom: 20px; /* Space below heading */
     font-size: 2.5rem;
     z-index: 2;
   }
 
   & h3 {
-    color: #ffd700; /* Slightly lighter for subheadings */
+    color: #eee; /* Slightly lighter for subheadings */
     margin-bottom: 10px; /* Space below subheadings */
   }
 
   & p {
-    color: #ffd700; /* Slightly lighter for subheadings */
+    color: #eee; /* Slightly lighter for subheadings */
   }
 
   & a {
-    color: #ffd700; /* Link color */
+    color: #eee; /* Link color */
     text-decoration: none; /* Remove underline */
 
     &:hover {
