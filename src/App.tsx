@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./layoutes/Layout";
 import NotFound from "./components/NotFound";
 import OurProducts from "./pages/OurProducts";
-import Contacts from "./pages/Contacts";
+import ContactsPage from "./pages/ContactsPage";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "about", element: <About /> },
       { path: "products", element: <OurProducts /> },
-      { path: "contacts", element: <Contacts /> },
+      { path: "contacts", element: <ContactsPage /> },
     ],
   },
   { path: "*", element: <NotFound /> }, // Fallback for unmatched routes

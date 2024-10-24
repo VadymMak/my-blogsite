@@ -1,8 +1,8 @@
 // Contact.tsx
 import React, { useState } from "react";
-import styles from "./Contacts.module.scss";
+import styles from "./ContactsPage.module.scss";
 
-const Contacts: React.FC = () => {
+const ContactsPage: React.FC = () => {
   const [formData, setFormData] = useState({
     quantity: "",
     email: "",
@@ -84,4 +84,4 @@ const Contacts: React.FC = () => {
   );
 };
 
-export default Contacts;
+export default ContactsPage;
