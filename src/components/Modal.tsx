@@ -35,8 +35,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here (e.g., sending to a server or API)
-    console.log("Order submitted:", formData);
     onClose();
     setFormData({ quantity: 1, email: "", phone: "" });
     setIsOrdering(false);
@@ -56,8 +54,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
             &times;
           </button>
           <h3 className={styles.cardTitle}>{product.name}</h3>
-          <p className={styles.cardDescription}>{product.description}</p>
-
+          {product.description.split("\n\n").map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
           {!isOrdering ? (
             <div className={styles.modalFooter}>
               <button className={styles.orderButton} onClick={handleOrderClick}>

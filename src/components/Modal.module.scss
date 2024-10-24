@@ -30,9 +30,13 @@
   text-align: center;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 
-  /* Beautiful gradient background */
   background-image: linear-gradient(to bottom, #000000, #434343);
   color: #ffd700;
+
+  & p {
+    text-align: left;
+    text-indent: 20px;
+  }
 }
 
 .cardTitle {
