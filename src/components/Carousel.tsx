@@ -10,14 +10,10 @@ import Modal from "./Modal";
 
 import { useTranslation } from "react-i18next";
 
-import { products } from "../constants/products";
+import { products, IProduct } from "../constants/products";
+import i18n from "../118n/i18n";
 
-interface IProduct {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
+type LanguageKey = "en" | "bg" | "ua";
 
 const Carousel: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,9 +64,9 @@ const Carousel: React.FC = () => {
       {/* Carousel */}
       <div className={styles.carouselContainer}>
         <Slider {...settings}>
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div
-              key={index}
+              key={product.id}
               className={styles.carouselItem}
               onClick={() => openModal(product)}
             >
@@ -78,7 +74,7 @@ const Carousel: React.FC = () => {
                 className={styles.itemContent}
                 style={{ backgroundImage: `url(${product.image})` }}
               >
-                <h3>{product.name}</h3>
+                <h3>{product.name[i18n.language as LanguageKey]}</h3>
               </div>
             </div>
           ))}

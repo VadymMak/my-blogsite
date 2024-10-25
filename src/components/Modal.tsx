@@ -1,12 +1,7 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Modal.module.scss";
-
-interface IProduct {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
+import { IProduct } from "../constants/products";
 
 interface ModalProps {
   isOpen: boolean;
@@ -14,7 +9,11 @@ interface ModalProps {
   product: IProduct | null;
 }
 
+// Define the allowed languages as a type
+type LanguageType = "en" | "bg" | "ua";
+
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
+  const { t, i18n } = useTranslation();
   const [isOrdering, setIsOrdering] = useState(false);
   const [formData, setFormData] = useState({
     quantity: 1,
@@ -24,13 +23,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
 
   if (!isOpen || !product) return null;
 
+  // Cast i18n.language to LanguageType
+  const currentLang = i18n.language as LanguageType;
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleOrderClick = () => {
-    setIsOrdering(true); // Open the form
+    setIsOrdering(true);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -53,20 +55,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
           >
             &times;
           </button>
-          <h3 className={styles.cardTitle}>{product.name}</h3>
-          {product.description.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+
+          <h3 className={styles.cardTitle}>{product.name[currentLang]}</h3>
+          {product.description[currentLang]
+            .split("\n\n")
+            .map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+
           {!isOrdering ? (
             <div className={styles.modalFooter}>
               <button className={styles.orderButton} onClick={handleOrderClick}>
-                Order Now
+                {t("orderNow")}
               </button>
             </div>
           ) : (
             <form className={styles.orderForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="quantity">Quantity:</label>
+                <label htmlFor="quantity">{t("quantity")}:</label>
                 <input
                   type="number"
                   id="quantity"
@@ -78,7 +84,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">{t("email")}:</label>
                 <input
                   type="email"
                   id="email"
@@ -89,7 +95,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="phone">Phone:</label>
+                <label htmlFor="phone">{t("phone")}:</label>
                 <input
                   type="tel"
                   id="phone"
@@ -101,7 +107,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
               </div>
               <div className={styles.modalFooter}>
                 <button type="submit" className={styles.submitButton}>
-                  Submit Order
+                  {t("submitOrder")}
                 </button>
               </div>
             </form>
