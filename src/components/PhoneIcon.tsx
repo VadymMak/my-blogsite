@@ -21,7 +21,7 @@ const PhoneIcon = () => {
           <img src="/images/Phone_icon.png" alt="Phone Icon" />
         </button>
       </div>
-      <CartModal isOpen={isModalOpen} onClose={handleCloseModal} items={[]} />
+      <CartModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 };

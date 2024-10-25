@@ -6,10 +6,9 @@ import { IProduct } from "../constants/products";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  product: IProduct | null;
+  product: IProduct | null; // Expect a single product, not an array
 }
 
-// Define the allowed languages as a type
 type LanguageType = "en" | "bg" | "ua";
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
@@ -20,11 +19,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
     email: "",
     phone: "",
   });
+  const [error, setError] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   if (!isOpen || !product) return null;
 
-  // Cast i18n.language to LanguageType
-  const currentLang = i18n.language as LanguageType;
+  const currentLang = (
+    ["en", "bg", "ua"].includes(i18n.language) ? i18n.language : "en"
+  ) as LanguageType;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -33,13 +35,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
 
   const handleOrderClick = () => {
     setIsOrdering(true);
+    setError(""); // Reset error on new order
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onClose();
+
+    // Basic validation
+    if (!formData.email || !formData.phone) {
+      setError(t("pleaseFillAllFields")); // Ensure this translation key is defined
+      return;
+    }
+
+    // Simulate order submission
+    console.log("Order submitted:", formData);
     setFormData({ quantity: 1, email: "", phone: "" });
     setIsOrdering(false);
+    onClose(); // Close modal after submission
   };
 
   return (
@@ -55,17 +67,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
           >
             &times;
           </button>
-
           <h3 className={styles.cardTitle}>{product.name[currentLang]}</h3>
           {product.description[currentLang]
             .split("\n\n")
             .map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
-
-          {!isOrdering ? (
+          {error && <p className={styles.error}>{error}</p>}{" "}
+          {/* Display error message */}
+          {/* {!isOrdering ? (
             <div className={styles.modalFooter}>
-              <button className={styles.orderButton} onClick={handleOrderClick}>
+              <button
+                className={styles.orderButton}
+                onClick={handleOrderClick}
+                disabled={true}
+              >
                 {t("orderNow")}
               </button>
             </div>
@@ -106,12 +122,20 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                 />
               </div>
               <div className={styles.modalFooter}>
-                <button type="submit" className={styles.submitButton}>
-                  {t("submitOrder")}
+                <button onClick={onClose} className={styles.cancelButton}>
+                  {t("close")}
+                </button>
+                <button
+                  type="submit"
+                  onClick={() => alert("Proceed to checkout")}
+                  className={styles.orderButton}
+                  disabled={true}
+                >
+                  {t("orderNow")}
                 </button>
               </div>
             </form>
-          )}
+          )} */}
         </div>
       </div>
     </div>

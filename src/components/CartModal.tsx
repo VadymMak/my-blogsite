@@ -1,30 +1,26 @@
-// src/components/CartModal.tsx
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next"; // Import useTranslation for translations
 import styles from "./CartModal.module.scss"; // Import your modal styles
 
 interface CartModalProps {
   isOpen: boolean;
   onClose: () => void;
-  items: { id: number; name: string; price: number; quantity: number }[]; // Pass cart items as props
 }
 
-const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose, items }) => {
+const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation(); // Use translation hook
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState(""); // Add email state
 
   if (!isOpen) return null; // Don't render anything if not open
-
-  const total = items.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  ); // Calculate total
 
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h2>Wee eill call You back. Leave You phone</h2>
+        <h2>{t("weWillCallYouBack")}</h2>
         <div className={styles.userInfo}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">{t("name")}</label>
           <input
             type="text"
             id="name"
@@ -32,7 +28,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose, items }) => {
             onChange={(e) => setName(e.target.value)}
             required
           />
-          <label htmlFor="phone">Phone:</label>
+          <label htmlFor="phone">{t("phone")}</label>
           <input
             type="tel"
             id="phone"
@@ -40,19 +36,27 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose, items }) => {
             onChange={(e) => setPhone(e.target.value)}
             required
           />
+          <label htmlFor="email">{t("email")}</label>{" "}
+          {/* New email field label */}
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} // Handle email change
+            required
+          />
         </div>
-        <h3 className={styles.total}>Total: ${total.toFixed(2)}</h3>
+
         <div className={styles.buttonContainer}>
           <button onClick={onClose} className={styles.cancelButton}>
-            Close
+            {t("close")}
           </button>
           <button
             onClick={() => alert("Proceed to checkout")}
             className={styles.checkoutButton}
           >
-            Checkout
-          </button>{" "}
-          {/* Replace with actual checkout logic */}
+            {t("callBack")}
+          </button>
         </div>
       </div>
     </div>

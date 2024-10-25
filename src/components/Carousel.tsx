@@ -3,13 +3,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 import React, { useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss"; // Import your SCSS file
 import Modal from "./Modal";
-
 import { useTranslation } from "react-i18next";
-
 import { products, IProduct } from "../constants/products";
 import i18n from "../118n/i18n";
 
@@ -18,7 +14,6 @@ type LanguageKey = "en" | "bg" | "ua";
 const Carousel: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
-
   const { t } = useTranslation();
 
   const settings = {
@@ -55,13 +50,11 @@ const Carousel: React.FC = () => {
 
   return (
     <section className={styles.productSection}>
-      {/* Section Title */}
       <div className={styles.sectionTitle}>
         <h2>{t("ourProducts")}</h2>
         <p>{t("exploreProducts")}</p>
       </div>
 
-      {/* Carousel */}
       <div className={styles.carouselContainer}>
         <Slider {...settings}>
           {products.map((product) => (
@@ -82,7 +75,7 @@ const Carousel: React.FC = () => {
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
-          product={selectedProduct}
+          product={selectedProduct} // Pass the selected product directly
         />
       </div>
     </section>

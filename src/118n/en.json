@@ -28,5 +28,16 @@
   "ourHistory": "Our History",
   "ourHistoryTitle": "Since our founding in 2020, UB Market LTD has grown from a small local supplier to a trusted partner for businesses across Europe. Our success is built on a foundation of hard work, dedication, and a passion for providing the best products in the market. Over the years, we've expanded our operations and diversified our product offerings, always keeping pace with the evolving needs of our customers.",
   "ourTeam": "Our Team",
-  "ourTeamTitle": "Behind UB Market LTD is a team of highly skilled professionals who are passionate about the food industry. Our team works tirelessly to source, inspect, and distribute products that meet the highest standards of quality and safety."
+  "ourTeamTitle": "Behind UB Market LTD is a team of highly skilled professionals who are passionate about the food industry. Our team works tirelessly to source, inspect, and distribute products that meet the highest standards of quality and safety.",
+  "quantity": "Quantity: ",
+  "email": "Email: ",
+  "name": "Name: ",
+  "phone": "Phone: ",
+  "total": "Total: ",
+  "checkout": "Checkout",
+  "close": "Close",
+  "weWillCallYouBack": "We will call you back. Leave your phone and email.",
+  "orderNow": "Order Now",
+  "cancel": "Cancel",
+  "callBack": "Call Back"
 }
