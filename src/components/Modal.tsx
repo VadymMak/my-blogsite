@@ -13,14 +13,13 @@ type LanguageType = "en" | "bg" | "ua";
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
   const { t, i18n } = useTranslation();
-  // const [isOrdering, setIsOrdering] = useState(false);
+  const [isOrdering, setIsOrdering] = useState(false);
   const [formData, setFormData] = useState({
     quantity: 1,
     email: "",
     phone: "",
   });
   const [error, setError] = useState("");
-  // const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   if (!isOpen || !product) return null;
 
@@ -28,31 +27,31 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
     ["en", "bg", "ua"].includes(i18n.language) ? i18n.language : "en"
   ) as LanguageType;
 
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  // const handleOrderClick = () => {
-  //   setIsOrdering(true);
-  //   setError(""); // Reset error on new order
-  // };
+  const handleOrderClick = () => {
+    setIsOrdering(true);
+    setError(""); // Reset error on new order
+  };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  //   // Basic validation
-  //   if (!formData.email || !formData.phone) {
-  //     setError(t("pleaseFillAllFields")); // Ensure this translation key is defined
-  //     return;
-  //   }
+    // Basic validation
+    if (!formData.email || !formData.phone) {
+      setError(t("pleaseFillAllFields")); // Ensure this translation key is defined
+      return;
+    }
 
-  // Simulate order submission
-  //   console.log("Order submitted:", formData);
-  //   setFormData({ quantity: 1, email: "", phone: "" });
-  //   setIsOrdering(false);
-  //   onClose(); // Close modal after submission
-  // };
+    // Simulate order submission
+    console.log("Order submitted:", formData);
+    setFormData({ quantity: 1, email: "", phone: "" });
+    setIsOrdering(false);
+    onClose(); // Close modal after submission
+  };
 
   return (
     <div className={styles.modalOverlay}>
@@ -62,7 +61,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
             className={styles.closeButton}
             onClick={() => {
               onClose();
-              // setIsOrdering(false);
+              setIsOrdering(false);
             }}
           >
             &times;
@@ -75,7 +74,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
             ))}
           {error && <p className={styles.error}>{error}</p>}{" "}
           {/* Display error message */}
-          {/* {!isOrdering ? (
+          {!isOrdering ? (
             <div className={styles.modalFooter}>
               <button
                 className={styles.orderButton}
@@ -135,7 +134,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                 </button>
               </div>
             </form>
-          )} */}
+          )}
         </div>
       </div>
     </div>
