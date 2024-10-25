@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss"; // Import your SCSS file
 import Modal from "./Modal";
 
+import { useTranslation } from "react-i18next";
+
 import { products } from "../constants/products";
 
 interface IProduct {
@@ -20,6 +22,8 @@ interface IProduct {
 const Carousel: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
+
+  const { t } = useTranslation();
 
   const settings = {
     dots: true,
@@ -46,7 +50,6 @@ const Carousel: React.FC = () => {
   const openModal = (product: IProduct) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
-    console.log("clicked");
   };
 
   const closeModal = () => {
@@ -58,8 +61,8 @@ const Carousel: React.FC = () => {
     <section className={styles.productSection}>
       {/* Section Title */}
       <div className={styles.sectionTitle}>
-        <h2>Our Products</h2>
-        <p>Explore our range of high-quality products</p>
+        <h2>{t("ourProducts")}</h2>
+        <p>{t("exploreProducts")}</p>
       </div>
 
       {/* Carousel */}

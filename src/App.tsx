@@ -8,6 +8,7 @@ import Layout from "./layoutes/Layout";
 import NotFound from "./components/NotFound";
 import OurProducts from "./pages/OurProducts";
 import ContactsPage from "./pages/ContactsPage";
+import "./118n/i18n";
 
 const router = createBrowserRouter([
   {

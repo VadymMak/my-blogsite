@@ -1,12 +1,16 @@
 // src/components/Contacts.tsx
 import React from "react";
-import styles from "./Contacts.module.scss"; // Import your styles
+import styles from "./Contacts.module.scss";
+
+import { useTranslation } from "react-i18next";
 
 const Contacts: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.contacts}>
       <div className={styles["contacts-title"]}>
-        <h2>Contact Us</h2>
+        <h2>{t("contactUs")}</h2>
       </div>
 
       <div className={styles.contactInfo}>
