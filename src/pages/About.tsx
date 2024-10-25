@@ -41,7 +41,7 @@ const About: React.FC = () => {
               <strong>{t("innovation")}</strong> {t("innovationTitle")}
             </li>
             <li>
-              <strong>{t("sustainability")}:</strong> {t("sustainabilityTitle")}
+              <strong>{t("sustainability")}</strong> {t("sustainabilityTitle")}
             </li>
           </ul>
         </section>
