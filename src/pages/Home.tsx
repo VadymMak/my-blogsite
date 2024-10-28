@@ -31,7 +31,7 @@ const Home: React.FC = () => {
           <Contacts />
         </section>
         <OurLocation />
-        <PhoneIcon />
+        {/* <PhoneIcon /> */}
       </div>
     </Suspense>
   );

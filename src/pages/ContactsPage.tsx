@@ -1,14 +1,26 @@
-// Contact.tsx
+// src/pages/Contact.tsx
 import React, { useState } from "react";
 import styles from "./ContactsPage.module.scss";
 
+const CONTACT_INFO = {
+  email: "support@ub-market.com",
+  phone: "+1 (800) 123-4567",
+  address: "123 Market St, City, Country",
+};
+
+type FormData = {
+  quantity: string;
+  email: string;
+  phone: string;
+};
+
 const ContactsPage: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     quantity: "",
     email: "",
     phone: "",
   });
-  //   const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -19,49 +31,47 @@ const ContactsPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    if (!formData.quantity || !formData.email || !formData.phone) {
+      setError("All fields are required.");
+      return;
+    }
+    setError(null);
+    console.log("Form submitted:", formData);
   };
+
+  const FormField = ({
+    label,
+    name,
+    type = "text",
+  }: {
+    label: string;
+    name: keyof FormData;
+    type?: string;
+  }) => (
+    <div className={styles.formGroup}>
+      <label htmlFor={name}>{label}:</label>
+      <input
+        id={name}
+        type={type}
+        name={name}
+        value={formData[name]}
+        onChange={handleChange}
+        required
+        aria-label={label}
+      />
+    </div>
+  );
 
   return (
     <div className={styles.contact}>
       <h2>Contact Us</h2>
 
       <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label htmlFor="quantity">Product Quantity:</label>
-          <input
-            type="text"
-            name="quantity"
-            value={formData.quantity}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <FormField label="Product Quantity" name="quantity" />
+        <FormField label="Email" name="email" type="email" />
+        <FormField label="Phone" name="phone" type="tel" />
 
-        <div className={styles.formGroup}>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="phone">Phone:</label>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* {error && <p className={styles.error}>{error}</p>} */}
+        {error && <p className={styles.error}>{error}</p>}
 
         <button type="submit">Submit</button>
       </form>
@@ -70,13 +80,13 @@ const ContactsPage: React.FC = () => {
         <h3>Contact Information</h3>
         <ul>
           <li>
-            <strong>Email:</strong> support@ub-market.com
+            <strong>Email:</strong> {CONTACT_INFO.email}
           </li>
           <li>
-            <strong>Phone:</strong> +1 (800) 123-4567
+            <strong>Phone:</strong> {CONTACT_INFO.phone}
           </li>
           <li>
-            <strong>Address:</strong> 123 Market St, City, Country
+            <strong>Address:</strong> {CONTACT_INFO.address}
           </li>
         </ul>
       </div>
