@@ -1,32 +1,39 @@
-// src/pages/Home.tsx
-import React from "react";
+import React, { startTransition, Suspense } from "react";
 import styles from "./Home.module.scss";
-import PhoneIcon from "../components/PhoneIcon";
-import Contacts from "../components/Contacts";
-import Carousel from "../components/Carousel";
-import AboutUs from "./AboutUs";
-import Banner from "../components/Banner";
-import OurLocation from "../components/OurLocation";
 
-const Home = () => {
+const Carousel = React.lazy(() => import("../components/Carousel"));
+const Contacts = React.lazy(() => import("../components/Contacts"));
+const PhoneIcon = React.lazy(() => import("../components/PhoneIcon"));
+const AboutUs = React.lazy(() => import("./AboutUs"));
+const Banner = React.lazy(() => import("../components/Banner"));
+const OurLocation = React.lazy(() => import("../components/OurLocation"));
+
+const Home: React.FC = () => {
+  const handleLoadComponents = () => {
+    startTransition(() => {
+      // This loads all lazy components without suspending
+    });
+  };
+
+  React.useEffect(() => {
+    handleLoadComponents();
+  }, []);
+
   return (
-    <div className={styles.home}>
-      {/* Banner Section */}
-      <Banner />
-      {/* Second Section: About Us */}
-      <section className={styles.section}>
-        <AboutUs />
-      </section>
-      <Carousel />
-      {/* Other components can go here */}
-      <section className={styles.section}>
-        <Contacts />
-      </section>
-      {/* Google Map Section */}
-      <OurLocation />
-      {/* Phone Icon Section */}
-      <PhoneIcon />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={styles.home}>
+        <Banner />
+        <section className={styles.section}>
+          <AboutUs />
+        </section>
+        <Carousel />
+        <section className={styles.section}>
+          <Contacts />
+        </section>
+        <OurLocation />
+        <PhoneIcon />
+      </div>
+    </Suspense>
   );
 };
 

@@ -12,7 +12,126 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: white; /* src/pages/Home.module.scss */
+
+    :root {
+      --text-primary: #333;
+      --text-secondary: #555;
+      --background-light: #f4f4f4;
+      --background-dark: rgba(0, 0, 0, 0.9);
+      --banner-height-desktop: 400px;
+      --banner-height-mobile: 300px;
+      --font-size-h1: 48px;
+      --font-size-h2: 36px;
+      --font-size-p: 24px;
+      --padding-section: 50px 20px;
+      --max-width-content: 90%;
+    }
+
+    .home {
+      position: relative;
+
+      /* Banner Section */
+      .banner {
+        background-image: url("../../public/images/top.jpg");
+        background-size: cover;
+        background-position: center;
+        height: var(--banner-height-desktop);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 0 20px;
+
+        h1 {
+          font-size: var(--font-size-h1);
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: var(--font-size-p);
+          margin-top: 0;
+        }
+      }
+
+      /* About Us Section */
+      .about-us,
+      .carousel,
+      .contact-us,
+      .map {
+        padding: var(--padding-section);
+        background-color: var(--background-light);
+        text-align: center;
+
+        h2 {
+          font-size: var(--font-size-h2);
+          margin-bottom: 20px;
+          color: var(--text-primary);
+        }
+
+        p {
+          font-size: 18px;
+          max-width: var(--max-width-content);
+          margin: 0 auto;
+          line-height: 1.6;
+          color: var(--text-secondary);
+        }
+      }
+
+      /* Carousel */
+      .carousel {
+        background-color: var(--background-light);
+      }
+
+      /* Map Section */
+      .map {
+        .mapContainer {
+          max-width: var(--max-width-content);
+          margin: 0 auto;
+
+          iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+          }
+        }
+      }
+
+      /* Section Divider */
+      .section {
+        padding: 20px 0;
+        background-color: var(--background-dark);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .banner {
+          height: var(--banner-height-mobile);
+
+          h1 {
+            font-size: 32px;
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+
+        .about-us,
+        .carousel,
+        .map {
+          h2 {
+            font-size: 28px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
     text-align: center;
     padding: 0 20px;
 
