@@ -1,16 +1,27 @@
 // LanguageDropdown.tsx
-// LanguageDropdown.tsx
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguageDropdown.module.scss";
 
-const LanguageDropdown = () => {
+interface Language {
+  code: string;
+  name: string;
+  flag: string;
+}
+
+interface LanguageDropdownProps {
+  changeLanguage: (lang: string) => void; // Accept changeLanguage as a prop
+}
+
+const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
+  changeLanguage,
+}) => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default language
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("en"); // Default language
 
-  const languages = [
-    { code: "en", name: "English", flag: "./icons/en.svg" },
+  const languages: Language[] = [
+    { code: "en", name: "English", flag: "/icons/en.svg" },
     { code: "ua", name: "Українська", flag: "/icons/ua.svg" },
     { code: "bg", name: "Български", flag: "/icons/bg.svg" },
   ];
@@ -22,22 +33,46 @@ const LanguageDropdown = () => {
   }, [i18n]);
 
   const handleLanguageChange = (code: string) => {
+    changeLanguage(code); // Call the prop function to change the language
     i18n.changeLanguage(code);
     localStorage.setItem("language", code);
     setSelectedLanguage(code); // Update selected language
     setIsOpen(false);
   };
 
-  // Find the current language object for display
   const currentLanguage = languages.find(
     (lang) => lang.code === selectedLanguage
   );
 
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleOutsideClick = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (!target.closest(`.${styles.dropdown}`)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      const listener = (event: MouseEvent) => handleOutsideClick(event);
+      window.addEventListener("click", listener);
+
+      return () => {
+        window.removeEventListener("click", listener);
+      };
+    }
+  }, [isOpen]);
+
   return (
     <div className={styles.dropdown}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleDropdown}
         className={styles.dropdownToggle}
+        aria-haspopup="true"
+        aria-expanded={isOpen}
       >
         {currentLanguage && (
           <>

@@ -3,15 +3,13 @@ import HamburgerMenu from "./HamburgerMenu";
 import useWindowSize from "../hooks/useWindowSize";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
-
-// @ts-ignore
 import LanguageDropdown from "./LanguageDropdown";
 
 interface HeaderProps {
   changeLanguage: (lang: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ changeLanguage }) => {
+const Header: React.FC<HeaderProps> = React.memo(({ changeLanguage }) => {
   const { width } = useWindowSize();
 
   return (
@@ -21,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({ changeLanguage }) => {
           src="/images/logo-white-text.png"
           alt="UB Market Logo"
           className={styles.logoImage}
+          loading="lazy"
         />
       </div>
 
@@ -40,10 +39,13 @@ const Header: React.FC<HeaderProps> = ({ changeLanguage }) => {
           </li>
         </ul>
       </nav>
-      <LanguageDropdown />
+
+      {/* Pass changeLanguage to the LanguageDropdown */}
+      <LanguageDropdown changeLanguage={changeLanguage} />
+
       {width < 768 && <HamburgerMenu />}
     </header>
   );
-};
+});
 
 export default Header;
