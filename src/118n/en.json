@@ -41,5 +41,17 @@
   "weWillCallYouBack": "We will call you back. Leave your phone and email.",
   "orderNow": "Order Now",
   "cancel": "Cancel",
-  "callBack": "Call Back"
+  "callBack": "Call Back",
+  "helpText": "We’re here to help! Reach out to us for any inquiries, support, or feedback.",
+  "ourContactInfo": "Our Contact Information",
+  "address": "Address:",
+  "officeHours": "Office Hours",
+  "officeHoursText": "Our team is available during the following hours:",
+  "findUsTitle": "Find Us Here",
+  "followUs": "Follow Us on Social Media",
+  "stayConnected": "Stay connected with us for updates and more.",
+  "mondayToFriday": "Monday - Friday: 9:00 AM - 5:00 PM",
+  "saturday": "Saturday: 10:00 AM - 2:00 PM",
+  "sunday": "Sunday: Closed",
+  "cityStateZip": "Zip Code: "
 }

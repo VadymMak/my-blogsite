@@ -1,112 +1,106 @@
-// src/pages/Contact.module.scss
+// background: linear-gradient(black, transparent),
+//     url("../../public/images/contact-us.jpg") no-repeat center center;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   padding: 60px 20px; // Ensure enough padding for the header
+//   padding-top: 150px;
+//   color: $text-color;
+//   text-align: center; // Center all text
 
-$background-color: rgba(0, 0, 0, 0.8);
-$text-color: #fff;
-$button-color: #28a745;
-$button-hover-color: #218838;
-$input-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+// src/pages/ContactsPage.module.scss
 
-.contact {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+// src/pages/ContactsPage.module.scss
+
+$background-color: rgba(0, 0, 0, 0.8); // Change to black for contrast
+$text-color: white; // Set text color to white
+$header-color: gold; // Set header color to gold
+
+.contactsPage {
+  background: linear-gradient(black, transparent),
+    url("../../public/images/contact-us.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 60px 20px; // Ensure enough padding for the header
+  padding-top: 150px;
   color: $text-color;
-  padding: 20px;
-  box-sizing: border-box;
+  text-align: center; // Center all text
 
-  background: linear-gradient(to bottom, $background-color, $background-color),
-    url("../../public/images/contact-us.jpg") no-repeat center/cover;
-
-  h2 {
-    margin-bottom: 20px;
+  h1 {
     font-size: 2.5rem;
-    text-align: center;
+    margin-bottom: 20px;
   }
 
-  .formGroup {
-    margin-bottom: 15px;
+  section {
+    margin-bottom: 40px;
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 1rem;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      box-shadow: $input-shadow;
-      font-size: 1rem;
-    }
-  }
-
-  .error {
-    color: red;
-    text-align: center;
-  }
-
-  button {
-    padding: 10px 20px;
-    background-color: $button-color;
-    color: $text-color;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-
-    &:hover {
-      background-color: $button-hover-color;
-    }
-  }
-
-  .contactList {
-    margin-top: 40px;
-    text-align: center;
-
-    h3 {
-      margin-bottom: 15px;
+    h2 {
       font-size: 2rem;
+      color: $header-color; // Gold color for headers
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
 
     ul {
       list-style: none;
       padding: 0;
+      display: flex; // Flexbox to align icons horizontally
+      justify-content: center; // Center the icons
+      margin-top: 20px; // Space between section text and icons
 
       li {
-        margin: 10px 0;
-        font-size: 1.2rem;
+        margin: 0 15px; // Horizontal spacing between icons
+
+        a {
+          color: $header-color; // Change this to your desired icon color
+          font-size: 2.5rem; // Set the icon size here (make them bigger)
+          transition: color 0.3s;
+
+          &:hover {
+            color: darken($header-color, 10%); // Change hover color as desired
+          }
+        }
       }
+    }
+
+    .map {
+      width: 100%;
+      max-width: 600px;
+      height: 450px;
+      margin: 0 auto; // Center the map
     }
   }
 
   // Responsive adjustments
   @media (max-width: 768px) {
-    h2 {
+    padding: 40px 10px;
+
+    h1 {
       font-size: 2rem;
     }
 
-    .formGroup {
-      input {
-        padding: 8px;
-        font-size: 0.9rem;
-      }
+    h2 {
+      font-size: 1.5rem;
     }
 
-    button {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-    }
-
-    .contactList h3 {
-      font-size: 1.6rem;
-    }
-
-    .contactList li {
+    p {
       font-size: 1rem;
+    }
+
+    .map {
+      height: 300px;
+    }
+
+    ul {
+      flex-direction: column; // Stack icons vertically on smaller screens
+      margin-top: 10px;
+
+      li {
+        margin: 10px 0; // Space between stacked icons
+      }
     }
   }
 }

@@ -1,40 +1,13 @@
-// // src/components/Footer.tsx
-// import React from "react";
-// import styles from "./Footer.module.scss"; // Import your footer styles
-
-// const Footer: React.FC = () => {
-//   return (
-//     <footer className={styles.footer}>
-//       <div className={styles.footerContent}>
-//         <p>© 2024 Your Company Name. All rights reserved.</p>
-//         <div className={styles.socialIcons}>
-//           <a
-//             href="https://telegram.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <i className="fa-brands fa-telegram"></i>
-//           </a>
-//           <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
-//             <i className="fa-brands fa-whatsapp"></i>
-//           </a>
-//           <a
-//             href="https://www.viber.com"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <i className="fa-brands fa-viber"></i>
-//           </a>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Footer.module.scss";
+import {
+  faFacebook,
+  faLinkedin,
+  faTelegram,
+  faTwitter,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer: React.FC = () => {
   return (
@@ -49,21 +22,25 @@ const Footer: React.FC = () => {
           <h4>Follow Us</h4>
           <div className={styles.socialIcons}>
             <a
-              href="https://telegram.org"
+              href="https://facebook.com/yourpage"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fa-brands fa-telegram"></i>
-            </a>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-whatsapp"></i>
+              <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a
-              href="https://www.viber.com"
+              href="https://twitter.com/yourpage"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fa-brands fa-viber"></i>
+              <FontAwesomeIcon icon={faTelegram} />
+            </a>
+            <a
+              href="https://linkedin.com/company/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>
         </div>
