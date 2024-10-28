@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import useWindowSize from "../hooks/useWindowSize";
 import styles from "./HamburgerMenu.module.scss";
 
@@ -10,30 +11,55 @@ const HamburgerMenu: React.FC = () => {
     setIsOpen((prev) => !prev);
   };
 
-  if (width > 768) {
-    isOpen && setIsOpen(false);
-  }
+  // Close menu if window width is greater than 768
+  useEffect(() => {
+    if (width > 768) {
+      setIsOpen(false);
+    }
+  }, [width]);
+
+  // Function to close the menu
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close the menu when a link is clicked
+  };
 
   return (
     <div className={styles.hamburgerMenu}>
-      <button className={styles.hamburgerMenu__toggle} onClick={toggleMenu}>
+      <button
+        className={styles.hamburgerMenu__toggle}
+        onClick={toggleMenu}
+        aria-expanded={isOpen}
+        aria-controls="hamburger-menu"
+      >
         {isOpen ? "✖" : "☰"}
       </button>
       {isOpen && (
         <div className={styles.overlay}>
-          <nav className={styles.menu}>
+          <nav className={styles.menu} id="hamburger-menu">
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to="/" onClick={handleLinkClick}>
+                  Home
+                </Link>{" "}
+                {/* Close menu on click */}
               </li>
               <li>
-                <a href="/about">About Us</a>
+                <Link to="/about" onClick={handleLinkClick}>
+                  About Us
+                </Link>{" "}
+                {/* Close menu on click */}
               </li>
               <li>
-                <a href="/products">Our Products</a>
+                <Link to="/products" onClick={handleLinkClick}>
+                  Our Products
+                </Link>{" "}
+                {/* Close menu on click */}
               </li>
               <li>
-                <a href="/contacts">Contacts</a>
+                <Link to="/contacts" onClick={handleLinkClick}>
+                  Contacts
+                </Link>{" "}
+                {/* Close menu on click */}
               </li>
             </ul>
           </nav>
