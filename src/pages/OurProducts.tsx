@@ -18,7 +18,7 @@ const OurProducts: React.FC = () => {
           <div
             key={product.id}
             className={`${styles.productCard} ${
-              index % 2 === 0 ? styles.even : styles.odd
+              index % 2 === 0 ? styles.even : styles.odd // Alternating classes
             }`}
           >
             <div className={styles.productImage}>

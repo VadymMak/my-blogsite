@@ -1,13 +1,12 @@
 .ourProducts {
-  background-image: url("../../public//images/our-products.jpg");
+  background-image: url("../../public/images/our-products.jpg");
   background-size: cover;
   background-position: center;
-  padding: 150px 20px 20px 20px;
+  padding: 150px 20px 20px;
   color: white;
   text-align: center;
 
   .title {
-    text-align: center;
     font-size: 2.5rem;
     color: #eee;
     margin-bottom: 40px;
@@ -29,30 +28,31 @@
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 1)
     );
-    gap: 30px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    gap: 30px; // Space between image and text
 
     &:hover {
       transform: translateY(-10px);
     }
 
+    // Adjust styles for alternating layouts (chessboard)
     &.even {
-      flex-direction: row;
+      flex-direction: row; // Default for even index
     }
 
     &.odd {
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; // Reverse for odd index
     }
 
     .productImage {
       flex: 1;
       img {
         max-width: 100%;
-        border-radius: 10px;
+        border-radius: 10px; // Rounded corners for images
+        display: block; // Ensures the image does not have additional spacing below
       }
     }
 
@@ -61,18 +61,16 @@
       h3 {
         font-size: 1.8rem;
         margin-bottom: 10px;
-        color: #ffd700;
       }
       p {
         font-size: 1.2rem;
-        color: #ffd700;
         text-align: left;
         text-indent: 20px;
       }
     }
   }
 
-  /* Mobile Layout */
+  // Mobile Layout
   @media (max-width: 768px) {
     .productCard {
       flex-direction: column;
@@ -80,7 +78,7 @@
 
       &.even,
       &.odd {
-        flex-direction: column; /* Force both layouts to stack vertically */
+        flex-direction: column; // Force both layouts to stack vertically
       }
 
       .productImage {

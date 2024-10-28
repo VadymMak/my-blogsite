@@ -14,7 +14,8 @@ const useWindowSize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
 
-    window.addEventListener("resize", handleResize);
+    // Add the resize event listener with the passive option
+    window.addEventListener("resize", handleResize, { passive: true });
 
     // Cleanup event listener on component unmount
     return () => {

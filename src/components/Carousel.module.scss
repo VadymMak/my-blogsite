@@ -1,14 +1,10 @@
-// ProductSection.module.scss
-
 .productSection {
   position: relative;
   padding: 50px 0;
-  background: url("../../public//images/our-products.jpg") no-repeat;
-  background-color: rgba(0, 0, 0, 0.9);
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("../../public/images/our-products.jpg") no-repeat center center / cover;
   background-attachment: fixed;
-  /* Section Title Styling */
+
   &::before {
     content: "";
     position: absolute;
@@ -16,17 +12,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.8
-    ); /* Adjust the second value for darkness */
-    z-index: 1; /* Ensures the overlay is on top of the background image */
+    background-color: rgba(0, 0, 0, 0.8); // Adjust for overlay darkness
+    z-index: 1;
   }
+
   .sectionTitle {
     position: relative;
-    z-index: 3;
+    z-index: 2;
     text-align: center;
     margin-bottom: 40px;
 
@@ -43,38 +35,38 @@
     }
   }
 
-  /* Carousel Container */
   .carouselContainer {
     position: relative;
-    z-index: 3;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 
     .slick-dots {
       bottom: -30px;
+      li button::before {
+        color: #eee;
+      }
     }
 
     .slick-prev,
     .slick-next {
       z-index: 2;
       font-size: 2rem;
-      color: #333;
+      color: #eee;
     }
   }
 
-  /* Carousel Item Styling */
   .carouselItem {
     padding: 20px;
 
     .itemContent {
       position: relative;
       height: 250px;
+      border-radius: 10px;
       background-size: cover;
       background-position: center;
-      border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      text-align: center;
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -102,8 +94,8 @@
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
         border-radius: 10px;
+        z-index: 1;
       }
     }
   }

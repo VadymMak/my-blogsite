@@ -14,7 +14,7 @@ const AboutUs = () => {
         <meta
           name="description"
           content={
-            t("descriptionOfAboutUs") ||
+            t("aboutUsDescription") ||
             "Learn more about our operations and guarantees."
           }
         />

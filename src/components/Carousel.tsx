@@ -2,8 +2,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import React, { useState } from "react";
+import { Helmet } from "react-helmet"; // Import Helmet for SEO
 import Slider from "react-slick";
-import styles from "./Carousel.module.scss"; // Import your SCSS file
+import styles from "./Carousel.module.scss";
 import Modal from "./Modal";
 import { useTranslation } from "react-i18next";
 import { products, IProduct } from "../constants/products";
@@ -49,7 +50,22 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <section className={styles.productSection}>
+    <section className={styles.productSection} aria-label={t("ourProducts")}>
+      <Helmet>
+        <title>{t("ourProducts")}</title>
+        <meta
+          name="description"
+          content={
+            t("exploreProductsDescription") ||
+            "Explore our range of high-quality products."
+          }
+        />
+        <meta
+          name="keywords"
+          content="products, carousel, UB Market, high-quality products"
+        />
+      </Helmet>
+
       <div className={styles.sectionTitle}>
         <h2>{t("ourProducts")}</h2>
         <p>{t("exploreProducts")}</p>
@@ -62,6 +78,8 @@ const Carousel: React.FC = () => {
               key={product.id}
               className={styles.carouselItem}
               onClick={() => openModal(product)}
+              aria-label={product.name[i18n.language as LanguageKey]}
+              role="button"
             >
               <div
                 className={styles.itemContent}
@@ -72,10 +90,21 @@ const Carousel: React.FC = () => {
             </div>
           ))}
         </Slider>
+        {selectedProduct && (
+          <Helmet>
+            <title>{selectedProduct.name[i18n.language as LanguageKey]}</title>
+            <meta
+              name="description"
+              content={`Discover more about ${
+                selectedProduct.name[i18n.language as LanguageKey]
+              }.`}
+            />
+          </Helmet>
+        )}
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
-          product={selectedProduct} // Pass the selected product directly
+          product={selectedProduct}
         />
       </div>
     </section>
