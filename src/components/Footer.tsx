@@ -3,9 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Footer.module.scss";
 import {
   faFacebook,
-  faLinkedin,
   faTelegram,
-  faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 
