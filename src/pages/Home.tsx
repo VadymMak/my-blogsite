@@ -1,22 +1,22 @@
-import React, { startTransition, Suspense } from "react";
+import React, { startTransition, Suspense, useEffect } from "react";
 import styles from "./Home.module.scss";
 
 const Carousel = React.lazy(() => import("../components/Carousel"));
 const Contacts = React.lazy(() => import("../components/Contacts"));
-// const PhoneIcon = React.lazy(() => import("../components/PhoneIcon"));
 const AboutUs = React.lazy(() => import("./AboutUs"));
 const Banner = React.lazy(() => import("../components/Banner"));
 const OurLocation = React.lazy(() => import("../components/OurLocation"));
 
 const Home: React.FC = () => {
-  const handleLoadComponents = () => {
+  useEffect(() => {
     startTransition(() => {
-      // This loads all lazy components without suspending
+      // Lazy load all components without suspending
+      import("../components/Carousel");
+      import("../components/Contacts");
+      import("./AboutUs");
+      import("../components/Banner");
+      import("../components/OurLocation");
     });
-  };
-
-  React.useEffect(() => {
-    handleLoadComponents();
   }, []);
 
   return (
@@ -31,7 +31,6 @@ const Home: React.FC = () => {
           <Contacts />
         </section>
         <OurLocation />
-        {/* <PhoneIcon /> */}
       </div>
     </Suspense>
   );
