@@ -76,7 +76,8 @@ $header-color: gold; // Set header color to gold
 
   // Responsive adjustments
   @media (max-width: 768px) {
-    padding: 40px 10px;
+    padding: 20px 10px;
+    padding-top: 150px;
 
     h1 {
       font-size: 2rem;
