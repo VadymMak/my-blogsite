@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import styles from "./ReadMore.module.scss";
 
 interface ReadMoreProps {
-  content: string;
-  excerpt: string;
+  content: string; // The full content that will be split into paragraphs
+  excerpt: string; // The excerpt to show when not expanded
 }
 
 const ReadMore: React.FC<ReadMoreProps> = ({ content, excerpt }) => {
@@ -16,7 +16,20 @@ const ReadMore: React.FC<ReadMoreProps> = ({ content, excerpt }) => {
 
   return (
     <div className={styles.readMore}>
-      <p>{isExpanded ? excerpt : content}</p>
+      {isExpanded ? (
+        <div>
+          {content.split("\n\n").map((paragraph: string, index: number) => {
+            return (
+              <div key={index}>
+                <br />
+                <p key={index}>{paragraph.substring(4)}</p>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <p>{excerpt}</p> // Render the excerpt as a single paragraph
+      )}
       <button onClick={toggleReadMore}>
         {isExpanded ? "Show Less" : "Read More"}
       </button>

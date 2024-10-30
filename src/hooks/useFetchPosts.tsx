@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { createClient } from "contentful";
 
 export interface BlogPost {
-  id: number;
+  id: string; // Change to string to match Contentful ID type
   title: string;
   content: string;
   date: string;
@@ -15,27 +15,30 @@ export interface UseFetchBlogPosts {
   error: string | null;
 }
 
-// src/hooks/useFetchBlogPosts.ts
-
 const useFetchBlogPosts = (): UseFetchBlogPosts => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Initialize the Contentful client
+  const client = createClient({
+    space: "ys4ugb0tz6hx", // Replace with your space ID
+    accessToken: "hNAzP706sdLhBl0QhxnY_gmf0NNwkfMNnUAmfHMQOP0", // Replace with your access token
+  });
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(
-          "https://ubmarket2022.blogspot.com/feeds/posts/default?alt=json"
-        );
-        const items = response.data.feed.entry || [];
+        const response = await client.getEntries({
+          content_type: "blogPost", // Replace with your Contentful content type ID
+        });
 
-        const formattedPosts: BlogPost[] = items.map((item: any) => ({
-          id: item.id.$t,
-          title: item.title.$t,
-          content: item.content.$t,
-          date: item.published.$t,
-          excerpt: item.summary ? item.summary.$t : "",
+        const formattedPosts: BlogPost[] = response.items.map((item: any) => ({
+          id: item.sys.id, // Contentful ID
+          title: item.fields.title,
+          content: item.fields.content,
+          date: item.fields.date,
+          excerpt: item.fields.excerpt || "",
         }));
 
         setPosts(formattedPosts);
@@ -47,7 +50,7 @@ const useFetchBlogPosts = (): UseFetchBlogPosts => {
     };
 
     fetchPosts();
-  }, []);
+  }, [client]);
 
   return { posts, loading, error };
 };

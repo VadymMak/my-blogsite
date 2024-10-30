@@ -5,7 +5,7 @@ import ReadMore from "../components/ReadMore";
 
 interface BlogPostProps {
   post: {
-    id: number;
+    id: string;
     title: string;
     excerpt: string;
     content: string;
@@ -14,10 +14,19 @@ interface BlogPostProps {
 }
 
 const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
+  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div className={styles.blogPost}>
       <h2>{post.title}</h2>
-      <p className={styles.date}>{post.date}</p>
+      <p className={styles.date}>
+        <strong>Date: </strong>
+        {formattedDate}
+      </p>
       <ReadMore content={post.content} excerpt={post.excerpt} />
     </div>
   );
