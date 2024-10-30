@@ -1,0 +1,22 @@
+// src/components/BlogPost.module.scss
+
+.blogPost {
+  background: linear-gradient(to bottom, #333333, #555555);
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Inner padding */
+  margin: 10px 0; /* Vertical margin between posts */
+  width: 100%; /* Full width */
+  max-width: 100%; /* Ensure no overflow */
+  text-align: left;
+}
+
+.blogPost h2 {
+  margin: 0 0 10px 0; /* Margin for the title */
+  color: #ccc;
+}
+
+.blogPost p {
+  margin: 0; /* Reset paragraph margins */
+  color: #ccc;
+}

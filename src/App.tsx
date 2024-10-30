@@ -7,7 +7,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import OurProducts from "./pages/OurProducts";
 import ContactsPage from "./pages/ContactsPage";
+import BlogPage from "./pages/BlogPage";
 import NotFound from "./components/NotFound";
+
 import "./118n/i18n"; // Ensure your translation setup is loaded
 
 // Define your routes
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "products", element: <OurProducts /> },
       { path: "contacts", element: <ContactsPage /> },
+      { path: "blog", element: <BlogPage /> },
     ],
   },
   { path: "*", element: <NotFound /> }, // Fallback for unmatched routes

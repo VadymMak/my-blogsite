@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"; // Ensure you have react-helmet installed
 import styles from "./ContactsPage.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebook,
+  faInstagram,
   faTelegram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
@@ -70,7 +70,7 @@ const ContactsPage: React.FC = () => {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <FontAwesomeIcon icon={faFacebook} size="2x" />
+              <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </li>
           <li>

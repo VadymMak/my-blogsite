@@ -52,7 +52,11 @@ const HamburgerMenu: React.FC = () => {
                 <Link to="/products" onClick={closeMenu}>
                   Our Products
                 </Link>{" "}
-                {/* Close menu on click */}
+              </li>
+              <li>
+                <Link to="/blog" onClick={closeMenu}>
+                  Blog
+                </Link>{" "}
               </li>
               <li>
                 <Link to="/contacts" onClick={closeMenu}>

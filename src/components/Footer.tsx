@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Footer.module.scss";
 import {
-  faFacebook,
+  faInstagram,
   faTelegram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
               href="https://twitter.com/yourpage"

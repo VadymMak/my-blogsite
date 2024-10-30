@@ -1,0 +1,21 @@
+// src/components/ReadMore.module.scss
+.readMore {
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    &:hover {
+      color: #005bb5;
+    }
+  }
+}

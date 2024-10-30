@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+html,
+body {
+  height: 100vh; /* Ensure body takes full height */
+  position: relative;
+  background: url("../public//images/our-location.jpg") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px 20px;
+  text-align: center;
+}

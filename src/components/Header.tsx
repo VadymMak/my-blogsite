@@ -35,6 +35,9 @@ const Header: React.FC<HeaderProps> = React.memo(({ changeLanguage }) => {
             <Link to="/products">Our Products</Link>
           </li>
           <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
             <Link to="/contacts">Contacts</Link>
           </li>
         </ul>
