@@ -1,12 +1,19 @@
 // src/pages/BlogPage.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BlogPost from "./BlogPost";
 import styles from "./BlogPage.module.scss";
-import useFetchPosts from "../hooks/useFetchPosts";
+import { RootState, AppDispatch } from "../store/store";
+import { fetchPosts } from "../store/blogSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const BlogPage: React.FC = () => {
-  const { posts, loading, error } = useFetchPosts();
+  // const { posts, loading, error } = useFetchPosts();
+
+  const dispatch: AppDispatch = useDispatch(); // Use AppDispatch
+  const { posts, loading, error } = useSelector(
+    (state: RootState) => state.blog
+  );
 
   const postsPerPage = 5;
   const location = useLocation();
@@ -29,6 +36,10 @@ const BlogPage: React.FC = () => {
   const handlePageChange = (newPage: number) => {
     navigate(`/blog?page=${newPage}`);
   };
+
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
