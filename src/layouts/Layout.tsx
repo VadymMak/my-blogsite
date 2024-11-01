@@ -23,7 +23,7 @@ const Layout = () => {
 
   return (
     <div>
-      <Header changeLanguage={changeLanguage} />
+      <Header changeLanguage={changeLanguage} currentLanguage={""} />
 
       <main role="main">
         <Outlet />

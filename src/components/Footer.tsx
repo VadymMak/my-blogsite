@@ -27,14 +27,14 @@ const Footer: React.FC = () => {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
-              href="https://twitter.com/yourpage"
+              href="https://t.me/your_username"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faTelegram} />
             </a>
             <a
-              href="https://linkedin.com/company/yourpage"
+              href="https://wa.me/your_phone_number"
               target="_blank"
               rel="noopener noreferrer"
             >

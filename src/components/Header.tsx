@@ -7,55 +7,57 @@ import LanguageDropdown from "./LanguageDropdown";
 
 interface HeaderProps {
   changeLanguage: (lang: string) => void;
+  currentLanguage: string; // Add this prop to keep track of the current language
 }
 
-const Header: React.FC<HeaderProps> = React.memo(({ changeLanguage }) => {
-  const { width } = useWindowSize();
-  const location = useLocation();
+const Header: React.FC<HeaderProps> = React.memo(
+  ({ changeLanguage, currentLanguage }) => {
+    const { width } = useWindowSize();
+    const location = useLocation();
+    const isBlogPage = location.pathname === "/blog";
 
-  // Check if the current route is the Blog page
-  const isBlogPage = location.pathname === "/blog";
+    return (
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <img
+            src="/images/logo-white-text.png"
+            alt="UB Market Logo"
+            className={styles.logoImage}
+            loading="lazy"
+          />
+        </div>
 
-  return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <img
-          src="/images/logo-white-text.png"
-          alt="UB Market Logo"
-          className={styles.logoImage}
-          loading="lazy"
+        <nav className={styles.nav}>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/products">Our Products</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/contacts">Contacts</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Pass current language to LanguageDropdown */}
+        <LanguageDropdown
+          changeLanguage={changeLanguage}
+          currentLanguage={currentLanguage}
+          isBlogPage={isBlogPage}
         />
-      </div>
 
-      <nav className={styles.nav}>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/products">Our Products</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link to="/contacts">Contacts</Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* Pass the language options based on the page */}
-      <LanguageDropdown
-        changeLanguage={changeLanguage}
-        isBlogPage={isBlogPage}
-      />
-
-      {width < 768 && <HamburgerMenu />}
-    </header>
-  );
-});
+        {width < 768 && <HamburgerMenu />}
+      </header>
+    );
+  }
+);
 
 export default Header;

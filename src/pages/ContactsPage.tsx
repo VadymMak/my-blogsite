@@ -75,7 +75,7 @@ const ContactsPage: React.FC = () => {
           </li>
           <li>
             <a
-              href="https://telegram.com/yourpage"
+              href="https://t.me/your_username"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
@@ -85,7 +85,7 @@ const ContactsPage: React.FC = () => {
           </li>
           <li>
             <a
-              href="https://whatsapp.com/yourpage"
+              href="https://wa.me/your_phone_number"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

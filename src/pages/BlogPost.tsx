@@ -11,9 +11,10 @@ interface BlogPostProps {
     content: string;
     date: string;
   };
+  language: string;
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ post, language }) => {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
