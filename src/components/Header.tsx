@@ -1,8 +1,8 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
 import useWindowSize from "../hooks/useWindowSize";
 import styles from "./Header.module.scss";
-import { Link } from "react-router-dom";
 import LanguageDropdown from "./LanguageDropdown";
 
 interface HeaderProps {
@@ -11,6 +11,10 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = React.memo(({ changeLanguage }) => {
   const { width } = useWindowSize();
+  const location = useLocation();
+
+  // Check if the current route is the Blog page
+  const isBlogPage = location.pathname === "/blog";
 
   return (
     <header className={styles.header}>
@@ -43,8 +47,11 @@ const Header: React.FC<HeaderProps> = React.memo(({ changeLanguage }) => {
         </ul>
       </nav>
 
-      {/* Pass changeLanguage to the LanguageDropdown */}
-      <LanguageDropdown changeLanguage={changeLanguage} />
+      {/* Pass the language options based on the page */}
+      <LanguageDropdown
+        changeLanguage={changeLanguage}
+        isBlogPage={isBlogPage}
+      />
 
       {width < 768 && <HamburgerMenu />}
     </header>

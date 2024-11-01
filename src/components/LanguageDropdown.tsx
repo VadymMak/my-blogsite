@@ -1,4 +1,3 @@
-// LanguageDropdown.tsx
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguageDropdown.module.scss";
@@ -11,20 +10,27 @@ interface Language {
 
 interface LanguageDropdownProps {
   changeLanguage: (lang: string) => void; // Accept changeLanguage as a prop
+  isBlogPage?: boolean; // New prop to indicate if we're on the Blog page
 }
 
 const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
   changeLanguage,
+  isBlogPage = false,
 }) => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<string>("en"); // Default language
 
-  const languages: Language[] = [
+  const allLanguages: Language[] = [
     { code: "en", name: "English", flag: "/icons/en.svg" },
     { code: "ua", name: "Українська", flag: "/icons/ua.svg" },
     { code: "bg", name: "Български", flag: "/icons/bg.svg" },
   ];
+
+  // Filter languages based on isBlogPage
+  const languages = isBlogPage
+    ? allLanguages.filter((lang) => lang.code === "en" || lang.code === "bg")
+    : allLanguages;
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") || "en";

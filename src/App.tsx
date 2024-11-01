@@ -1,16 +1,17 @@
-// src/App.tsx
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import Layout from "./layouts/Layout"; // Corrected the spelling from 'layoutes' to 'layouts'
-import Home from "./pages/Home";
-import About from "./pages/About";
-import OurProducts from "./pages/OurProducts";
-import ContactsPage from "./pages/ContactsPage";
-import BlogPage from "./pages/BlogPage";
-import NotFound from "./components/NotFound";
+import Layout from "./layouts/Layout"; // Your main layout component
+import NotFound from "./components/NotFound"; // Your 404 Not Found component
 
 import "./118n/i18n"; // Ensure your translation setup is loaded
+
+// Lazy load the components
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const OurProducts = lazy(() => import("./pages/OurProducts"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
 
 // Define your routes
 const router = createBrowserRouter([
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
 
 // Main App Component
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;

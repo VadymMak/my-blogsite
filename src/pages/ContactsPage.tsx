@@ -65,7 +65,7 @@ const ContactsPage: React.FC = () => {
         <ul className={styles.socialLinks}>
           <li>
             <a
-              href="https://facebook.com/yourpage"
+              href="https://www.instagram.com/ub_market_ltd"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           <h4>Follow Us</h4>
           <div className={styles.socialIcons}>
             <a
-              href="https://facebook.com/yourpage"
+              href="https://www.instagram.com/ub_market_ltd"
               target="_blank"
               rel="noopener noreferrer"
             >
