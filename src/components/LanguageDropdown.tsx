@@ -35,34 +35,43 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     { code: "bg", name: "Български", flag: "/icons/bg.svg" },
   ];
 
-  const languages = allLanguages;
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") || "en";
-    i18n.changeLanguage(savedLanguage);
-    setSelectedLanguage(savedLanguage);
-  }, [i18n]);
-
   const handleLanguageChange = useCallback(
     (code: string) => {
+      // Change the language and update the state
       changeLanguage(code);
       i18n.changeLanguage(code);
       localStorage.setItem("language", code);
-      setSelectedLanguage(code);
-      setIsOpen(false);
+      setSelectedLanguage(code); // Update selected language
       dispatch(fetchPosts(code)); // Fetch posts for the selected language
+      setIsOpen(false);
     },
     [changeLanguage, dispatch, i18n]
-  ); // Include dependencies for memoization
+  );
 
-  // Handle automatic language change when on Blog page and Ukrainian is selected
   useEffect(() => {
-    if (isBlogPage && selectedLanguage === "ua") {
-      handleLanguageChange("en");
+    // On Blog Page, set the language to English if it's not already English
+    if (isBlogPage) {
+      if (selectedLanguage !== "en") {
+        handleLanguageChange("en"); // Change to English
+      }
+    } else {
+      // For other pages, retrieve the current language from local storage
+      const savedLanguage = localStorage.getItem("language") || "en";
+      if (savedLanguage !== selectedLanguage) {
+        i18n.changeLanguage(savedLanguage);
+        setSelectedLanguage(savedLanguage);
+      }
     }
-  }, [isBlogPage, selectedLanguage, handleLanguageChange]); // Add handleLanguageChange to dependencies
+  }, [isBlogPage, i18n, selectedLanguage, handleLanguageChange]);
 
-  const currentLang = languages.find((lang) => lang.code === selectedLanguage);
+  // Ensure the dropdown reflects the current selected language
+  useEffect(() => {
+    setSelectedLanguage(currentLanguage); // Update state to match current language prop
+  }, [currentLanguage]);
+
+  const currentLang = allLanguages.find(
+    (lang) => lang.code === selectedLanguage
+  );
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -106,13 +115,13 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
       </button>
       {isOpen && (
         <ul className={styles.dropdownMenu}>
-          {languages.map((lang) => (
+          {allLanguages.map((lang) => (
             <li key={lang.code}>
               <button
                 onClick={() => handleLanguageChange(lang.code)}
                 disabled={isBlogPage && lang.code === "ua"} // Disable Ukrainian button on Blog page
-                className={styles.languageButton} // Optional: Add a class for styling disabled buttons
-                style={{ opacity: isBlogPage && lang.code === "ua" ? 0.5 : 1 }} // Optional: Change appearance
+                className={styles.languageButton}
+                style={{ opacity: isBlogPage && lang.code === "ua" ? 0.5 : 1 }}
               >
                 <img
                   src={lang.flag}
