@@ -43,13 +43,19 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     setSelectedLanguage(savedLanguage);
   }, [i18n]);
 
+  useEffect(() => {
+    if (isBlogPage && selectedLanguage === "ua") {
+      handleLanguageChange("en");
+    }
+  }, [isBlogPage]);
+
   const handleLanguageChange = (code: string) => {
     changeLanguage(code);
     i18n.changeLanguage(code);
     localStorage.setItem("language", code);
     setSelectedLanguage(code);
     setIsOpen(false);
-    dispatch(fetchPosts(code));
+    dispatch(fetchPosts(code)); // Fetch posts for the selected language
   };
 
   const currentLang = languages.find((lang) => lang.code === selectedLanguage);

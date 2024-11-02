@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { useTranslation } from "react-i18next";
 import "../../src/118n/i18n";
 import { useEffect } from "react";
+import styles from "./Layout.module.scss";
 
 const Layout = () => {
   const { i18n } = useTranslation();
@@ -22,13 +23,11 @@ const Layout = () => {
   }, [i18n]);
 
   return (
-    <div>
+    <div className={styles.layoutContainer}>
       <Header changeLanguage={changeLanguage} currentLanguage={""} />
-
-      <main role="main">
+      <main className={styles.mainContent}>
         <Outlet />
       </main>
-
       <Footer />
     </div>
   );

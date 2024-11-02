@@ -1,3 +1,4 @@
+// BlogPage.tsx
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BlogPost from "./BlogPost";
@@ -25,7 +26,6 @@ const BlogPage: React.FC = () => {
   const currentPage = getPageNumber();
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  // Slice posts based on the current page
   const currentPosts = posts.slice(
     (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
@@ -35,17 +35,11 @@ const BlogPage: React.FC = () => {
     navigate(`/blog?page=${newPage}`);
   };
 
-  const handleLanguageChange = (lang: string) => {
-    localStorage.setItem("language", lang); // Store language in localStorage
-    console.log("Language: ", lang);
-    dispatch(setLanguage(lang)); // Update language in the store
-    dispatch(fetchPosts(lang)); // Fetch posts for the new language
-  };
-
   useEffect(() => {
-    const storedLanguage = localStorage.getItem("language") || "en"; // Default to English
-    dispatch(setLanguage(storedLanguage)); // Set language in the store
-    dispatch(fetchPosts(storedLanguage)); // Fetch posts based on stored language
+    // Always set language to English when navigating to BlogPage
+    localStorage.setItem("language", "en");
+    dispatch(setLanguage("en")); // Update Redux state
+    dispatch(fetchPosts("en")); // Fetch posts in English
   }, [dispatch]);
 
   if (loading) return <Loader />;
@@ -57,38 +51,38 @@ const BlogPage: React.FC = () => {
         <h1>Our Blog</h1>
       </div>
 
-      <div>
-        {/* Language selection buttons */}
-        <button onClick={() => handleLanguageChange("en")}>English</button>
-        <button onClick={() => handleLanguageChange("bg")}>Bulgarian</button>
-        <button onClick={() => handleLanguageChange("ua")}>Ukrainian</button>
-      </div>
-
-      <div className={styles.blogContent}>
-        <ul className={styles.blogList}>
-          {currentPosts.map((post) => (
-            <BlogPost key={post.id} post={post} language={language} />
-          ))}
-        </ul>
-
-        <div className={styles.pagination}>
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <span>
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
+      {/* Show message if the current language is not Ukrainian */}
+      {language === "ua" ? (
+        <div className={styles.centeredMessage}>
+          <p>Blog in the Ukrainian language is not available.</p>
         </div>
-      </div>
+      ) : (
+        <div className={styles.blogContent}>
+          <ul className={styles.blogList}>
+            {currentPosts.map((post) => (
+              <BlogPost key={post.id} post={post} language={language} />
+            ))}
+          </ul>
+
+          <div className={styles.pagination}>
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span>
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

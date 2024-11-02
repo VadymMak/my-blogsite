@@ -40,6 +40,15 @@
   padding: 0;
 }
 
+.centeredMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
