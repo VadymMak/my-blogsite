@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguageDropdown.module.scss";
 import { useDispatch } from "react-redux";
@@ -43,20 +43,24 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     setSelectedLanguage(savedLanguage);
   }, [i18n]);
 
+  const handleLanguageChange = useCallback(
+    (code: string) => {
+      changeLanguage(code);
+      i18n.changeLanguage(code);
+      localStorage.setItem("language", code);
+      setSelectedLanguage(code);
+      setIsOpen(false);
+      dispatch(fetchPosts(code)); // Fetch posts for the selected language
+    },
+    [changeLanguage, dispatch, i18n]
+  ); // Include dependencies for memoization
+
+  // Handle automatic language change when on Blog page and Ukrainian is selected
   useEffect(() => {
     if (isBlogPage && selectedLanguage === "ua") {
       handleLanguageChange("en");
     }
-  }, [isBlogPage]);
-
-  const handleLanguageChange = (code: string) => {
-    changeLanguage(code);
-    i18n.changeLanguage(code);
-    localStorage.setItem("language", code);
-    setSelectedLanguage(code);
-    setIsOpen(false);
-    dispatch(fetchPosts(code)); // Fetch posts for the selected language
-  };
+  }, [isBlogPage, selectedLanguage, handleLanguageChange]); // Add handleLanguageChange to dependencies
 
   const currentLang = languages.find((lang) => lang.code === selectedLanguage);
 
