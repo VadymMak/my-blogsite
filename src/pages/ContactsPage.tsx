@@ -17,9 +17,50 @@ const ContactsPage: React.FC = () => {
       <Helmet>
         <title>{t("contactPageTitle")}</title>
         <meta name="description" content={t("contactMetaDescription")} />
-        <meta name="keywords" content={t("contactMetaKeywords")} />
+        <meta
+          name="keywords"
+          content={t("contactMetaKeywords") + ", contact, UB Market, Varna"}
+        />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ub-markets.netlify.app/contact" />
+        <link rel="canonical" href="https://ub-markets.com/contact" />
+        <meta
+          property="og:title"
+          content="Contact UB Market | Get Assistance and Find Our Location"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with UB Market! Visit our contact page for our address, office hours, and social media links. We're here to assist you with all your inquiries."
+        />
+        <meta property="og:url" content="https://ub-market.com/contact" />
+        <meta
+          property="og:image"
+          content="https://ub-market.com/images/logo.png"
+        />
+        <meta property="og:type" content="website" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "UB Market",
+            url: "https://ub-market.com",
+            logo: "https://ub-market.com/images/logo.png",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+359 8844 69860",
+              contactType: "Customer Service",
+              areaServed: "BG",
+              availableLanguage: ["English", "Bulgarian", "Ukrainian"],
+            },
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "1234 Market Street, Suite 100",
+              addressLocality: "Varna",
+              postalCode: "9010",
+              addressCountry: "BG",
+            },
+          })}
+        </script>
       </Helmet>
 
       <h1>{t("contactTitle")}</h1>
@@ -68,7 +109,7 @@ const ContactsPage: React.FC = () => {
               href="https://www.instagram.com/ub_market_ltd"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Facebook"
+              aria-label="Instagram"
             >
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>

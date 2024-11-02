@@ -28,13 +28,41 @@ const Home: React.FC = () => {
         </title>
         <meta
           name="description"
-          content="Explore UB Market, where quality products and exceptional service meet. Discover our top-rated items and learn more about our story."
+          content="Discover UB Market for quality vegetable oils, margarine, and more. Enjoy exceptional service and top-rated products tailored to your culinary needs. Shop now!"
         />
         <meta
           name="keywords"
-          content="UB Market, quality products, carousel, contact, location"
+          content="UB Market, quality products, vegetable oil, palm oil, margarine, sugar, dairy products, condiments, cooking ingredients"
         />
-        <link rel="canonical" href="https://yourdomain.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="UB Market - Quality Products" />
+        <meta
+          property="og:description"
+          content="Discover top-quality products and exceptional service with UB Market. Learn more about our offerings and connect with us!"
+        />
+        <meta
+          property="og:image"
+          content="https://ub-market.com/images/logo.png"
+        />
+        <meta property="og:url" content="https://ub-market.com/" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ub-market.com" />
+        <script type="application/ld+json">
+          {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UB Market",
+        "url": "https://ub-market.com/",
+        "logo": "https://ub-market.com/images/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+359-8844-69860",
+          "contactType": "Customer Service"
+        }
+      }
+    `}
+        </script>
       </Helmet>
 
       <Suspense fallback={<div>Loading main content...</div>}>

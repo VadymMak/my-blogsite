@@ -1,4 +1,3 @@
-// BlogPage.tsx
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BlogPost from "./BlogPost";
@@ -7,6 +6,7 @@ import { RootState, AppDispatch } from "../store/store";
 import { fetchPosts, setLanguage } from "../store/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
+import { Helmet } from "react-helmet"; // Import Helmet for SEO
 
 const BlogPage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -36,10 +36,9 @@ const BlogPage: React.FC = () => {
   };
 
   useEffect(() => {
-    // Always set language to English when navigating to BlogPage
     localStorage.setItem("language", "en");
-    dispatch(setLanguage("en")); // Update Redux state
-    dispatch(fetchPosts("en")); // Fetch posts in English
+    dispatch(setLanguage("en"));
+    dispatch(fetchPosts("en"));
   }, [dispatch]);
 
   if (loading) return <Loader />;
@@ -47,11 +46,46 @@ const BlogPage: React.FC = () => {
 
   return (
     <div className={styles.blogPageWrapper}>
+      {/* SEO Metadata */}
+      <Helmet>
+        <title>Our Blog - Insights and Updates from UB Market</title>
+        <meta
+          name="description"
+          content="Stay updated with the latest insights and news from UB Market. Explore our blog for articles on quality products and market trends."
+        />
+        <meta
+          name="keywords"
+          content="UB Market, blog, quality products, market trends, insights, news"
+        />
+        <meta property="og:title" content="Our Blog - UB Market" />
+        <meta
+          property="og:description"
+          content="Explore articles, insights, and updates from UB Market. Discover quality products and market trends."
+        />
+        <meta
+          property="og:image"
+          content="https://ub-market.com/images/logo.png"
+        />
+        <meta property="og:url" content="https://ub-market.com/blog" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ub-market.com/blog" />
+        <script>
+          {`
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'YOUR_TRACKING_ID', 'auto');
+            ga('send', 'pageview');
+          `}
+        </script>
+      </Helmet>
+
       <div className={styles.blogTitle}>
         <h1>Our Blog</h1>
       </div>
 
-      {/* Show message if the current language is not Ukrainian */}
       {language === "ua" ? (
         <div className={styles.centeredMessage}>
           <p>Blog in the Ukrainian language is not available.</p>
