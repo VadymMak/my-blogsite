@@ -5,6 +5,7 @@ import styles from "./BlogPage.module.scss";
 import { RootState, AppDispatch } from "../store/store";
 import { fetchPosts, setLanguage } from "../store/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../components/Loader";
 
 const BlogPage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -47,7 +48,7 @@ const BlogPage: React.FC = () => {
     dispatch(fetchPosts(storedLanguage)); // Fetch posts based on stored language
   }, [dispatch]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
 
   return (
