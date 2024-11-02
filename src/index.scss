@@ -12,10 +12,6 @@ html,
 body {
   height: 100vh; /* Ensure body takes full height */
   position: relative;
-  background: url("../public//images/our-location.jpg") no-repeat center center;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 50px 20px;
+  background: rgba(0, 0, 0, 0.9);
   text-align: center;
 }

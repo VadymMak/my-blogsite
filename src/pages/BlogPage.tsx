@@ -36,6 +36,7 @@ const BlogPage: React.FC = () => {
 
   const handleLanguageChange = (lang: string) => {
     localStorage.setItem("language", lang); // Store language in localStorage
+    console.log("Language: ", lang);
     dispatch(setLanguage(lang)); // Update language in the store
     dispatch(fetchPosts(lang)); // Fetch posts for the new language
   };
