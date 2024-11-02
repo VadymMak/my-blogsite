@@ -6,6 +6,7 @@ import {
   faTelegram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Footer: React.FC = () => {
   return (
@@ -14,7 +15,13 @@ const Footer: React.FC = () => {
         <div className={styles.contact}>
           <h4>Contact Us</h4>
           <p>Е-mail: ubmarket2022@gmail.com</p>
-          <p>Phone: +359 8844 69860</p>
+          <p>
+            Phone: +359 8844 69860:{" "}
+            <a href="tel:+359884469860">
+              <FontAwesomeIcon icon={faPhone} className={styles.phoneIcon} />
+              Call us
+            </a>
+          </p>
         </div>
         <div className={styles.social}>
           <h4>Follow Us</h4>

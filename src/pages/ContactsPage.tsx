@@ -8,6 +8,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next"; // Import useTranslation for i18n
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const ContactsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -73,6 +74,13 @@ const ContactsPage: React.FC = () => {
           <br />
           Varna, Bulgaria, {t("cityStateZip")} 9010, Sirma Voivoda St., b.1, ap.
           21
+        </p>
+        <p>
+          Phone: +359 8844 69860:
+          <a href="tel:+359884469860">
+            <FontAwesomeIcon icon={faPhone} className={styles.phoneIcon} />
+            Call us
+          </a>
         </p>
       </section>
 
