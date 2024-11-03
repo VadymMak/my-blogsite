@@ -26,7 +26,11 @@ const BlogPage: React.FC = () => {
   const currentPage = getPageNumber();
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  const currentPosts = posts.slice(
+  const sortedPosts = posts
+    .slice()
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const currentPosts = sortedPosts.slice(
     (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
   );

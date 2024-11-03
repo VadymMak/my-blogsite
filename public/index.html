@@ -2,18 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+
+    <!-- Primary SEO Metadata in English -->
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="UB Market - Quality food products including mayonnaise, vegetable oil, milk powder, and margarine."
     />
+    <meta
+      name="keywords"
+      content="UB Market, food products, mayonnaise, vegetable oil, milk powder, margarine, quality foods"
+    />
+
+    <!-- Open Graph Tags in English -->
+    <meta property="og:title" content="UB Market" />
+    <meta
+      property="og:description"
+      content="High-quality food products for consumers and businesses."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
+    <meta property="og:url" content="https://ub-market.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Alternate hreflang for Bulgarian -->
+    <link rel="alternate" href="https://ub-market.com" hreflang="en" />
+    <link rel="alternate" href="https://ub-market.com/bg" hreflang="bg" />
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
+    <!-- Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>UB Market</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UB Market",
+        "url": "https://ub-market.com",
+        "logo": "%PUBLIC_URL%/logo192.png",
+        "sameAs": [
+          "https://wa.me/your_phone_number",
+          "https://www.instagram.com/ub_market_ltd",
+          "https://t.me/your_username"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sofia",
+          "addressCountry": "BG"
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

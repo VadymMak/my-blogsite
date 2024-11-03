@@ -79,7 +79,7 @@ const ContactsPage: React.FC = () => {
           Phone: +359 8844 69860:
           <a href="tel:+359884469860">
             <FontAwesomeIcon icon={faPhone} className={styles.phoneIcon} />
-            Call us
+            {t("callUs")}
           </a>
         </p>
       </section>

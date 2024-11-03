@@ -7,6 +7,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { t } from "i18next";
 
 const Footer: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const Footer: React.FC = () => {
             Phone: +359 8844 69860:{" "}
             <a href="tel:+359884469860">
               <FontAwesomeIcon icon={faPhone} className={styles.phoneIcon} />
-              Call us
+              {t("callUs")}
             </a>
           </p>
         </div>
