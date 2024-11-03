@@ -30,7 +30,6 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  aria-label: "Close modal"; // Improved accessibility
 }
 
 .userInfo {
@@ -51,7 +50,6 @@ input[type="email"] {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  aria-required: "true"; // Indicate required fields for accessibility
 }
 
 .total {

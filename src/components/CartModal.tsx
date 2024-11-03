@@ -85,6 +85,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
               onChange={(e) => setName(e.target.value)}
               required
               aria-required="true"
+              aria-label={t("enterYourName")}
               placeholder={t("enterYourName")}
             />
             <label htmlFor="phone">{t("phone")}</label>
@@ -95,6 +96,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
               onChange={(e) => setPhone(e.target.value)}
               required
               aria-required="true"
+              aria-label={t("enterYourPhone")}
               placeholder={t("enterYourPhone")}
             />
             <label htmlFor="email">{t("email")}</label>
@@ -105,6 +107,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
               onChange={(e) => setEmail(e.target.value)}
               required
               aria-required="true"
+              aria-label={t("enterYourEmail")}
               placeholder={t("enterYourEmail")}
             />
           </div>
@@ -114,6 +117,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
               type="button"
               onClick={onClose}
               className={styles.cancelButton}
+              aria-label={t("close")}
             >
               {t("close")}
             </button>
@@ -124,6 +128,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                 alert("Proceed to checkout");
               }}
               className={styles.checkoutButton}
+              aria-label={t("callBack")}
             >
               {t("callBack")}
             </button>
