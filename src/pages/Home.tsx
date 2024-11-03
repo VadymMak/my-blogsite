@@ -11,7 +11,6 @@ const OurLocation = React.lazy(() => import("../components/OurLocation"));
 
 const Home: React.FC = () => {
   useEffect(() => {
-    // Preload important components without rendering them
     import("../components/Carousel");
     import("../components/Contacts");
     import("./AboutUs");
@@ -21,7 +20,6 @@ const Home: React.FC = () => {
 
   return (
     <>
-      {/* SEO Metadata */}
       <Helmet>
         <title>
           Welcome to UB Market - Quality Products at Your Fingertips
