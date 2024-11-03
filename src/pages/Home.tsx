@@ -2,7 +2,6 @@ import React, { Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import styles from "./Home.module.scss";
 
-// Lazy-loaded components
 const Carousel = React.lazy(() => import("../components/Carousel"));
 const Contacts = React.lazy(() => import("../components/Contacts"));
 const AboutUs = React.lazy(() => import("./AboutUs"));
@@ -47,19 +46,19 @@ const Home: React.FC = () => {
         <link rel="canonical" href="https://ub-market.com" />
         <script type="application/ld+json">
           {`
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "UB Market",
-        "url": "https://ub-market.com/",
-        "logo": "https://ub-market.com/images/logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+359-8844-69860",
-          "contactType": "Customer Service"
-        }
-      }
-    `}
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "UB Market",
+              "url": "https://ub-market.com/",
+              "logo": "https://ub-market.com/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+359-8844-69860",
+                "contactType": "Customer Service"
+              }
+            }
+          `}
         </script>
       </Helmet>
 
