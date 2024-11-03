@@ -1,37 +1,76 @@
-// src/components/Contacts.tsx
 import React from "react";
-import styles from "./Contacts.module.scss";
-
+import { Helmet } from "react-helmet"; // Import Helmet for SEO
 import { useTranslation } from "react-i18next";
+import styles from "./Contacts.module.scss";
 
 const Contacts: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <section className={styles.contacts}>
+      <Helmet>
+        <title>{t("contactUs")}</title>
+        <meta
+          name="description"
+          content={
+            t("contactUsDescription") ||
+            "Contact UB Market for inquiries and support."
+          }
+        />
+        <meta
+          name="keywords"
+          content="UB Market, contact, address, email, phone, customer support"
+        />
+        <meta property="og:title" content={t("contactUs")} />
+        <meta
+          property="og:description"
+          content={
+            t("contactUsDescription") ||
+            "Contact UB Market for inquiries and support."
+          }
+        />
+        <meta property="og:url" content="https://ub-market.com/contacts" />
+        <link rel="canonical" href="https://ub-market.com/contacts" />
+        <script>
+          {`
+            // SEO Optimization Script
+            (function() {
+              var meta = document.createElement('meta');
+              meta.name = 'robots';
+              meta.content = 'index, follow';
+              document.getElementsByTagName('head')[0].appendChild(meta);
+              
+              console.log('SEO Script executed: Page is indexable and follows links.');
+            })();
+          `}
+        </script>
+      </Helmet>
+
       <div className={styles["contacts-title"]}>
         <h2>{t("contactUs")}</h2>
       </div>
 
       <div className={styles.contactInfo}>
         <div className={styles.contactItem}>
-          <h3>Address</h3>
+          <h3>{t("address")}</h3>
           <p>
             U B Market PLLC Legal address: Bulgaria, Varna, 9010, Sirma Voivoda
             St., b.1, ap. 21;
           </p>
-          <p>Company Nr: 207067808 EU VAT: BG207067808</p>
-        </div>
-        <div className={styles.contactItem}>
-          <h3>Email</h3>
           <p>
-            <a href="ubmarket2022@gmail.com">ubmarket2022@gmail.com</a>
+            {t("companyInfo", { companyNr: "207067808", vat: "BG207067808" })}
           </p>
         </div>
         <div className={styles.contactItem}>
-          <h3>Phone</h3>
+          <h3>{t("email")}</h3>
           <p>
-            <a href="tel:+1234567890">+359 8844 69860</a>
+            <a href="mailto:ubmarket2022@gmail.com">ubmarket2022@gmail.com</a>
+          </p>
+        </div>
+        <div className={styles.contactItem}>
+          <h3>{t("phone")}</h3>
+          <p>
+            <a href="tel:+359884469860">+359 8844 69860</a>
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next"; // Import useTranslation for translations
-import styles from "./CartModal.module.scss"; // Import your modal styles
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
+import styles from "./CartModal.module.scss";
 
 interface CartModalProps {
   isOpen: boolean;
@@ -8,56 +9,126 @@ interface CartModalProps {
 }
 
 const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
-  const { t } = useTranslation(); // Use translation hook
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState(""); // Add email state
+  const [email, setEmail] = useState("");
 
-  if (!isOpen) return null; // Don't render anything if not open
+  if (!isOpen) return null;
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
-        <h2>{t("weWillCallYouBack")}</h2>
-        <div className={styles.userInfo}>
-          <label htmlFor="name">{t("name")}</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <label htmlFor="phone">{t("phone")}</label>
-          <input
-            type="tel"
-            id="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <label htmlFor="email">{t("email")}</label>{" "}
-          {/* New email field label */}
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)} // Handle email change
-            required
-          />
-        </div>
+    <div
+      className={styles.modalOverlay}
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-modal="true"
+    >
+      <Helmet>
+        <title>{t("weWillCallYouBack")}</title>
+        <meta
+          name="description"
+          content={
+            t("callbackDescription") ||
+            "Provide your contact information for a callback."
+          }
+        />
+        <meta
+          name="keywords"
+          content="callback, contact, UB Market, customer service"
+        />
+        <meta property="og:title" content={t("weWillCallYouBack")} />
+        <meta
+          property="og:description"
+          content={
+            t("callbackDescription") ||
+            "Provide your contact information for a callback."
+          }
+        />
+        <meta
+          property="og:image"
+          content="https://ub-market.com/images/logo.png"
+        />
+        <meta property="og:url" content="https://ub-market.com/contact" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactAction",
+              name: t("weWillCallYouBack"),
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://ub-market.com/contact",
+              },
+              actionStatus: "https://schema.org/PotentialActionStatus",
+              agent: {
+                "@type": "Organization",
+                name: "UB Market",
+              },
+              description:
+                t("callbackDescription") ||
+                "Provide your contact information for a callback.",
+            }),
+          }}
+        />
+      </Helmet>
 
-        <div className={styles.buttonContainer}>
-          <button onClick={onClose} className={styles.cancelButton}>
-            {t("close")}
-          </button>
-          <button
-            onClick={() => alert("Proceed to checkout")}
-            className={styles.checkoutButton}
-          >
-            {t("callBack")}
-          </button>
-        </div>
+      <div className={styles.modalContent}>
+        <h2 id="modalTitle">{t("weWillCallYouBack")}</h2>
+        <form>
+          <div className={styles.userInfo}>
+            <label htmlFor="name">{t("name")}</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              aria-required="true"
+              placeholder={t("enterYourName")}
+            />
+            <label htmlFor="phone">{t("phone")}</label>
+            <input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              aria-required="true"
+              placeholder={t("enterYourPhone")}
+            />
+            <label htmlFor="email">{t("email")}</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              aria-required="true"
+              placeholder={t("enterYourEmail")}
+            />
+          </div>
+
+          <div className={styles.buttonContainer}>
+            <button
+              type="button"
+              onClick={onClose}
+              className={styles.cancelButton}
+            >
+              {t("close")}
+            </button>
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                alert("Proceed to checkout");
+              }}
+              className={styles.checkoutButton}
+            >
+              {t("callBack")}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

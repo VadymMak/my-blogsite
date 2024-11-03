@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); // Adjust for overlay darkness
+    background-color: rgba(0, 0, 0, 0.8); // Overlay for text visibility
     z-index: 1;
   }
 
@@ -25,8 +25,9 @@
     h2 {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #eee;
+      color: #fff; // Ensures readability
       margin-bottom: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); // Enhances visibility
     }
 
     p {
@@ -81,9 +82,9 @@
         position: relative;
         z-index: 2;
         font-size: 1.5rem;
-        color: #eee;
+        color: #fff; // Ensures visibility
         font-weight: bold;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); // Enhances readability
       }
 
       &::before {

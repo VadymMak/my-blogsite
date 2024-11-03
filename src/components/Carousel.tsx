@@ -64,6 +64,37 @@ const Carousel: React.FC = () => {
           name="keywords"
           content="products, carousel, UB Market, high-quality products"
         />
+        <meta property="og:title" content={t("ourProducts")} />
+        <meta
+          property="og:description"
+          content={
+            t("exploreProductsDescription") ||
+            "Explore our range of high-quality products."
+          }
+        />
+        <meta
+          property="og:image"
+          content="https://ub-market.com/images/logo.png"
+        />
+        <meta property="og:url" content="https://ub-market.com/" />
+        <link rel="canonical" href="https://ub-market.com/products" />
+
+        {/* JSON-LD structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: t("ourProducts"),
+            description: t("exploreProductsDescription"),
+            image: "https://ub-market.com/images/logo.png",
+            url: "https://ub-market.com/products",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://ub-market.com/products",
+            },
+            productID: products.map((product) => product.id),
+          })}
+        </script>
       </Helmet>
 
       <div className={styles.sectionTitle}>

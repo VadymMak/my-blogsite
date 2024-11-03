@@ -1,12 +1,12 @@
 .contacts {
   position: relative;
   padding: 60px 0;
-  background: url("../../public//images/contact-us.jpg");
-  background-color: rgba(0, 0, 0, 0.9);
+  background: url("../../public/images/contact-us.jpg") no-repeat center center
+    fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  color: #eee; // Set a default text color
   text-align: center;
+
   &::before {
     content: "";
     position: absolute;
@@ -29,42 +29,32 @@
 }
 
 .contacts-title {
-  position: relative;
   z-index: 1;
-  color: #eee;
   font-size: 1.5rem;
 }
 
 .contactItem {
-  position: relative;
-  flex: 1; /* Flex-grow for items */
-  margin: 10px; /* Space between items */
-  min-width: 200px; /* Minimum width for items */
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
   z-index: 2;
 
-  & h2 {
-    position: relative;
-    color: #eee; /* Dark color for headings */
-    margin-bottom: 20px; /* Space below heading */
+  h2 {
+    margin-bottom: 20px;
     font-size: 2.5rem;
-    z-index: 2;
   }
 
-  & h3 {
-    color: #eee; /* Slightly lighter for subheadings */
-    margin-bottom: 10px; /* Space below subheadings */
+  h3 {
+    margin-bottom: 10px;
   }
 
-  & p {
-    color: #eee; /* Slightly lighter for subheadings */
-  }
-
-  & a {
-    color: #eee; /* Link color */
-    text-decoration: none; /* Remove underline */
+  p,
+  a {
+    color: inherit; // Use inherited color for consistency
+    text-decoration: none;
 
     &:hover {
-      text-decoration: underline; /* Underline on hover */
+      text-decoration: underline; // Underline on hover for accessibility
     }
   }
 }
