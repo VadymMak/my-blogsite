@@ -134,7 +134,7 @@ const ContactsPage: React.FC = () => {
           </li>
           <li>
             <a
-              href="https://wa.me/your_phone_number"
+              href="https://wa.me/+359884469860"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
