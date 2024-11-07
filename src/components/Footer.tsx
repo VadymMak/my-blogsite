@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               <FontAwesomeIcon icon={faTelegram} />
             </a>
             <a
-              href="https://wa.me/your_phone_number"
+              href="https://wa.me/+359884469860"
               target="_blank"
               rel="noopener noreferrer"
             >
