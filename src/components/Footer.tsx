@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
-              href="https://t.me/@ub_market_ltd"
+              href="https://t.me/ub_market_ltd"
               target="_blank"
               rel="noopener noreferrer"
             >
