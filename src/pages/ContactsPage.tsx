@@ -124,7 +124,7 @@ const ContactsPage: React.FC = () => {
           </li>
           <li>
             <a
-              href="https://t.me/your_username"
+              href="https://t.me/@ub_market_ltd"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
