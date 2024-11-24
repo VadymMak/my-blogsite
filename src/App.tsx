@@ -1,5 +1,7 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import { initGA } from "./analytics";
 
 import Layout from "./layouts/Layout"; // Your main layout component
 import NotFound from "./components/NotFound"; // Your 404 Not Found component
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
 
 // Main App Component
 function App() {
+  useEffect(() => {
+    initGA(); // Инициализация GA
+  }, []);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <RouterProvider router={router} />

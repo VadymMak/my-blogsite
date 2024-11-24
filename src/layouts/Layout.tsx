@@ -4,10 +4,21 @@ import Header from "../components/Header";
 import { useTranslation } from "react-i18next";
 import "../../src/118n/i18n";
 import { useEffect } from "react";
+
+import { useLocation } from "react-router-dom";
+import { trackPageview } from "../analytics";
+
 import styles from "./Layout.module.scss";
 
 const Layout = () => {
   const { i18n } = useTranslation();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track page views when location changes
+    trackPageview(location.pathname + location.search);
+  }, [location]);
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang).catch((error) => {
