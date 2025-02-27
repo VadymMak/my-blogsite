@@ -1,4 +1,4 @@
-// src/components/BlogPost.tsx
+// src/components/BlogPost.tsx (move back to components if it was in pages)
 import React from "react";
 import styles from "./BlogPost.module.scss";
 import ReadMore from "../components/ReadMore";
@@ -10,6 +10,7 @@ interface BlogPostProps {
     excerpt: string;
     content: string;
     date: string;
+    slug?: string; // Optional, for linking
   };
   language: string;
 }

@@ -64,16 +64,14 @@ const ContactsPage: React.FC = () => {
         </script>
       </Helmet>
 
-      <h1>{t("contactTitle")}</h1>
-      <p>{t("contactMetaDescription")}</p>
+      {/* <h1>{t("contactTitle")}</h1>
+      <p>{t("contactMetaDescription")}</p> */}
 
       <section className={styles.contactInfo}>
         <h2>{t("contactTitle")}</h2>
         <p>
-          <strong>{t("address")}</strong> 1234 Market Street, Suite 100
-          <br />
-          Varna, Bulgaria, {t("cityStateZip")} 9010, Sirma Voivoda St., b.1, ap.
-          21
+          <strong>{t("address")} </strong>
+          Bulgaria, Varna, 9010, Sirma Voivoda St., b.1, ap. 21,
         </p>
         <p>
           Phone: +359 8844 69860:
