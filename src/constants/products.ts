@@ -72,51 +72,22 @@ export const products: IProduct[] = [
   {
     id: 4,
     name: {
-      en: "Sugar",
-      bg: "Палмово масло и маргарин",
-      ua: "Пальмове масло і маргарин",
+      en: "Crystalline Sugar",
+      bg: "Кристална Захар",
+      ua: "Цукор Кристалічний",
     },
     image: "/images/sugar.jpg",
     description: {
-      en: `Sugar of the highest quality from UB Market LTD is a product that meets all standards and quality norms.
-
-      \n\n Our sugar is certified and comes with all necessary documents confirming its safety and compliance with international requirements. This sugar is ideal for use in the food industry as well as at home. Thanks to strict quality control, our customers receive only pure, white sugar without impurities.
-
-      \n\n Order sugar from UB Market LTD and get a high-quality product on favorable terms. We guarantee timely delivery and professional service. UB Market LTD – your reliable supplier!`,
-      bg: `Захар с най-високо качество от UB Market LTD е продукт, който отговаря на всички стандарти и норми за качество.
-      
-      \n\nНашата захар е сертифицирана и идва с всички необходими документи, потвърждаващи нейната безопасност и съответствие с международните изисквания. Тази захар е идеална за употреба в хранителната индустрия, както и в дома. Благодарение на строгия контрол на качеството, нашите клиенти получават само чиста, бяла захар без примеси.
-      
-      \n\nПоръчайте захар от UB Market LTD и получете висококачествен продукт на изгодни условия. Гарантираме навременна доставка и професионално обслужване. UB Market LTD – вашият надежден доставчик!`,
-      ua: `Цукор найвищої якості від UB Market LTD — це продукт, який відповідає всім стандартам і нормам якості.
-      
-      \n\nНаш цукор сертифікований і має всі необхідні документи, що підтверджують його безпеку та відповідність міжнародним вимогам. Цей цукор ідеально підходить для використання в харчовій промисловості, а також вдома. Завдяки строгому контролю якості, наші клієнти отримують тільки чистий, білий цукор без домішок.
-      
-      \n\nЗамовте цукор від UB Market LTD і отримайте високоякісний продукт на вигідних умовах. Гарантуємо своєчасну доставку та професійне обслуговування. UB Market LTD — ваш надійний постачальник!`,
+      en: `CRYSTALLINE SUGAR – Sugar of the 1st category (from sugar beets), which is a key ingredient in confectionery products. It is widely used as a sweetener for hot and cold beverages and also serves as a preservative for fruit and berry products such as jams, jellies, and marmalades. With its stable structure and high purity, this sugar ensures consistent sweetness and excellent product quality.
+      \n\n CRYSTALLINE SUGAR – Obtained through deep purification and special refining, ensuring uniform crystals and the absence of foreign impurities. Due to its natural origin, it is easily absorbed by the body, maintaining the necessary energy levels and serving as an important source of carbohydrates that support brain activity and sustain vital processes.`,
+      bg: `CRYSTALLINE SUGAR – Захар от 1-ва категория (от захарно цвекло), която е основна съставка в сладкарските изделия. Широко се използва като подсладител за топли и студени напитки, а също така изпълнява функцията на консервант за плодови и ягодови продукти като конфитюри, мармалади и желета. Благодарение на своята стабилна структура и висока чистота, тази захар осигурява постоянна сладост и отлично качество на продуктите.
+      \n\nCRYSTALLINE SUGAR – Получава се чрез дълбоко пречистване и специална рафинация, което гарантира еднородност на кристалите и липса на чужди примеси. Благодарение на естествения си произход, тя лесно се усвоява от организма, поддържа необходимото ниво на енергия и е важен източник на въглехидрати, които подпомагат мозъчната дейност и осигуряват жизненоважни процеси.`,
+      ua: `CRYSTALLINE SUGAR – Цукор 1 категорії (із цукрових буряків), який є основним інгредієнтом у кондитерських виробах, широко використовується як підсолоджувач для гарячих та холодних напоїв, а також виконує функцію консерванта для фруктових і ягідних продуктів, таких як варення, джеми, желе. Маючи стабільну структуру та високу чистоту, цей цукор забезпечує стійку солодкість та відмінну якість продуктів.
+      \n\nCRYSTALLINE SUGAR – отримується шляхом глибокої очистки та спеціального рафінування, що гарантує однорідність кристалів та відсутність сторонніх домішок. Завдяки природному походженню, він легко засвоюється організмом, підтримуючи необхідний рівень енергії та є важливим джерелом вуглеводів, які сприяють активній роботі мозку та забезпечують життєві процеси.`,
     },
   },
   {
     id: 5,
-    name: {
-      en: "Powdered Milk",
-      bg: "Сухо мляко",
-      ua: "Порошкове молоко",
-    },
-    image: "/images/dry-milk.jpg",
-    description: {
-      en: `UHT Milk 3.5%, 1L – is a top-quality product that provides a long shelf life without losing its nutritional properties. 
-      \n\n Thanks to modern ultra-high-temperature (UHT) processing technology, the milk retains its natural taste, beneficial vitamins, and minerals. It is ideal for use in cooking, baking, preparing coffee, sauces, and many other dishes. This milk easily dissolves without leaving lumps and can be an indispensable assistant in the food industry’s production processes. You can purchase UHT Milk 3.5%, 1L from UB Market LTD. 
-      \n\n We guarantee high product quality and offer favorable terms for cooperation. Choose a reliable supplier – UB Market LTD!`,
-      bg: `UHT Мляко 3.5%, 1L – е продукт с високо качество, който осигурява дълъг срок на годност, без да губи хранителните си свойства. 
-      \n\n Благодарение на съвременната технология за ултрависокотемпературна (UHT) обработка, млякото запазва естествения си вкус, полезните витамини и минерали. Идеално е за употреба при готвене, печене, приготвяне на кафе, сосове и много други ястия. Това мляко лесно се разтваря, без да оставя бучки и може да бъде незаменим помощник в производствените процеси на хранителната индустрия. Можете да закупите UHT Мляко 3.5%, 1L от UB Market LTD. 
-      \n\n Гарантираме високо качество на продукта и предлагаме изгодни условия за сътрудничество. Изберете надежден доставчик – UB Market LTD!`,
-      ua: `UHT Молоко 3.5%, 1L – це продукт високої якості, який забезпечує тривалий термін зберігання без втрати своїх харчових властивостей. 
-      \n\n Завдяки сучасній технології ультра-високої температурної (UHT) обробки, молоко зберігає свій природний смак, корисні вітаміни та мінерали. Ідеально підходить для використання у приготуванні їжі, випічці, приготуванні кави, соусів та багатьох інших страв. Це молоко легко розчиняється без утворення грудок і може бути незамінним помічником у виробничих процесах харчової промисловості. Ви можете придбати UHT Молоко 3.5%, 1L у UB Market LTD. 
-      \n\n Ми гарантуємо високу якість продукції і пропонуємо вигідні умови для співпраці. Оберіть надійного постачальника – UB Market LTD!`,
-    },
-  },
-  {
-    id: 6,
     name: {
       en: "Mayonnaise",
       bg: "Майонеза",
@@ -124,17 +95,14 @@ export const products: IProduct[] = [
     },
     image: "/images/mayonnaise.jpg",
     description: {
-      en: `Mayonnaise 67% PC-4.5 kg, KOROLIVSKIY SMAK – is a top-quality product designed to meet the needs of both home and professional kitchens. 
-      \n\n With its rich flavor and thick consistency, this mayonnaise is perfect for preparing salads, sauces, marinades, and other culinary masterpieces. The product contains an optimal fat content (67%), providing dishes with a rich taste and a smooth texture. 
-      The quality of KOROLIVSKIY SMAK is backed by years of consumer trust. You can purchase the 67% PC-4.5 kg mayonnaise from UB Market LTD at a competitive price. 
-      \n\n We offer great terms for our customers and guarantee high-quality products and first-class service.`,
-      bg: `Майонеза 67% PC-4.5 кг, KOROLIVSKIY SMAK – е продукт с високо качество, проектиран да отговори на нуждите както на домашните, така и на професионалните кухни. 
-      \n\n Със своя богат вкус и гъста консистенция, тази майонеза е идеална за приготвяне на салати, сосове, маринати и други кулинарни шедьоври. Продуктът съдържа оптимално съдържание на мазнини (67%), осигурявайки на ястията богат вкус и гладка текстура. 
-      Качеството на KOROLIVSKIY SMAK е подкрепено от години на доверие от потребителите. Можете да закупите майонеза 67% PC-4.5 кг от UB Market LTD на конкурентна цена. 
-      \n\n Предлагаме отлични условия за нашите клиенти и гарантираме висококачествени продукти и обслужване от първа класа.`,
-      ua: `Майонез 67% PC-4.5 кг, KOROLIVSKIY SMAK – це продукт високої якості, розроблений для задоволення потреб як домашніх, так і професійних кухонь. 
-      \n\n Завдяки своєму багатому смаку та густій консистенції, цей майонез ідеально підходить для приготування салатів, соусів, маринадів та інших кулінарних шедеврів. Продукт містить оптимальний вміст жиру (67%), що надає стравам насиченого смаку та гладкої текстури. 
-      Якість KOROLIVSKIY SMAK підтверджується багаторічною довірою споживачів. Ви можете придбати майонез 67% PC-4.5 кг у UB Market LTD за конкурентоспроможною ціною. 
+      en: `PREMIUM MAYONNAISE – a classic product used in the preparation of numerous dishes and salads, as well as a base for sauces or as a standalone sauce. It is a versatile ingredient that enhances dishes with a distinct flavor, delicate texture, and a harmonious balance between spiciness and smoothness.
+      \n\n PREMIUM MAYONNAISE – is produced using a traditional recipe with natural ingredients, containing an optimal fat content of 67% and meeting high-quality standards. Only high-quality oil, fresh egg products, and natural spices are used in the production process. Full automation ensures a stable texture and impeccable product quality.
+      \n\nThe assortment also includes a vegan mayonnaise, made from plant-based ingredients without any animal-derived products, making it an ideal choice for people following special diets.`,
+      bg: `PREMIUM MAYONNAISE – класически продукт, използван в приготвянето на множество ястия и салати, както и като основа за сосове или самостоятелен сос. Това е универсална съставка, която придава на ястията изразителен вкус, нежна текстура и хармоничен баланс между пикантност и мекота. 
+      \n\n PREMIUM MAYONNAISE – се произвежда по традиционна рецепта с натурални съставки, съдържа оптимално съдържание на мазнини 67% и отговаря на високи стандарти за качество. В процеса на производство се използват само висококачествено масло, пресни яйчни продукти и натурални подправки. Пълната автоматизация на производството осигурява стабилна текстура и безупречно качество на продукта.
+      \n\nPREMIUM MAYONNAISE – виробляється за традиційною рецептурою з натуральних інгредієнтів, має оптимальну масову частку жиру 67% та відповідає високим стандартам якості. У процесі виготовлення використовуються лише високоякісна олія, свіжі яєчні продукти та натуральні спеції. Завдяки повній автоматизації виробництва досягається стабільна текстура та бездоганна якість продукту.
+      \n\nВ асортименті представлений також веганський майонез, виготовлений на основі рослинних інгредієнтів без використання продуктів тваринного походження, що робить його ідеальним вибором для людей, які дотримуються спеціальних дієт.`,
+      ua: `PREMIUM MAYONNAISE – класичний продукт, що використовується у приготуванні численних страв та салатів, а також як основа для соусів чи окремий соус. Це універсальний інгредієнт, що надає стравам вираженого смаку, ніжної текстури та гармонійного балансу між гостротою та м'якістю.
       \n\n Ми пропонуємо чудові умови для наших клієнтів та гарантуємо високоякісні продукти та обслуговування першого класу.`,
     },
   },
