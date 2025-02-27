@@ -58,14 +58,44 @@
 
     .productInfo {
       flex: 1;
-      h3 {
+
+      .productTitle {
         font-size: 1.8rem;
         margin-bottom: 10px;
+        cursor: pointer; // Indicate clickable
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #007bff; // Blue hover effect for visibility against dark background
+        }
       }
+
       p {
         font-size: 1.2rem;
         text-align: left;
         text-indent: 20px;
+      }
+
+      .expandedInfo {
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); // Slightly transparent white for contrast
+        border-radius: 8px;
+        text-align: left;
+
+        p {
+          font-size: 1.1rem;
+          margin: 0 0 10px 0; // Spacing between paragraphs
+          text-indent: 0; // Remove indent for expanded content
+          strong {
+            color: #ddd; // Lighter color for emphasis
+          }
+        }
       }
     }
   }
@@ -86,11 +116,20 @@
       }
 
       .productInfo {
-        h3 {
+        .productTitle {
           font-size: 1.6rem;
         }
         p {
           font-size: 1.1rem;
+          text-align: center; // Center-align description text on mobile
+        }
+
+        .expandedInfo {
+          padding: 10px;
+          p {
+            font-size: 1rem;
+            text-align: left; // Keep expanded text left-aligned for readability
+          }
         }
       }
     }

@@ -14,9 +14,11 @@
   .logo {
     display: flex;
     align-items: center;
+    // background-color: #fff;
+    // padding: 8px;
 
     .logoImage {
-      height: 100px; /* Increase the height as needed */
+      height: 80px; /* Increase the height as needed */
       width: auto; /* Maintain aspect ratio */
     }
 
