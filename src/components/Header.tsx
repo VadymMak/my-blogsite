@@ -7,7 +7,7 @@ import LanguageDropdown from "./LanguageDropdown";
 
 interface HeaderProps {
   changeLanguage: (lang: string) => void;
-  currentLanguage: string; // Add this prop to keep track of the current language
+  currentLanguage: string;
 }
 
 const Header: React.FC<HeaderProps> = React.memo(
@@ -19,12 +19,15 @@ const Header: React.FC<HeaderProps> = React.memo(
     return (
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img
-            src="/images/logo-white-text.png"
-            alt="UB Market Logo"
-            className={styles.logoImage}
-            loading="lazy"
-          />
+          <Link to="/">
+            <img
+              // src="/icons/logo.svg"
+              src="/icons/logo.jpeg"
+              alt="UB Market Logo"
+              className={styles.logoImage}
+              loading="lazy"
+            />
+          </Link>
         </div>
 
         <nav className={styles.nav}>

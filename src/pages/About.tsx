@@ -56,10 +56,10 @@ const About: React.FC = () => {
           <p className={styles.intro}>{t("aboutUsTitle")}</p>
         </section>
 
-        <section className={styles.section}>
+        {/* <section className={styles.section}>
           <h2 className={styles.title}>{t("ourMission")}</h2>
           <p>{t("ourMissionTitle")}</p>
-        </section>
+        </section> */}
 
         <section className={styles.section}>
           <h2 className={styles.title}>{t("ourVision")}</h2>
