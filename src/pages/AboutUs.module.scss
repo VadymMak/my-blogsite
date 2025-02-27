@@ -1,65 +1,148 @@
-// AboutUs.module.scss
-
 .aboutUs {
   position: relative;
   width: 100%;
-  min-height: 550px; /* Minimum height for the section */
+  min-height: 700px; // Base min-height for larger screens
   background: url("../../public/images/about-us.jpg") no-repeat center center /
-    cover; /* Combined properties for better readability */
-  background-attachment: fixed; /* Fixed background for a parallax effect */
+    cover;
+  background-attachment: fixed;
   display: flex;
-  justify-content: flex-start; /* Align content to the left for desktop */
-  align-items: center; /* Center items vertically */
-  overflow: hidden; /* Prevent overflow if content is larger */
+  justify-content: flex-start; // Align to the left
+  align-items: center;
+  overflow: hidden;
 
   .overlay {
-    position: absolute; /* Position overlay on top */
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
-    z-index: 1; /* Keep overlay on top */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align content in the overlay */
+    justify-content: flex-start; // Align content to the left
   }
 
   .content {
-    position: relative; /* Position content above the overlay */
-    z-index: 2; /* Ensure content is above overlay */
-    color: #fff; /* Text color */
-    text-align: left; /* Align text to left for desktop */
-    padding: 20px; /* Padding for spacing */
-    max-width: 800px; /* Max width for readability */
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+    padding: 40px; // Padding for breathing room
+    width: 100%; // Full width of the overlay
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; // Align items to the left
 
     h2 {
-      font-size: 2.5rem; /* Font size for heading */
-      margin-bottom: 20px; /* Space below heading */
-      text-align: center; /* Center heading text */
-    }
-
-    p {
-      font-size: 1.2rem; /* Font size for paragraphs */
-      margin: 10px 0; /* Space above and below paragraphs */
-      text-indent: 20px; /* Indentation for paragraphs */
+      font-size: 2.5rem;
+      margin-bottom: 30px; // Space below heading
+      text-align: center; // Center the title
+      width: 80%; // Match the text container width
+      max-width: 800px; // Cap the width to match textContainer
+      align-self: flex-start; // Align with the left edge of textContainer
+      margin-left: 10%; // Offset to center within the 80% width
     }
   }
 
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    justify-content: center; /* Center content on mobile */
-    text-align: center; /* Center text on mobile */
+  .textContainer {
+    width: 80%; // Text takes up 80% of the page width
+    max-width: 800px; // Cap the width to prevent overflow
+    display: flex;
+    flex-direction: column; // Stack text vertically
+    gap: 20px; // Space between paragraphs
 
+    p {
+      font-size: 1.2rem;
+      margin: 0; // Remove default margins
+      line-height: 1.6; // Better readability
+      text-indent: 20px;
+    }
+  }
+
+  /* Intermediate Breakpoint (between desktop and mobile) */
+  @media (max-width: 1100px) and (min-width: 769px) {
     .content {
-      padding: 10px; /* Adjust padding for smaller screens */
+      padding: 30px; // Slightly reduce padding
 
       h2 {
-        font-size: 2rem; /* Smaller title on mobile */
+        width: 90%; // Match text container width
+        max-width: 650px; // Adjust max-width
+        font-size: 2.2rem; // Slightly smaller title
+        margin-left: 5%; // Adjust offset for narrower width
       }
+    }
+
+    .textContainer {
+      width: 90%; // Slightly wider to adapt
+      max-width: 650px; // Adjust max-width
 
       p {
-        font-size: 1rem; /* Smaller text on mobile */
+        font-size: 1.1rem; // Slightly smaller text
+      }
+    }
+  }
+
+  /* Mobile Styles (768px and below) */
+  @media (max-width: 768px) {
+    min-height: 700px; // Reduce min-height for smaller screens
+    height: auto;
+    justify-content: center;
+    text-align: center;
+
+    .content {
+      padding: 20px 10px; // Adjust padding: more top/bottom, less left/right
+      align-items: center; // Center items on mobile
+
+      h2 {
+        font-size: 2rem; // Smaller title on mobile
+        width: 90%; // Match text container width on mobile
+        max-width: 100%; // Full width within padding
+        margin-bottom: 20px; // Reduce space below
+        margin-left: 0; // No offset, fully centered
+      }
+    }
+
+    .textContainer {
+      width: 90%; // Wider on mobile for readability
+      max-width: 100%; // Full width within padding
+      gap: 15px; // Smaller gap on mobile
+
+      p {
+        font-size: 1rem; // Smaller text on mobile
+        text-indent: 10px; // Smaller indent on mobile
+      }
+    }
+  }
+
+  /* Extra Small Screens (below 590px) */
+  @media (max-width: 590px) {
+    min-height: 650px; // Reduce height to adapt to content
+    height: auto; // Let the section grow with content
+    padding-top: 20px; // Add top padding to ensure title visibility
+    align-items: flex-start; // Start content from the top
+
+    .overlay {
+      align-items: flex-start; // Start from the top
+    }
+
+    .content {
+      padding: 15px 10px; // Further reduce padding
+      min-height: unset; // Remove any inherited min-height
+
+      h2 {
+        font-size: 1.8rem; // Even smaller title
+        margin-bottom: 15px; // Less space below
+        margin-left: 0; // No offset, fully centered
+      }
+    }
+
+    .textContainer {
+      gap: 10px; // Smaller gap for tighter layout
+
+      p {
+        font-size: 0.9rem; // Smaller text
+        text-indent: 5px; // Minimal indent
       }
     }
   }
