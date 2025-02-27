@@ -54,12 +54,11 @@ const Contacts: React.FC = () => {
         <div className={styles.contactItem}>
           <h3>{t("address")}</h3>
           <p>
-            U B Market PLLC Legal address: Bulgaria, Varna, 9010, Sirma Voivoda
-            St., b.1, ap. 21;
+            Bulgaria, Varna, 9010, Sirma Voivoda St., b.1, ap. 21, UB Market
           </p>
-          <p>
+          {/* <p>
             {t("companyInfo", { companyNr: "207067808", vat: "BG207067808" })}
-          </p>
+          </p> */}
         </div>
         <div className={styles.contactItem}>
           <h3>{t("email")}</h3>
