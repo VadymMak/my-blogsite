@@ -19,59 +19,54 @@ export const products: IProduct[] = [
     name: {
       en: "Frying Oil",
       bg: "Масло за пържене",
-      ua: "Олія для смаження",
+      ua: "Олія Фритюрна:",
     },
     image: "/images/frying-oil.jpg",
     description: {
-      en: `Sunflower DEEP FRYING OIL – is a product tailored to modern culinary trends for deep frying, sautéing, and baking. 
-      \n\n The oil heats up quickly and evenly, allowing you to prepare delicious dishes with an appetizing golden crust, without excess fat or an overpowering smell. This product is made from a unique recipe using sunflower oil, class P with the addition of an anti-foaming agent (E900) and antioxidants (E320, E321). 
-      \n\n This technology makes the oil thermally stable and resistant to prolonged heat treatment, with a smoke point exceeding 225°C, making it ideal for deep frying.`,
-      bg: `Слънчогледово ДЪЛБОКО ПЪРЖЕНО МАСЛО – е продукт, съобразен с модерните кулинарни тенденции за дълбоко пържене, сотиране и печене. 
-      \n\n Маслото се загрява бързо и равномерно, позволявайки ви да приготвяте вкусни ястия с апетитна златиста коричка, без излишни мазнини или доминираща миризма. Този продукт е произведен от уникална рецепта, използваща слънчогледово масло, клас P с добавка на анти-пенител (E900) и антиоксиданти (E320, E321). 
-      \n\n Технологията прави маслото термично стабилно и устойчиво на продължителна термична обработка, с точка на димене, която надвишава 225°C, което го прави идеално за дълбоко пържене.`,
-      ua: `Соняшникова ГЛИБОКОВАРКОВА ОЛІЯ – це продукт, спеціально розроблений для сучасних кулінарних тенденцій, таких як глибоке смаження, соте і випікання. 
-      \n\n Олія швидко і рівномірно нагрівається, дозволяючи приготувати смачні страви з апетитною золотою скоринкою, без зайвих жирів і домінуючого запаху. Цей продукт виготовлений за унікальною рецептурою з використанням соняшникової олії класу P з додаванням антипінного агента (E900) та антиоксидантів (E320, E321). 
-      \n\n Ця технологія робить олію термічно стабільною та стійкою до тривалого нагрівання, з температурою димлення понад 225°C, що робить її ідеальною для глибокого смаження.`,
+      en: `DEEP FRYING OIL – is a product adapted to modern culinary trends for deep-frying. It heats up quickly and allows you to prepare delicious dishes with a golden crust, but without excess fat and specific odors. The oil is designed for multiple uses, even when frying different products consecutively – their smells do not mix. 
+      \n\n DEEP FRYING OIL is produced using a unique recipe from the finest sunflower oil, which undergoes an extra-refining process (RDBW). The addition of an antifoaming agent (E900) and antioxidants (E320, E321) makes the oil thermally stable, with a smoke point of 225°C and above. 
+      The optimal continuous frying time, when the oil is used correctly, is 48 hours.`,
+      bg: `DEEP FRYING OIL – е продукт, адаптиран към съвременните кулинарни тенденции за пържене. Загрява бързо и позволява приготвянето на вкусни ястия със златиста коричка, но без излишни мазнини и специфични миризми. Олиото е предназначено за многократна употреба, дори при пържене на различни продукти последователно – техните аромати не се смесват.
+      \n\n DEEP FRYING OIL се произвежда по уникална рецепта от най-финото слънчогледово олио, което преминава процес на допълнителна рафинация (RDBW). Добавянето на обезпеняващ агент (E900) и антиоксиданти (E320, E321) прави олиото термично стабилно, с точка на димене 225°C и повече. 
+      Оптималното време за непрекъснато пържене, при правилна употреба на олиото, е 48 часа.`,
+      ua: `DEEP FRYING OIL –це продукт це продукт, адаптований до сучасних кулінарних тенденцій для приготування страв у фритюрнику, швидко нагрівається і дозволяє приготувати смачні страви зі золотистою скоринкою, але без зайвого жиру та специфічного запаху. Олія
+      призначена для багаторазового використання, навіть при смаженні різних продуктів поспіль – їх запахи не змішуються. 
+      \n\n DEEP FRYING OIL - виготовляється за унікальною рецептурою, з найкращої соняшникової олії яка проходить процес екстра-рафінації (RDBW). Додавання піногасного агента (Е900) та антиоксидантів (Е320, Е321) - робить олію термостабільною, з температурою димоутворення – від 225°С.
+      Оптимальний термін безперервного смаження, при правильному використанні олії – 48годин.`,
     },
   },
   {
     id: 2,
     name: {
-      en: "Sunflower Oil",
-      bg: "Слънчогледово масло",
-      ua: "Соняшникова олія",
+      en: "Culinary Oil",
+      bg: "Кулинарно олио",
+      ua: "Олія Кулінарна:",
     },
     image: "/images/sun-flower.jpg",
     description: {
-      en: `Sunflower Oil RDBW – Refined Deodorized Sunflower Oil under the KOROLIVSKYI SMAK brand – is a high-quality oil with the highest degree of purification, offering a neutral taste and aroma. 
-      \n\n This refined oil is the perfect choice for culinary use, especially when cooking with heat. Due to its composition, RDBW oil is suitable for frying, extended cooking, and heat processing of various dishes and ingredients, while preserving their flavor qualities. 
-      \n\n Choose KOROLIVSKYI SMAK for your kitchen and taste the difference!`,
+      en: `REFINED SUNFLOWER OIL – a premium-class oil designed for frying foods (meat, fish, vegetables), adding to baked goods, as well as for salad dressings and sauce preparation. It can be used for dietary and vegetarian nutrition. Contains beneficial vitamins A, E, and D, as well as a high amount of polyunsaturated fatty acids. 
+      \n\n REFINED SUNFLOWER OIL - Produced from selected sunflower seeds through raw pressing, which preserves the maximum amount of beneficial nutrients. It undergoes deep refining, as well as deodorization, sedimentation, and winterization processes. The oil has a clear consistency without any sediment or impurities, and thanks to deodorization, it has no seed smell or taste.`,
       bg: `Слънчогледово масло RDBW – Рафинирано Дезодорирано Слънчогледово масло под марката KOROLIVSKYI SMAK – е висококачествено масло с най-висока степен на пречистване, предлагащо неутрален вкус и аромат. 
-      \n\n Това рафинирано масло е идеалният избор за кулинарна употреба, особено когато готвите с топлина. Поради своя състав, RDBW маслото е подходящо за пържене, продължително готвене и термична обработка на различни ястия и съставки, като същевременно запазва техните вкусови качества. 
-      \n\n Изберете KOROLIVSKYI SMAK за вашата кухня и опитайте разликата!`,
-      ua: `Соняшникова олія RDBW – Рафінована Дезодорована Соняшникова олія під маркою KOROLIVSKYI SMAK – це високоякісна олія з найвищим ступенем очищення, що має нейтральний смак і аромат. 
-      \n\n Ця рафінована олія є ідеальним вибором для кулінарії, особливо під час приготування на вогні. Завдяки своєму складу, RDBW олія підходить для смаження, тривалого приготування та термічної обробки різних страв і інгредієнтів, зберігаючи їх смакові якості. 
-      \n\n Виберіть KOROLIVSKYI SMAK для вашої кухні та відчуйте різницю!`,
+      \n\n REFINED SUNFLOWER OIL - Произвежда се от подбрани слънчогледови семена чрез сурово пресоване, което позволява запазването на максимално количество полезни вещества. Подлага се на дълбоко рафиниране, както и на процеси на дезодориране, утаяване и зимуване. Олиото има прозрачна консистенция без утайка или примеси, а благодарение на дезодорацията няма мирис или вкус на семена.`,
+      ua: `REFINED SUNFLOWER OIL – олія вищого класу, призначена для смаження продуктів (м'яса, риби, овочів), додавання у випічку, а також для заправки салатів та приготування соусів. Можна використовувати для дієтичного та вегетаріанського харчування. Містить корисні для організму вітаміни A, E та D, а також високу кількість поліненасичених жирних кислот.. 
+      \n\n REFINED SUNFLOWER OIL - Виготовляється з добірного насіння соняшника, шляхом сирого пресування, що дозволяє зберегти максимальну кількість корисних речовин. Проходить очистку шляхом глибокої рафінації, та процеси – дезодорації, осадження та виморозки. Олія має прозору консистенцію без будь-якого осаду або домішок, завдяки дезодорації у олії відсутній запах і присмак насіння.`,
     },
   },
   {
     id: 3,
     name: {
-      en: "Palm Oil and Margarine",
-      bg: "Палмово масло и маргарин",
-      ua: "Пальмове масло і маргарин",
+      en: "High-Oleic Oil",
+      bg: "Високоолеиново Oлио",
+      ua: "Олія Високоолеїнова:",
     },
     image: "/images/palm-oil.jpg",
     description: {
-      en: `Palm Oil and Margarine – are essential ingredients in many sectors of the food industry. They are widely used in the production of baked goods, confectionery, bread products, and various culinary creations. Palm oil, due to its thermal stability, is ideal for frying and baking, while margarine adds a delicate texture and rich flavor to baked goods.
-      \n\n UB Market LTD offers only high-quality products, collaborating with verified and reliable suppliers. We guarantee that our palm oil and margarine meet all quality and safety standards, making them an excellent choice for your production needs.
-      \n\n Order our products, and you will receive not only a top-quality product but also professional service. UB Market LTD – your trusted partner in the food ingredient market!`,
-      bg: `Палмово масло и маргарин – са незаменими съставки в много сектори на хранителната индустрия. Те се използват широко в производството на печива, сладкарски изделия, хлебни продукти и различни кулинарни творения. Палмовото масло, поради своята термична стабилност, е идеално за пържене и печене, докато маргаринът добавя нежна текстура и богат вкус на печивата.
-      \n\n UB Market LTD предлага само висококачествени продукти, като си сътрудничи с проверени и надеждни доставчици. Гарантираме, че нашето палмово масло и маргарин отговарят на всички стандарти за качество и безопасност, което ги прави отличен избор за вашите производствени нужди.
-      \n\n Поръчайте нашите продукти и ще получите не само продукт с високо качество, но и професионално обслужване. UB Market LTD – вашият надежден партньор на пазара на хранителни съставки!`,
-      ua: `Пальмове масло і маргарин – це незамінні інгредієнти у багатьох галузях харчової промисловості. Вони широко використовуються в виробництві випічки, кондитерських виробів, хлібобулочних продуктів, а також у виготовленні різноманітних кулінарних виробів. Пальмове масло завдяки своїй термостабільності ідеально підходить для смаження і випікання, а маргарин додає випічці ніжну текстуру і насичений смак.
-      \n\n UB Market LTD пропонує само високоякісні продукти, співпрацюючи з перевіреними і надійними постачальниками. Ми гарантуємо, що наше пальмове масло та маргарин відповідають усім стандартам якості та безпеки, що робить їх чудовим вибором для вашого виробництва.
-      \n\n Замовляйте продукцію у нас, і ви отримаєте не тільки першокласний продукт, але й професійний сервіс. UB Market LTD — ваш надійний партнер на ринку харчових інгредієнтів!`,
+      en: `HIGH OLEIC OIL - A product rich in beneficial oleic acid, widely used in cooking: baking, frying, deep-frying, and in bread, confectionery, salads, sauces, and appetizers. It is also consumed as a dietary supplement, a multivitamin source, and for topical treatment. 
+      \n\n HIGH OLEIC OIL - Made from special sunflower varieties with high oleic acid (76-90%), it stands out among vegetable oils. It contains low saturated fats (10%) and is rich in vitamin E – a natural antioxidant. Omega-3 lowers cholesterol and strengthens immunity, while Omega-9 supports heart function. Easily absorbed, it is a natural preventive remedy. Thanks to high polyunsaturated acid content, it has excellent heat resistance (smoke point 240°C) and a shelf life of up to 24 months.`,
+      bg: `ВИСОКООЛЕИНОВО ОЛИО - Продукт с високо съдържание на олеинова киселина, използван в готвенето: печене, пържене, дълбоко пържене, хляб, сладкарски изделия, салати, сосове и предястия. Също се консумира като добавка, източник на мултивитамини и за локално приложение. 
+      \n\n ВИСОКООЛЕИНОВО ОЛИО - Произведено от специални слънчогледови сортове с високо съдържание на олеинова киселина (76-90%), има предимства сред растителните масла. Отличава се с ниско съдържание на наситени мазнини (10%) и високо съдържание на витамин E – естествен антиоксидант. Омега-3 намалява холестерола и укрепва имунитета, докато Омега-9 подпомага работата на сърцето и кръвоносните съдове. Усвоява се лесно и се счита за естествено профилактично средство. Благодарение на високото съдържание на полиненаситени киселини, то има термоустойчивост (240°C) и се съхранява до 24 месеца.`,
+      ua: `HIGH OLEIC OIL - Продукт із високим вмістом олеїнової кислоти, широко застосовується у випіканні, смаженні, фритюрі, хлібопекарстві, кондитерських виробах, салатах, соусах і закусках. Також використовується як дієтична добавка, джерело мультивітамінів та для місцевого застосування. 
+      \n\n HIGH OLEIC OIL - Виготовлена зі спеціальних сортів соняшника з високим вмістом олеїнової кислоти (76-90%), має переваги серед рослинних олій. Відзначається низьким рівнем насичених жирів (10%) і високим вмістом вітаміну E – природного антиоксиданту. Омега-3 знижує холестерин і зміцнює імунітет, а Омега-9 покращує роботу серця і судин. Добре засвоюється організмом і є природним профілактичним засобом. Завдяки високому рівню поліненасичених кислот має термостійкість (240°C) і зберігається до 24 місяців.`,
     },
   },
   {
