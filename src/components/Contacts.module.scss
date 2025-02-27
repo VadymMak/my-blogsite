@@ -29,6 +29,9 @@
 }
 
 .contacts-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
   z-index: 1;
   font-size: 1.5rem;
 }
