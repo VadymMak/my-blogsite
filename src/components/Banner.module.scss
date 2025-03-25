@@ -10,7 +10,7 @@
   padding-right: 20px;
   color: #eee;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   &:before {
@@ -27,7 +27,7 @@
   .banner-content {
     position: relative;
     z-index: 2;
-    padding: 20px;
+    padding: 10px;
     color: #eee;
     text-align: center;
     font-size: 1.2rem;

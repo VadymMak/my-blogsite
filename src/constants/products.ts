@@ -1,3 +1,4 @@
+// src/constants/products.ts
 export interface IProduct {
   id: number;
   name: {
@@ -11,6 +12,16 @@ export interface IProduct {
     ua: string;
   };
   image: string;
+  safety?: {
+    en: string;
+    bg: string;
+    ua: string;
+  };
+  alternative?: {
+    en: string;
+    bg: string;
+    ua: string;
+  };
 }
 
 export const products: IProduct[] = [
@@ -19,109 +30,115 @@ export const products: IProduct[] = [
     name: {
       en: "Frying Oil",
       bg: "Масло за пържене",
-      ua: "Олія для смаження",
+      ua: "Олія Фритюрна:",
     },
     image: "/images/frying-oil.jpg",
     description: {
-      en: `Sunflower DEEP FRYING OIL – is a product tailored to modern culinary trends for deep frying, sautéing, and baking. 
-      \n\n The oil heats up quickly and evenly, allowing you to prepare delicious dishes with an appetizing golden crust, without excess fat or an overpowering smell. This product is made from a unique recipe using sunflower oil, class P with the addition of an anti-foaming agent (E900) and antioxidants (E320, E321). 
-      \n\n This technology makes the oil thermally stable and resistant to prolonged heat treatment, with a smoke point exceeding 225°C, making it ideal for deep frying.`,
-      bg: `Слънчогледово ДЪЛБОКО ПЪРЖЕНО МАСЛО – е продукт, съобразен с модерните кулинарни тенденции за дълбоко пържене, сотиране и печене. 
-      \n\n Маслото се загрява бързо и равномерно, позволявайки ви да приготвяте вкусни ястия с апетитна златиста коричка, без излишни мазнини или доминираща миризма. Този продукт е произведен от уникална рецепта, използваща слънчогледово масло, клас P с добавка на анти-пенител (E900) и антиоксиданти (E320, E321). 
-      \n\n Технологията прави маслото термично стабилно и устойчиво на продължителна термична обработка, с точка на димене, която надвишава 225°C, което го прави идеално за дълбоко пържене.`,
-      ua: `Соняшникова ГЛИБОКОВАРКОВА ОЛІЯ – це продукт, спеціально розроблений для сучасних кулінарних тенденцій, таких як глибоке смаження, соте і випікання. 
-      \n\n Олія швидко і рівномірно нагрівається, дозволяючи приготувати смачні страви з апетитною золотою скоринкою, без зайвих жирів і домінуючого запаху. Цей продукт виготовлений за унікальною рецептурою з використанням соняшникової олії класу P з додаванням антипінного агента (E900) та антиоксидантів (E320, E321). 
-      \n\n Ця технологія робить олію термічно стабільною та стійкою до тривалого нагрівання, з температурою димлення понад 225°C, що робить її ідеальною для глибокого смаження.`,
+      en: `DEEP FRYING OIL – is a product adapted to modern culinary trends for deep-frying. It heats up quickly and allows you to prepare delicious dishes with a golden crust, but without excess fat and specific odors. The oil is designed for multiple uses, even when frying different products consecutively – their smells do not mix. 
+      \n\n DEEP FRYING OIL is produced using a unique recipe from the finest sunflower oil, which undergoes an extra-refining process (RDBW). The addition of an antifoaming agent (E900) and antioxidants (E320, E321) makes the oil thermally stable, with a smoke point of 225°C and above. 
+      The optimal continuous frying time, when the oil is used correctly, is 48 hours.`,
+      bg: `DEEP FRYING OIL – е продукт, адаптиран към съвременните кулинарни тенденции за пържене. Загрява бързо и позволява приготвянето на вкусни ястия със златиста коричка, но без излишни мазнини и специфични миризми. Олиото е предназначено за многократна употреба, дори при пържене на различни продукти последователно – техните аромати не се смесват.
+      \n\n DEEP FRYING OIL се произвежда по уникална рецепта от най-финото слънчогледово олио, което преминава процес на допълнителна рафинация (RDBW). Добавянето на обезпеняващ агент (E900) и антиоксиданти (E320, E321) прави олиото термично стабилно, с точка на димене 225°C и повече. 
+      Оптималното време за непрекъснато пържене, при правилна употреба на олиото, е 48 часа.`,
+      ua: `DEEP FRYING OIL –це продукт це продукт, адаптований до сучасних кулінарних тенденцій для приготування страв у фритюрнику, швидко нагрівається і дозволяє приготувати смачні страви зі золотистою скоринкою, але без зайвого жиру та специфічного запаху. Олія
+      призначена для багаторазового використання, навіть при смаженні різних продуктів поспіль – їх запахи не змішуються. 
+      \n\n DEEP FRYING OIL - виготовляється за унікальною рецептурою, з найкращої соняшникової олії яка проходить процес екстра-рафінації (RDBW). Додавання піногасного агента (Е900) та антиоксидантів (Е320, Е321) - робить олію термостабільною, з температурою димоутворення – від 225°С.
+      Оптимальний термін безперервного смаження, при правильному використанні олії – 48годин.`,
+    },
+    safety: {
+      en: "Do not heat past 225°C to avoid harmful smoke; limit reuse to 48 hours to prevent oil degradation.",
+      bg: "Не загрявайте над 225°C, за да избегнете вреден дим; ограничете повторната употреба до 48 часа, за да предотвратите разграждането на олиото.",
+      ua: "Не нагрівайте вище 225°C, щоб уникнути шкідливого диму; обмежте повторне використання до 48 годин, щоб запобігти деградації олії.",
+    },
+    alternative: {
+      en: "Use High-Oleic Oil for higher heat resistance and longer frying time.",
+      bg: "Използвайте високоолеиново масло за по-голяма устойчивост на топлина и по-дълго време за пържене.",
+      ua: "Використовуйте високоолеїнову олію для кращої термостійкості та тривалішого смаження.",
     },
   },
   {
     id: 2,
     name: {
-      en: "Sunflower Oil",
-      bg: "Слънчогледово масло",
-      ua: "Соняшникова олія",
+      en: "Culinary Oil",
+      bg: "Кулинарно олио",
+      ua: "Олія Кулінарна:",
     },
     image: "/images/sun-flower.jpg",
     description: {
-      en: `Sunflower Oil RDBW – Refined Deodorized Sunflower Oil under the KOROLIVSKYI SMAK brand – is a high-quality oil with the highest degree of purification, offering a neutral taste and aroma. 
-      \n\n This refined oil is the perfect choice for culinary use, especially when cooking with heat. Due to its composition, RDBW oil is suitable for frying, extended cooking, and heat processing of various dishes and ingredients, while preserving their flavor qualities. 
-      \n\n Choose KOROLIVSKYI SMAK for your kitchen and taste the difference!`,
-      bg: `Слънчогледово масло RDBW – Рафинирано Дезодорирано Слънчогледово масло под марката KOROLIVSKYI SMAK – е висококачествено масло с най-висока степен на пречистване, предлагащо неутрален вкус и аромат. 
-      \n\n Това рафинирано масло е идеалният избор за кулинарна употреба, особено когато готвите с топлина. Поради своя състав, RDBW маслото е подходящо за пържене, продължително готвене и термична обработка на различни ястия и съставки, като същевременно запазва техните вкусови качества. 
-      \n\n Изберете KOROLIVSKYI SMAK за вашата кухня и опитайте разликата!`,
-      ua: `Соняшникова олія RDBW – Рафінована Дезодорована Соняшникова олія під маркою KOROLIVSKYI SMAK – це високоякісна олія з найвищим ступенем очищення, що має нейтральний смак і аромат. 
-      \n\n Ця рафінована олія є ідеальним вибором для кулінарії, особливо під час приготування на вогні. Завдяки своєму складу, RDBW олія підходить для смаження, тривалого приготування та термічної обробки різних страв і інгредієнтів, зберігаючи їх смакові якості. 
-      \n\n Виберіть KOROLIVSKYI SMAK для вашої кухні та відчуйте різницю!`,
+      en: `REFINED SUNFLOWER OIL – a premium-class oil designed for frying foods (meat, fish, vegetables), adding to baked goods, as well as for salad dressings and sauce preparation. It can be used for dietary and vegetarian nutrition. Contains beneficial vitamins A, E, and D, as well as a high amount of polyunsaturated fatty acids. 
+      \n\n REFINED SUNFLOWER OIL - Produced from selected sunflower seeds through raw pressing, which preserves the maximum amount of beneficial nutrients. It undergoes deep refining, as well as deodorization, sedimentation, and winterization processes. The oil has a clear consistency without any sediment or impurities, and thanks to deodorization, it has no seed smell or taste.`,
+      bg: `REFINED SUNFLOWER OIL - масло висок клас, предназначено за пържене на храни (мясо, риба, зеленчуци), добавяне в сладкарски изделия, както и за заправяне на салати и приготвяне на сосове. Може да се използва за диетично и вегетарианско хранене. Съдържа полезни за организма витамини А, Е и D, както и високо количество полиненаситени мастни киселини.
+      \n\nREFINED SUNFLOWER OIL - произведено от висококачествени слънчогледови семена чрез студено пресоване, което позволява запазването на максимално количество хранителни вещества. Претърпява процес на дълбока рафинация и допълнителни етапи като дезодорация, утаяване и замразяване. Маслото има прозрачна консистенция, без утайка или примеси. Благодарение на дезодорацията, то няма мирис или вкус на семена.`,
+      ua: `REFINED SUNFLOWER OIL – олія вищого класу, призначена для смаження продуктів (м'яса, риби, овочів), додавання у випічку, а також для заправки салатів та приготування соусів. Можна використовувати для дієтичного та вегетаріанського харчування. Містить корисні для організму вітаміни A, E та D, а також високу кількість поліненасичених жирних кислот.. 
+      \n\n REFINED SUNFLOWER OIL - Виготовляється з добірного насіння соняшника, шляхом сирого пресування, що дозволяє зберегти максимальну кількість корисних речовин. Проходить очистку шляхом глибокої рафінації, та процеси – дезодорації, осадження та виморозки. Олія має прозору консистенцію без будь-якого осаду або домішок, завдяки дезодорації у олії відсутній запах і присмак насіння.`,
+    },
+    safety: {
+      en: "Avoid using for deep frying at high temperatures (above 200°C); not suitable for prolonged reuse.",
+      bg: "Избягвайте употреба за дълбоко пържене при високи температури (над 200°C); не е подходящо за продължителна повторна употреба.",
+      ua: "Уникайте використання для глибокого смаження при високих температурах (понад 200°C); не підходить для тривалого повторного використання.",
+    },
+    alternative: {
+      en: "Use Frying Oil for deep frying or High-Oleic Oil for higher heat stability.",
+      bg: "Използвайте масло за пържене за дълбоко пържене или високоолеиново масло за по-голяма термична стабилност.",
+      ua: "Використовуйте фритюрну олію для глибокого смаження або високоолеїнову олію для кращої термостійкості.",
     },
   },
   {
     id: 3,
     name: {
-      en: "Palm Oil and Margarine",
-      bg: "Палмово масло и маргарин",
-      ua: "Пальмове масло і маргарин",
+      en: "High-Oleic Oil",
+      bg: "Високоолеиново Oлио",
+      ua: "Олія Високоолеїнова",
     },
     image: "/images/palm-oil.jpg",
     description: {
-      en: `Palm Oil and Margarine – are essential ingredients in many sectors of the food industry. They are widely used in the production of baked goods, confectionery, bread products, and various culinary creations. Palm oil, due to its thermal stability, is ideal for frying and baking, while margarine adds a delicate texture and rich flavor to baked goods.
-      \n\n UB Market LTD offers only high-quality products, collaborating with verified and reliable suppliers. We guarantee that our palm oil and margarine meet all quality and safety standards, making them an excellent choice for your production needs.
-      \n\n Order our products, and you will receive not only a top-quality product but also professional service. UB Market LTD – your trusted partner in the food ingredient market!`,
-      bg: `Палмово масло и маргарин – са незаменими съставки в много сектори на хранителната индустрия. Те се използват широко в производството на печива, сладкарски изделия, хлебни продукти и различни кулинарни творения. Палмовото масло, поради своята термична стабилност, е идеално за пържене и печене, докато маргаринът добавя нежна текстура и богат вкус на печивата.
-      \n\n UB Market LTD предлага само висококачествени продукти, като си сътрудничи с проверени и надеждни доставчици. Гарантираме, че нашето палмово масло и маргарин отговарят на всички стандарти за качество и безопасност, което ги прави отличен избор за вашите производствени нужди.
-      \n\n Поръчайте нашите продукти и ще получите не само продукт с високо качество, но и професионално обслужване. UB Market LTD – вашият надежден партньор на пазара на хранителни съставки!`,
-      ua: `Пальмове масло і маргарин – це незамінні інгредієнти у багатьох галузях харчової промисловості. Вони широко використовуються в виробництві випічки, кондитерських виробів, хлібобулочних продуктів, а також у виготовленні різноманітних кулінарних виробів. Пальмове масло завдяки своїй термостабільності ідеально підходить для смаження і випікання, а маргарин додає випічці ніжну текстуру і насичений смак.
-      \n\n UB Market LTD пропонує само високоякісні продукти, співпрацюючи з перевіреними і надійними постачальниками. Ми гарантуємо, що наше пальмове масло та маргарин відповідають усім стандартам якості та безпеки, що робить їх чудовим вибором для вашого виробництва.
-      \n\n Замовляйте продукцію у нас, і ви отримаєте не тільки першокласний продукт, але й професійний сервіс. UB Market LTD — ваш надійний партнер на ринку харчових інгредієнтів!`,
+      en: `HIGH OLEIC OIL - A product rich in beneficial oleic acid, widely used in cooking: baking, frying, deep-frying, and in bread, confectionery, salads, sauces, and appetizers. It is also consumed as a dietary supplement, a multivitamin source, and for topical treatment. 
+      \n\n HIGH OLEIC OIL -  Произведено от специални сортове слънчоглед с високо олеинова киселина (76-90%), то се отличава сред растителните масла. Съдържа малко наситени мазнини (10%) и е богат на витамин Е – естествен антиоксидант. Омега-3 понижава холестерола и укрепва имунитета, а Омега-9 подпомага сърдечната дейност. Лесно усвоим, той е естествено превантивно средство. Благодарение на високото съдържание на полиненаситени киселини, има отлична термоустойчивост (точка на дим 240°C) и срок на годност до 24 месеца.`,
+      bg: `HIGH OLEIC OIL - Продукт, богат на полезна олеинова киселина, широко използван в кулинарията: печене, пържене, дълбоко пържене, както и в хляб, сладкарски изделия, салати, сосове и предястия. Консумира се и като хранителна добавка, източник на мултивитамини и за локално лечение.
+      \n\nHIGH OLEIC OIL - Произведено от специални сортове слънчоглед с високо олеинова киселина (76-90%), то се отличава сред растителните масла. Съдържа малко наситени мазнини (10%) и е богат на витамин Е – естествен антиоксидант. Омега-3 понижава холестерола и укрепва имунитета, а Омега-9 подпомага сърдечната дейност. Лесно усвоим, той е естествено превантивно средство. Благодарение на високото съдържание на полиненаситени киселини, има отлична термоустойчивост (точка на дим 240°C) и срок на годност до 24 месеца.`,
+      ua: `HIGH OLEIC OIL - Продукт із високим вмістом олеїнової кислоти, широко застосовується у випіканні, смаженні, фритюрі, хлібопекарстві, кондитерських виробах, салатах, соусах і закусках. Також використовується як дієтична добавка, джерело мультивітамінів та для місцевого застосування. 
+      \n\n HIGH OLEIC OIL - Виготовлена зі спеціальних сортів соняшника з високим вмістом олеїнової кислоти (76-90%), має переваги серед рослинних олій. Відзначається низьким рівнем насичених жирів (10%) і високим вмістом вітаміну E – природного антиоксиданту. Омега-3 знижує холестерин і зміцнює імунітет, а Омега-9 покращує роботу серця і судин. Добре засвоюється організмом і є природним профілактичним засобом. Завдяки високому рівню поліненасичених кислот має термостійкість (240°C) і зберігається до 24 місяців.`,
+    },
+    safety: {
+      en: "Do not exceed 240°C to maintain nutritional benefits; store in a cool, dark place to prevent oxidation.",
+      bg: "Не превишавайте 240°C, за да запазите хранителните ползи; съхранявайте на хладно и тъмно място, за да предотвратите окисляване.",
+      ua: "Не перевищуйте 240°C, щоб зберегти поживні властивості; зберігайте в прохолодному темному місці, щоб уникнути окислення.",
+    },
+    alternative: {
+      en: "Use Frying Oil for cost-effective deep frying.",
+      bg: "Използвайте масло за пържене за икономично дълбоко пържене.",
+      ua: "Використовуйте фритюрну олію для економічного глибокого смаження.",
     },
   },
   {
     id: 4,
     name: {
-      en: "Sugar",
-      bg: "Палмово масло и маргарин",
-      ua: "Пальмове масло і маргарин",
+      en: "Crystalline Sugar",
+      bg: "Кристална Захар",
+      ua: "Цукор Кристалічний",
     },
     image: "/images/sugar.jpg",
     description: {
-      en: `Sugar of the highest quality from UB Market LTD is a product that meets all standards and quality norms.
-
-      \n\n Our sugar is certified and comes with all necessary documents confirming its safety and compliance with international requirements. This sugar is ideal for use in the food industry as well as at home. Thanks to strict quality control, our customers receive only pure, white sugar without impurities.
-
-      \n\n Order sugar from UB Market LTD and get a high-quality product on favorable terms. We guarantee timely delivery and professional service. UB Market LTD – your reliable supplier!`,
-      bg: `Захар с най-високо качество от UB Market LTD е продукт, който отговаря на всички стандарти и норми за качество.
-      
-      \n\nНашата захар е сертифицирана и идва с всички необходими документи, потвърждаващи нейната безопасност и съответствие с международните изисквания. Тази захар е идеална за употреба в хранителната индустрия, както и в дома. Благодарение на строгия контрол на качеството, нашите клиенти получават само чиста, бяла захар без примеси.
-      
-      \n\nПоръчайте захар от UB Market LTD и получете висококачествен продукт на изгодни условия. Гарантираме навременна доставка и професионално обслужване. UB Market LTD – вашият надежден доставчик!`,
-      ua: `Цукор найвищої якості від UB Market LTD — це продукт, який відповідає всім стандартам і нормам якості.
-      
-      \n\nНаш цукор сертифікований і має всі необхідні документи, що підтверджують його безпеку та відповідність міжнародним вимогам. Цей цукор ідеально підходить для використання в харчовій промисловості, а також вдома. Завдяки строгому контролю якості, наші клієнти отримують тільки чистий, білий цукор без домішок.
-      
-      \n\nЗамовте цукор від UB Market LTD і отримайте високоякісний продукт на вигідних умовах. Гарантуємо своєчасну доставку та професійне обслуговування. UB Market LTD — ваш надійний постачальник!`,
+      en: `CRYSTALLINE SUGAR – Sugar of the 1st category (from sugar beets), which is a key ingredient in confectionery products. It is widely used as a sweetener for hot and cold beverages and also serves as a preservative for fruit and berry products such as jams, jellies, and marmalades. With its stable structure and high purity, this sugar ensures consistent sweetness and excellent product quality.
+      \n\n CRYSTALLINE SUGAR – Obtained through deep purification and special refining, ensuring uniform crystals and the absence of foreign impurities. Due to its natural origin, it is easily absorbed by the body, maintaining the necessary energy levels and serving as an important source of carbohydrates that support brain activity and sustain vital processes.`,
+      bg: `CRYSTALLINE SUGAR – Захар от 1-ва категория (от захарно цвекло), която е основна съставка в сладкарските изделия. Широко се използва като подсладител за топли и студени напитки, а също така изпълнява функцията на консервант за плодови и ягодови продукти като конфитюри, мармалади и желета. Благодарение на своята стабилна структура и висока чистота, тази захар осигурява постоянна сладост и отлично качество на продуктите.
+      \n\nCRYSTALLINE SUGAR – Получава се чрез дълбоко пречистване и специална рафинация, което гарантира еднородност на кристалите и липса на чужди примеси. Благодарение на естествения си произход, тя лесно се усвоява от организма, поддържа необходимото ниво на енергия и е важен източник на въглехидрати, които подпомагат мозъчната дейност и осигуряват жизненоважни процеси.`,
+      ua: `CRYSTALLINE SUGAR – Цукор 1 категорії (із цукрових буряків), який є основним інгредієнтом у кондитерських виробах, широко використовується як підсолоджувач для гарячих та холодних напоїв, а також виконує функцію консерванта для фруктових і ягідних продуктів, таких як варення, джеми, желе. Маючи стабільну структуру та високу чистоту, цей цукор забезпечує стійку солодкість та відмінну якість продуктів.
+      \n\nCRYSTALLINE SUGAR – отримується шляхом глибокої очистки та спеціального рафінування, що гарантує однорідність кристалів та відсутність сторонніх домішок. Завдяки природному походженню, він легко засвоюється організмом, підтримуючи необхідний рівень енергії та є важливим джерелом вуглеводів, які сприяють активній роботі мозку та забезпечують життєві процеси.`,
+    },
+    safety: {
+      en: "Avoid excessive consumption to prevent health issues; store in a dry place to avoid clumping.",
+      bg: "Избягвайте прекомерна консумация, за да предотвратите здравословни проблеми; съхранявайте на сухо място, за да избегнете слепване.",
+      ua: "Уникайте надмірного вживання, щоб запобігти проблемам зі здоров’ям; зберігайте в сухому місці, щоб уникнути злипання.",
+    },
+    alternative: {
+      en: "Use stevia or honey for a healthier sweetener option.",
+      bg: "Използвайте стевия или мед за по-здравословен подсладител.",
+      ua: "Використовуйте стевію або мед як здоровішу альтернативу підсолоджувачу.",
     },
   },
   {
     id: 5,
-    name: {
-      en: "Powdered Milk",
-      bg: "Сухо мляко",
-      ua: "Порошкове молоко",
-    },
-    image: "/images/dry-milk.jpg",
-    description: {
-      en: `UHT Milk 3.5%, 1L – is a top-quality product that provides a long shelf life without losing its nutritional properties. 
-      \n\n Thanks to modern ultra-high-temperature (UHT) processing technology, the milk retains its natural taste, beneficial vitamins, and minerals. It is ideal for use in cooking, baking, preparing coffee, sauces, and many other dishes. This milk easily dissolves without leaving lumps and can be an indispensable assistant in the food industry’s production processes. You can purchase UHT Milk 3.5%, 1L from UB Market LTD. 
-      \n\n We guarantee high product quality and offer favorable terms for cooperation. Choose a reliable supplier – UB Market LTD!`,
-      bg: `UHT Мляко 3.5%, 1L – е продукт с високо качество, който осигурява дълъг срок на годност, без да губи хранителните си свойства. 
-      \n\n Благодарение на съвременната технология за ултрависокотемпературна (UHT) обработка, млякото запазва естествения си вкус, полезните витамини и минерали. Идеално е за употреба при готвене, печене, приготвяне на кафе, сосове и много други ястия. Това мляко лесно се разтваря, без да оставя бучки и може да бъде незаменим помощник в производствените процеси на хранителната индустрия. Можете да закупите UHT Мляко 3.5%, 1L от UB Market LTD. 
-      \n\n Гарантираме високо качество на продукта и предлагаме изгодни условия за сътрудничество. Изберете надежден доставчик – UB Market LTD!`,
-      ua: `UHT Молоко 3.5%, 1L – це продукт високої якості, який забезпечує тривалий термін зберігання без втрати своїх харчових властивостей. 
-      \n\n Завдяки сучасній технології ультра-високої температурної (UHT) обробки, молоко зберігає свій природний смак, корисні вітаміни та мінерали. Ідеально підходить для використання у приготуванні їжі, випічці, приготуванні кави, соусів та багатьох інших страв. Це молоко легко розчиняється без утворення грудок і може бути незамінним помічником у виробничих процесах харчової промисловості. Ви можете придбати UHT Молоко 3.5%, 1L у UB Market LTD. 
-      \n\n Ми гарантуємо високу якість продукції і пропонуємо вигідні умови для співпраці. Оберіть надійного постачальника – UB Market LTD!`,
-    },
-  },
-  {
-    id: 6,
     name: {
       en: "Mayonnaise",
       bg: "Майонеза",
@@ -129,18 +146,25 @@ export const products: IProduct[] = [
     },
     image: "/images/mayonnaise.jpg",
     description: {
-      en: `Mayonnaise 67% PC-4.5 kg, KOROLIVSKIY SMAK – is a top-quality product designed to meet the needs of both home and professional kitchens. 
-      \n\n With its rich flavor and thick consistency, this mayonnaise is perfect for preparing salads, sauces, marinades, and other culinary masterpieces. The product contains an optimal fat content (67%), providing dishes with a rich taste and a smooth texture. 
-      The quality of KOROLIVSKIY SMAK is backed by years of consumer trust. You can purchase the 67% PC-4.5 kg mayonnaise from UB Market LTD at a competitive price. 
-      \n\n We offer great terms for our customers and guarantee high-quality products and first-class service.`,
-      bg: `Майонеза 67% PC-4.5 кг, KOROLIVSKIY SMAK – е продукт с високо качество, проектиран да отговори на нуждите както на домашните, така и на професионалните кухни. 
-      \n\n Със своя богат вкус и гъста консистенция, тази майонеза е идеална за приготвяне на салати, сосове, маринати и други кулинарни шедьоври. Продуктът съдържа оптимално съдържание на мазнини (67%), осигурявайки на ястията богат вкус и гладка текстура. 
-      Качеството на KOROLIVSKIY SMAK е подкрепено от години на доверие от потребителите. Можете да закупите майонеза 67% PC-4.5 кг от UB Market LTD на конкурентна цена. 
-      \n\n Предлагаме отлични условия за нашите клиенти и гарантираме висококачествени продукти и обслужване от първа класа.`,
-      ua: `Майонез 67% PC-4.5 кг, KOROLIVSKIY SMAK – це продукт високої якості, розроблений для задоволення потреб як домашніх, так і професійних кухонь. 
-      \n\n Завдяки своєму багатому смаку та густій консистенції, цей майонез ідеально підходить для приготування салатів, соусів, маринадів та інших кулінарних шедеврів. Продукт містить оптимальний вміст жиру (67%), що надає стравам насиченого смаку та гладкої текстури. 
-      Якість KOROLIVSKIY SMAK підтверджується багаторічною довірою споживачів. Ви можете придбати майонез 67% PC-4.5 кг у UB Market LTD за конкурентоспроможною ціною. 
-      \n\n Ми пропонуємо чудові умови для наших клієнтів та гарантуємо високоякісні продукти та обслуговування першого класу.`,
+      en: `PREMIUM MAYONNAISE – a classic product used in the preparation of numerous dishes and salads, as well as a base for sauces or as a standalone sauce. It is a versatile ingredient that enhances dishes with a distinct flavor, delicate texture, and a harmonious balance between spiciness and smoothness.
+      \n\n PREMIUM MAYONNAISE – is produced using a traditional recipe with natural ingredients, containing an optimal fat content of 67% and meeting high-quality standards. Only high-quality oil, fresh egg products, and natural spices are used in the production process. Full automation ensures a stable texture and impeccable product quality.
+      \n\nThe assortment also includes a vegan mayonnaise, made from plant-based ingredients without any animal-derived products, making it an ideal choice for people following special diets.`,
+      bg: `PREMIUM MAYONNAISE – класически продукт, използван в приготвянето на множество ястия и салати, както и като основа за сосове или самостоятелен сос. Това е универсална съставка, която придава на ястията изразителен вкус, нежна текстура и хармоничен баланс между пикантност и мекота. 
+      \n\n "PREMIUM MAYONNAISE" – се произвежда по традиционна рецепта с натурални съставки, съдържа оптимално съдържание на мазнини 67% и отговаря на високи стандарти за качество. В процеса на производство се използват само висококачествено масло, пресни яйчни продукти и натурални подправки. Пълната автоматизация на производството осигурява стабилна текстура и безупречно качество на продукта.
+      \n\nВ асортимента има и веган майонеза, направена на растителна основа без животински продукти, което я прави идеален избор за хора, които спазват специални диети.`,
+      ua: `PREMIUM MAYONNAISE – класичний продукт, що використовується у приготуванні численних страв та салатів, а також як основа для соусів чи окремий соус. Це універсальний інгредієнт, що надає стравам вираженого смаку, ніжної текстури та гармонійного балансу між гостротою та м'якістю.
+      \n\nPREMIUM MAYONNAISE – виробляється за традиційною рецептурою з натуральних інгредієнтів, має оптимальну масову частку жиру 67% та відповідає високим стандартам якості. У процесі виготовлення використовуються лише високоякісна олія, свіжі яєчні продукти та натуральні спеції. Завдяки повній автоматизації виробництва досягається стабільна текстура та бездоганна якість продукту.
+      \n\nВ асортименті представлений також веганський майонез, виготовлений на основі рослинних інгредієнтів без використання продуктів тваринного походження, що робить його ідеальним вибором для людей, які дотримуються спеціальних дієт.`,
+    },
+    safety: {
+      en: "Refrigerate after opening; avoid if allergic to eggs (for non-vegan version).",
+      bg: "Съхранявайте в хладилник след отваряне; избягвайте, ако сте алергични към яйца (за невеганската версия).",
+      ua: "Зберігайте в холодильнику після відкриття; уникайте, якщо маєте алергію на яйця (для невеганської версії).",
+    },
+    alternative: {
+      en: "Use vegan mayonnaise for egg-free diets or yogurt for a lighter option.",
+      bg: "Използвайте веганска майонеза за диети без яйца или кисело мляко за по-лека алтернатива.",
+      ua: "Використовуйте веганський майонез для дієт без яєць або йогурт як легшу альтернативу.",
     },
   },
 ];

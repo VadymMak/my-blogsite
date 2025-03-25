@@ -54,11 +54,8 @@ const Contacts: React.FC = () => {
         <div className={styles.contactItem}>
           <h3>{t("address")}</h3>
           <p>
-            U B Market PLLC Legal address: Bulgaria, Varna, 9010, Sirma Voivoda
-            St., b.1, ap. 21;
-          </p>
-          <p>
-            {t("companyInfo", { companyNr: "207067808", vat: "BG207067808" })}
+            Bulgaria, Varna, 9010, Sirma Voivoda St., b.1, ap. 21,
+            <strong> UB Market LTD</strong>
           </p>
         </div>
         <div className={styles.contactItem}>
