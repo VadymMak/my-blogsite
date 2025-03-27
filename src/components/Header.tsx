@@ -19,13 +19,15 @@ const Header: React.FC<HeaderProps> = React.memo(
     return (
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img
-            src="/icons/logo.svg"
-            // src="/images/logo.png"
-            alt="UB Market Logo"
-            className={styles.logoImage}
-            loading="lazy"
-          />
+          <Link to="/">
+            <img
+              // src="/icons/logo.svg"
+              src="/icons/logo.jpeg"
+              alt="UB Market Logo"
+              className={styles.logoImage}
+              loading="lazy"
+            />
+          </Link>
         </div>
 
         <nav className={styles.nav}>
