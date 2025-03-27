@@ -29,7 +29,7 @@ export const products: IProduct[] = [
     id: 1,
     name: {
       en: "Frying Oil",
-      bg: "Масло за пържене",
+      bg: "Олио за пържене",
       ua: "Олія Фритюрна:",
     },
     image: "/images/frying-oil.jpg",
