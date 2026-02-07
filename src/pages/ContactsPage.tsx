@@ -23,7 +23,6 @@ const ContactsPage: React.FC = () => {
           content={t("contactMetaKeywords") + ", contact, UB Market, Varna"}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ub-markets.com/contact" />
         <meta
           property="og:title"
           content="Contact UB Market | Get Assistance and Find Our Location"

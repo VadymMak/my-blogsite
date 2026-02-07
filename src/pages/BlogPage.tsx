@@ -72,7 +72,6 @@ const BlogPage: React.FC = () => {
         />
         <meta property="og:url" content="https://ub-market.com/blog" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ub-market.com/blog" />
         
       </Helmet>
 

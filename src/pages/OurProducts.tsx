@@ -30,7 +30,6 @@ const OurProducts: React.FC = () => {
           name="keywords"
           content="products, quality products, UB Market, vegetable oil, palm oil, margarine, sugar, dairy products, condiments, cooking ingredients"
         />
-        <link rel="canonical" href="https://ub-market.com/our-products" />
         <meta property="og:title" content={t("ourProducts")} />
         <meta
           property="og:description"

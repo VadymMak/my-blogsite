@@ -30,7 +30,6 @@ const Contacts: React.FC = () => {
           }
         />
         <meta property="og:url" content="https://ub-market.com/contacts" />
-        <link rel="canonical" href="https://ub-market.com/contacts" />
        
       </Helmet>
 
