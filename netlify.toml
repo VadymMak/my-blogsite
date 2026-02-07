@@ -2,6 +2,11 @@
   command = "npm run build"
   publish = "build"
 
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
