@@ -36,7 +36,7 @@ const OurProducts: React.FC = () => {
           property="og:description"
           content="Discover our wide range of quality products at UB Market. Browse our selection and find the perfect item for you."
         />
-        <meta property="og:image" content="/images/logo.png" />
+        <meta property="og:image" content="/images/logo.webp" />
         <meta property="og:url" content="https://ub-market.com/our-products" />
         <script type="application/ld+json">
           {`
@@ -45,7 +45,7 @@ const OurProducts: React.FC = () => {
               "@type": "Product",
               "name": "${t("ourProducts")}",
               "description": "Discover our wide range of quality products at UB Market.",
-              "image": "https://ub-market.com/images/logo.png",
+              "image": "https://ub-market.com/images/logo.webp",
               "brand": {
                 "@type": "Brand",
                 "name": "UB Market"

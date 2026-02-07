@@ -21,7 +21,7 @@ const Layout = () => {
   }, [location]);
 
   const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang).catch((error) => {
+    i18n.changeLanguage(lang).catch((error: Error) => {
       console.error("Error changing language:", error);
     });
   };

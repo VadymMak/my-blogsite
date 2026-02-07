@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = React.memo(
           <Link to="/">
             <img
               // src="/icons/logo.svg"
-              src="/icons/logo.jpeg"
+              src="/icons/logo.webp"
               alt="UB Market Logo"
               className={styles.logoImage}
               loading="lazy"

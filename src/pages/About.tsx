@@ -34,7 +34,7 @@ const About: React.FC = () => {
             "@type": "Organization",
             name: "Your Company Name",
             url: "https://yourwebsite.com",
-            logo: "https://yourwebsite.com/images/logo.png",
+            logo: "https://yourwebsite.com/images/logo.webp",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+1-234-567-890",

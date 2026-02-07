@@ -32,7 +32,7 @@ export const products: IProduct[] = [
       bg: "Олио за пържене",
       ua: "Олія Фритюрна:",
     },
-    image: "/images/frying-oil.jpg",
+    image: "/images/frying-oil.webp",
     description: {
       en: `DEEP FRYING OIL – is a product adapted to modern culinary trends for deep-frying. It heats up quickly and allows you to prepare delicious dishes with a golden crust, but without excess fat and specific odors. The oil is designed for multiple uses, even when frying different products consecutively – their smells do not mix. 
       \n\n DEEP FRYING OIL is produced using a unique recipe from the finest sunflower oil, which undergoes an extra-refining process (RDBW). The addition of an antifoaming agent (E900) and antioxidants (E320, E321) makes the oil thermally stable, with a smoke point of 225°C and above. 
@@ -63,7 +63,7 @@ export const products: IProduct[] = [
       bg: "Кулинарно олио",
       ua: "Олія Кулінарна:",
     },
-    image: "/images/sun-flower.jpg",
+    image: "/images/sun-flower.webp",
     description: {
       en: `REFINED SUNFLOWER OIL – a premium-class oil designed for frying foods (meat, fish, vegetables), adding to baked goods, as well as for salad dressings and sauce preparation. It can be used for dietary and vegetarian nutrition. Contains beneficial vitamins A, E, and D, as well as a high amount of polyunsaturated fatty acids. 
       \n\n REFINED SUNFLOWER OIL - Produced from selected sunflower seeds through raw pressing, which preserves the maximum amount of beneficial nutrients. It undergoes deep refining, as well as deodorization, sedimentation, and winterization processes. The oil has a clear consistency without any sediment or impurities, and thanks to deodorization, it has no seed smell or taste.`,
@@ -90,7 +90,7 @@ export const products: IProduct[] = [
       bg: "Високоолеиново Oлио",
       ua: "Олія Високоолеїнова",
     },
-    image: "/images/palm-oil.jpg",
+    image: "/images/palm-oil.webp",
     description: {
       en: `HIGH OLEIC OIL - A product rich in beneficial oleic acid, widely used in cooking: baking, frying, deep-frying, and in bread, confectionery, salads, sauces, and appetizers. It is also consumed as a dietary supplement, a multivitamin source, and for topical treatment. 
       \n\n HIGH OLEIC OIL -  Произведено от специални сортове слънчоглед с високо олеинова киселина (76-90%), то се отличава сред растителните масла. Съдържа малко наситени мазнини (10%) и е богат на витамин Е – естествен антиоксидант. Омега-3 понижава холестерола и укрепва имунитета, а Омега-9 подпомага сърдечната дейност. Лесно усвоим, той е естествено превантивно средство. Благодарение на високото съдържание на полиненаситени киселини, има отлична термоустойчивост (точка на дим 240°C) и срок на годност до 24 месеца.`,
@@ -117,7 +117,7 @@ export const products: IProduct[] = [
       bg: "Кристална Захар",
       ua: "Цукор Кристалічний",
     },
-    image: "/images/sugar.jpg",
+    image: "/images/sugar.webp",
     description: {
       en: `CRYSTALLINE SUGAR – Sugar of the 1st category (from sugar beets), which is a key ingredient in confectionery products. It is widely used as a sweetener for hot and cold beverages and also serves as a preservative for fruit and berry products such as jams, jellies, and marmalades. With its stable structure and high purity, this sugar ensures consistent sweetness and excellent product quality.
       \n\n CRYSTALLINE SUGAR – Obtained through deep purification and special refining, ensuring uniform crystals and the absence of foreign impurities. Due to its natural origin, it is easily absorbed by the body, maintaining the necessary energy levels and serving as an important source of carbohydrates that support brain activity and sustain vital processes.`,
@@ -144,7 +144,7 @@ export const products: IProduct[] = [
       bg: "Майонеза",
       ua: "Майонез",
     },
-    image: "/images/mayonnaise.jpg",
+    image: "/images/mayonnaise.webp",
     description: {
       en: `PREMIUM MAYONNAISE – a classic product used in the preparation of numerous dishes and salads, as well as a base for sauces or as a standalone sauce. It is a versatile ingredient that enhances dishes with a distinct flavor, delicate texture, and a harmonious balance between spiciness and smoothness.
       \n\n PREMIUM MAYONNAISE – is produced using a traditional recipe with natural ingredients, containing an optimal fat content of 67% and meeting high-quality standards. Only high-quality oil, fresh egg products, and natural spices are used in the production process. Full automation ensures a stable texture and impeccable product quality.

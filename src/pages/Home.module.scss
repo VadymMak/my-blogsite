@@ -1,11 +1,11 @@
 /* src/pages/Home.module.scss */
-//background-image: url("../../public/images/banner.jpg");
+//background-image: url("../../public/images/banner.webp");
 /* src/pages/Home.module.scss */
 .home {
   position: relative;
   /* Banner Section */
   .banner {
-    background-image: url("../../public/images/top.jpg");
+    background-image: url("../../public/images/top.webp");
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -33,7 +33,7 @@
 
       /* Banner Section */
       .banner {
-        background-image: url("../../public/images/top.jpg");
+        background-image: url("../../public/images/top.webp");
         background-size: cover;
         background-position: center;
         height: var(--banner-height-desktop);

@@ -74,7 +74,7 @@ const Carousel: React.FC = () => {
         />
         <meta
           property="og:image"
-          content="https://ub-market.com/images/logo.png"
+          content="https://ub-market.com/images/logo.webp"
         />
         <meta property="og:url" content="https://ub-market.com/" />
         <link rel="canonical" href="https://ub-market.com/products" />
@@ -86,7 +86,7 @@ const Carousel: React.FC = () => {
             "@type": "Product",
             name: t("ourProducts"),
             description: t("exploreProductsDescription"),
-            image: "https://ub-market.com/images/logo.png",
+            image: "https://ub-market.com/images/logo.webp",
             url: "https://ub-market.com/products",
             mainEntityOfPage: {
               "@type": "WebPage",
