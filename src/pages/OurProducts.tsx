@@ -78,6 +78,8 @@ const OurProducts: React.FC = () => {
                 src={product.image}
                 alt={product.name[currentLang]}
                 loading="lazy"
+                width={600}
+                height={400}
               />
             </div>
             <div className={styles.productInfo}>

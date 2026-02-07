@@ -49,10 +49,15 @@
 
     .productImage {
       flex: 1;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+
       img {
         max-width: 100%;
-        border-radius: 10px; // Rounded corners for images
-        display: block; // Ensures the image does not have additional spacing below
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
       }
     }
 

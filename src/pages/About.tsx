@@ -32,8 +32,8 @@ const About: React.FC = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Your Company Name",
-            url: "https://yourwebsite.com",
+            name: "UB Market LTD",
+            url: "https://ub-market.com",
             logo: "https://yourwebsite.com/images/logo.webp",
             contactPoint: {
               "@type": "ContactPoint",
@@ -55,11 +55,6 @@ const About: React.FC = () => {
           <h1 className={styles.title}>{t("aboutUs")}</h1>
           <p className={styles.intro}>{t("aboutUsTitle")}</p>
         </section>
-
-        {/* <section className={styles.section}>
-          <h2 className={styles.title}>{t("ourMission")}</h2>
-          <p>{t("ourMissionTitle")}</p>
-        </section> */}
 
         <section className={styles.section}>
           <h2 className={styles.title}>{t("ourVision")}</h2>

@@ -31,19 +31,7 @@ const Contacts: React.FC = () => {
         />
         <meta property="og:url" content="https://ub-market.com/contacts" />
         <link rel="canonical" href="https://ub-market.com/contacts" />
-        <script>
-          {`
-            // SEO Optimization Script
-            (function() {
-              var meta = document.createElement('meta');
-              meta.name = 'robots';
-              meta.content = 'index, follow';
-              document.getElementsByTagName('head')[0].appendChild(meta);
-              
-              console.log('SEO Script executed: Page is indexable and follows links.');
-            })();
-          `}
-        </script>
+       
       </Helmet>
 
       <div className={styles["contacts-title"]}>

@@ -18,7 +18,7 @@ const PhoneIcon = () => {
     <>
       <div className={styles.phoneIcon}>
         <button onClick={handleOpenModal}>
-          <img src="/images/Phone_icon.webp" alt="Phone Icon" />
+          <img src="/images/Phone_icon.webp" alt="Phone Icon" width={100} height={100} />
         </button>
       </div>
       <CartModal isOpen={isModalOpen} onClose={handleCloseModal} />

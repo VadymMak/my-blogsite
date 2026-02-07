@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1a1a2e" />
 
-    <!-- SEO: Title (50-60 символов) -->
-    <title>UB Market | Quality Food Products — Wholesale & Retail in Europe</title>
+    <!-- Preconnect for Google Analytics (performance boost) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
 
-    <!-- SEO: Description (150-160 символов) -->
+    <!-- Preload critical logo image (above the fold) -->
+    <link rel="preload" as="image" href="/icons/logo.webp" />
+
+    <!-- SEO Meta Tags -->
+    <title>UB Market | Quality Food Products — Wholesale &amp; Retail in Europe</title>
     <meta
       name="description"
-      content="UB Market — wholesale and retail food products in Bulgaria and Europe. Sunflower oil, frying oil, sugar, mayonnaise, dairy. Quality guaranteed."
+      content="UB Market supplies premium sunflower oil, frying oil, sugar, mayonnaise &amp; dairy across Europe. Wholesale &amp; retail from Bulgaria. Request a quote today!"
     />
     <meta
       name="keywords"
-      content="UB Market, food products, sunflower oil, frying oil, vegetable oil, sugar, mayonnaise, wholesale food, Bulgaria, Europe, quality food"
+      content="UB Market, food products, sunflower oil, frying oil, vegetable oil, sugar, mayonnaise, wholesale food, Bulgaria food supplier, European food distributor"
     />
     <meta name="author" content="UB Market LTD" />
     <meta name="robots" content="index, follow" />
@@ -23,12 +28,12 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ub-market.com/" />
 
-    <!-- Open Graph (Facebook, LinkedIn) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="UB Market | Quality Food Products for Europe" />
+    <meta property="og:title" content="UB Market | Quality Food Products — Wholesale &amp; Retail" />
     <meta
       property="og:description"
-      content="Wholesale and retail food products in Bulgaria and Europe. Sunflower oil, frying oil, sugar, mayonnaise, dairy products."
+      content="Premium sunflower oil, frying oil, sugar, mayonnaise &amp; dairy. Wholesale &amp; retail from Bulgaria across Europe."
     />
     <meta property="og:image" content="https://ub-market.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -38,22 +43,23 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="UB Market | Quality Food Products for Europe" />
+    <meta name="twitter:title" content="UB Market | Quality Food Products" />
     <meta
       name="twitter:description"
-      content="Wholesale and retail food products in Bulgaria and Europe. Sunflower oil, frying oil, sugar, mayonnaise, dairy products."
+      content="Premium food products — wholesale &amp; retail from Bulgaria across Europe."
     />
     <meta name="twitter:image" content="https://ub-market.com/og-image.jpg" />
 
     <!-- Hreflang -->
     <link rel="alternate" href="https://ub-market.com" hreflang="en" />
-    <link rel="alternate" href="https://ub-market.com" hreflang="bg" />
-    <link rel="alternate" href="https://ub-market.com" hreflang="uk" />
+    <link rel="alternate" href="https://ub-market.com/bg" hreflang="bg" />
+    <link rel="alternate" href="https://ub-market.com/uk" hreflang="uk" />
 
     <!-- Favicon -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
+    <!-- Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- Schema.org Structured Data -->
@@ -63,15 +69,11 @@
         "@type": "Organization",
         "name": "UB Market LTD",
         "url": "https://ub-market.com",
-        "logo": "https://ub-market.com/og-image.jpg",
-        "description": "Wholesale and retail food products supplier in Bulgaria and Europe.",
+        "logo": "https://ub-market.com/icons/logo.webp",
+        "image": "https://ub-market.com/og-image.jpg",
+        "description": "Wholesale and retail supplier of quality food products in Europe",
         "telephone": "+359884469860",
         "email": "ubmarket2022@gmail.com",
-        "sameAs": [
-          "https://www.instagram.com/ub_market_ltd",
-          "https://t.me/ub_market_ltd",
-          "https://wa.me/+359884469860"
-        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Sirma Voivoda St., b.1, ap. 21",
@@ -79,6 +81,11 @@
           "postalCode": "9010",
           "addressCountry": "BG"
         },
+        "sameAs": [
+          "https://www.instagram.com/ub_market_ltd",
+          "https://t.me/ub_market_ltd",
+          "https://wa.me/+359884469860"
+        ],
         "areaServed": {
           "@type": "GeoCircle",
           "geoMidpoint": {
@@ -92,7 +99,7 @@
           "@type": "ContactPoint",
           "telephone": "+359884469860",
           "contactType": "Customer Service",
-          "areaServed": ["BG", "EU"],
+          "areaServed": "Europe",
           "availableLanguage": ["English", "Bulgarian", "Ukrainian"]
         }
       }

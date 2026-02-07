@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>&copy; 2024 UB Market LTD. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} UB Market LTD. All rights reserved.</p>
       </div>
     </footer>
   );

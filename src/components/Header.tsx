@@ -21,11 +21,12 @@ const Header: React.FC<HeaderProps> = React.memo(
         <div className={styles.logo}>
           <Link to="/">
             <img
-              // src="/icons/logo.svg"
               src="/icons/logo.webp"
               alt="UB Market Logo"
               className={styles.logoImage}
-              loading="lazy"
+              width={120}
+              height={80}
+              fetchPriority="high"
             />
           </Link>
         </div>
