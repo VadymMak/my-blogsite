@@ -3,56 +3,102 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#1a1a2e" />
 
+    <!-- SEO: Title (50-60 символов) -->
+    <title>UB Market | Quality Food Products — Wholesale & Retail in Europe</title>
+
+    <!-- SEO: Description (150-160 символов) -->
     <meta
       name="description"
-      content="UB Market - Quality food products including mayonnaise, vegetable oil, milk powder, and margarine."
+      content="UB Market — wholesale and retail food products in Bulgaria and Europe. Sunflower oil, frying oil, sugar, mayonnaise, dairy. Quality guaranteed."
     />
     <meta
       name="keywords"
-      content="UB Market, food products, mayonnaise, vegetable oil, milk powder, margarine, quality foods"
+      content="UB Market, food products, sunflower oil, frying oil, vegetable oil, sugar, mayonnaise, wholesale food, Bulgaria, Europe, quality food"
     />
+    <meta name="author" content="UB Market LTD" />
+    <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="UB Market" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ub-market.com/" />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="UB Market | Quality Food Products for Europe" />
     <meta
       property="og:description"
-      content="High-quality food products for consumers and businesses."
+      content="Wholesale and retail food products in Bulgaria and Europe. Sunflower oil, frying oil, sugar, mayonnaise, dairy products."
     />
-    <meta property="og:image" content="https://ub-market.com/logo192.png" />
-    <meta property="og:url" content="https://ub-market.com" />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ub-market.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ub-market.com/" />
+    <meta property="og:site_name" content="UB Market" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UB Market | Quality Food Products for Europe" />
+    <meta
+      name="twitter:description"
+      content="Wholesale and retail food products in Bulgaria and Europe. Sunflower oil, frying oil, sugar, mayonnaise, dairy products."
+    />
+    <meta name="twitter:image" content="https://ub-market.com/og-image.jpg" />
+
+    <!-- Hreflang -->
     <link rel="alternate" href="https://ub-market.com" hreflang="en" />
-    <link rel="alternate" href="https://ub-market.com/bg" hreflang="bg" />
+    <link rel="alternate" href="https://ub-market.com" hreflang="bg" />
+    <link rel="alternate" href="https://ub-market.com" hreflang="uk" />
 
+    <!-- Favicon -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>UB Market</title>
-
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "UB Market",
+        "name": "UB Market LTD",
         "url": "https://ub-market.com",
-        "logo": "%PUBLIC_URL%/logo192.png",
+        "logo": "https://ub-market.com/og-image.jpg",
+        "description": "Wholesale and retail food products supplier in Bulgaria and Europe.",
+        "telephone": "+359884469860",
+        "email": "ubmarket2022@gmail.com",
         "sameAs": [
-          "https://wa.me/your_phone_number",
           "https://www.instagram.com/ub_market_ltd",
-          "https://t.me/your_username"
+          "https://t.me/ub_market_ltd",
+          "https://wa.me/+359884469860"
         ],
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Sofia",
+          "streetAddress": "Sirma Voivoda St., b.1, ap. 21",
+          "addressLocality": "Varna",
+          "postalCode": "9010",
           "addressCountry": "BG"
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.2258,
+            "longitude": 27.7803
+          },
+          "geoRadius": "3000 km"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+359884469860",
+          "contactType": "Customer Service",
+          "areaServed": ["BG", "EU"],
+          "availableLanguage": ["English", "Bulgarian", "Ukrainian"]
         }
       }
     </script>
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Google Analytics 4 -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-XJDT86L2YW"
@@ -63,7 +109,6 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-XJDT86L2YW");
     </script>
   </head>

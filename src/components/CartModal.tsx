@@ -46,7 +46,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
         />
         <meta
           property="og:image"
-          content="https://ub-market.com/images/logo.png"
+          content="https://ub-market.com/images/logo.webp"
         />
         <meta property="og:url" content="https://ub-market.com/contact" />
         <script

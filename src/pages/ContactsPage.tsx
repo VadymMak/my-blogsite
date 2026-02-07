@@ -35,7 +35,7 @@ const ContactsPage: React.FC = () => {
         <meta property="og:url" content="https://ub-market.com/contact" />
         <meta
           property="og:image"
-          content="https://ub-market.com/images/logo.png"
+          content="https://ub-market.com/images/logo.webp"
         />
         <meta property="og:type" content="website" />
 
@@ -45,7 +45,7 @@ const ContactsPage: React.FC = () => {
             "@type": "Organization",
             name: "UB Market",
             url: "https://ub-market.com",
-            logo: "https://ub-market.com/images/logo.png",
+            logo: "https://ub-market.com/images/logo.webp",
             contactPoint: {
               "@type": "ContactPoint",
               telephone: "+359 8844 69860",

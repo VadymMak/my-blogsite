@@ -68,7 +68,7 @@ const BlogPage: React.FC = () => {
         />
         <meta
           property="og:image"
-          content="https://ub-market.com/images/logo.png"
+          content="https://ub-market.com/images/logo.webp"
         />
         <meta property="og:url" content="https://ub-market.com/blog" />
         <meta property="og:type" content="website" />
