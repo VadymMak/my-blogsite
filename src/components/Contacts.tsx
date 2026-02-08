@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet"; // Import Helmet for SEO
 import { useTranslation } from "react-i18next";
 import styles from "./Contacts.module.scss";
 
@@ -8,31 +7,6 @@ const Contacts: React.FC = () => {
 
   return (
     <section className={styles.contacts}>
-      <Helmet>
-        <title>{t("contactUs")}</title>
-        <meta
-          name="description"
-          content={
-            t("contactUsDescription") ||
-            "Contact UB Market for inquiries and support."
-          }
-        />
-        <meta
-          name="keywords"
-          content="UB Market, contact, address, email, phone, customer support"
-        />
-        <meta property="og:title" content={t("contactUs")} />
-        <meta
-          property="og:description"
-          content={
-            t("contactUsDescription") ||
-            "Contact UB Market for inquiries and support."
-          }
-        />
-        <meta property="og:url" content="https://ub-market.com/contacts" />
-       
-      </Helmet>
-
       <div className={styles["contacts-title"]}>
         <h2>{t("contactUs")}</h2>
       </div>

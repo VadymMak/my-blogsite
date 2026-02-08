@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.contact}>
           <h4>Contact Us</h4>
-          <p>Е-mail: ubmarket2022@gmail.com</p>
+          <p>E-mail: ubmarket2022@gmail.com</p>
           <p>
             Phone: +359 8844 69860:{" "}
             <a href="tel:+359884469860">

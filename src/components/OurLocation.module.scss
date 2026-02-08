@@ -1,12 +1,15 @@
 .map {
   position: relative;
-  background: url("../../public/images/our-location.webp") no-repeat center
-    center;
+  background: url("../../public/images/our-location.webp") no-repeat center center;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   padding: 50px 20px;
   text-align: center;
+
+  @media (min-width: 1024px) {
+    background-attachment: fixed;
+  }
 
   h2 {
     font-size: 36px;

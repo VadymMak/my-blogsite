@@ -3,7 +3,11 @@
   padding: 50px 0;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url("../../public/images/our-products.webp") no-repeat center center / cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
+
+  @media (min-width: 1024px) {
+    background-attachment: fixed;
+  }
 
   &::before {
     content: "";
@@ -12,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); // Overlay for text visibility
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
   }
 
@@ -25,9 +29,9 @@
     h2 {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #fff; // Ensures readability
+      color: #fff;
       margin-bottom: 10px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); // Enhances visibility
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     p {
@@ -83,9 +87,9 @@
         position: relative;
         z-index: 2;
         font-size: 1.5rem;
-        color: #fff; // Ensures visibility
+        color: #fff;
         font-weight: bold;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); // Enhances readability
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
       }
 
       &::before {

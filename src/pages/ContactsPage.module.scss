@@ -1,29 +1,20 @@
-// background: linear-gradient(black, transparent),
-//     url("../../public/images/contact-us.webp") no-repeat center center;
-//   background-size: cover;
-//   background-attachment: fixed;
-//   padding: 60px 20px; // Ensure enough padding for the header
-//   padding-top: 150px;
-//   color: $text-color;
-//   text-align: center; // Center all text
-
-// src/pages/ContactsPage.module.scss
-
-// src/pages/ContactsPage.module.scss
-
-$background-color: rgba(0, 0, 0, 0.8); // Change to black for contrast
-$text-color: white; // Set text color to white
-$header-color: gold; // Set header color to gold
+$background-color: rgba(0, 0, 0, 0.8);
+$text-color: white;
+$header-color: gold;
 
 .contactsPage {
   background: linear-gradient(black, transparent),
     url("../../public/images/contact-us.webp") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
-  padding: 60px 20px; // Ensure enough padding for the header
+  background-attachment: scroll;
+  padding: 60px 20px;
   padding-top: 150px;
   color: $text-color;
-  text-align: center; // Center all text
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    background-attachment: fixed;
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -35,7 +26,7 @@ $header-color: gold; // Set header color to gold
 
     h2 {
       font-size: 2rem;
-      color: $header-color; // Gold color for headers
+      color: $header-color;
       margin-bottom: 15px;
     }
 
@@ -47,38 +38,37 @@ $header-color: gold; // Set header color to gold
     ul {
       list-style: none;
       padding: 0;
-      display: flex; // Flexbox to align icons horizontally
-      justify-content: center; // Center the icons
-      margin-top: 20px; // Space between section text and icons
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
 
       li {
-        margin: 0 15px; // Horizontal spacing between icons
+        margin: 0 15px;
 
         a {
-          color: $header-color; // Change this to your desired icon color
-          font-size: 2.5rem; // Set the icon size here (make them bigger)
+          color: $header-color;
+          font-size: 2.5rem;
           transition: color 0.3s;
 
           &:hover {
-            color: darken($header-color, 10%); // Change hover color as desired
+            color: darken($header-color, 10%);
           }
         }
       }
     }
 
     .phoneIcon {
-      margin-left: 8px; // Adjust the spacing as needed
+      margin-left: 8px;
     }
 
     .map {
       width: 100%;
       max-width: 600px;
       height: 450px;
-      margin: 0 auto; // Center the map
+      margin: 0 auto;
     }
   }
 
-  // Responsive adjustments
   @media (max-width: 768px) {
     padding: 20px 10px;
     padding-top: 150px;
@@ -100,11 +90,11 @@ $header-color: gold; // Set header color to gold
     }
 
     ul {
-      flex-direction: column; // Stack icons vertically on smaller screens
+      flex-direction: column;
       margin-top: 10px;
 
       li {
-        margin: 10px 0; // Space between stacked icons
+        margin: 10px 0;
       }
     }
   }

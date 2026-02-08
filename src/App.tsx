@@ -3,19 +3,17 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { initGA } from "./analytics";
 
-import Layout from "./layouts/Layout"; // Your main layout component
-import NotFound from "./components/NotFound"; // Your 404 Not Found component
+import Layout from "./layouts/Layout";
+import NotFound from "./components/NotFound";
 
-import "./118n/i18n"; // Ensure your translation setup is loaded
+import "./118n/i18n";
 
-// Lazy load the components
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const OurProducts = lazy(() => import("./pages/OurProducts"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 
-// Define your routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,13 +26,12 @@ const router = createBrowserRouter([
       { path: "blog", element: <BlogPage /> },
     ],
   },
-  { path: "*", element: <NotFound /> }, // Fallback for unmatched routes
+  { path: "*", element: <NotFound /> },
 ]);
 
-// Main App Component
 function App() {
   useEffect(() => {
-    initGA(); // Инициализация GA
+    initGA(); // Initialize GA
   }, []);
 
   return (

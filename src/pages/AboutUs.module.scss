@@ -1,14 +1,17 @@
 .aboutUs {
   position: relative;
   width: 100%;
-  min-height: 700px; // Base min-height for larger screens
-  background: url("../../public/images/about-us.webp") no-repeat center center /
-    cover;
-  background-attachment: fixed;
+  min-height: 700px;
+  background: url("../../public/images/about-us.webp") no-repeat center center / cover;
+  background-attachment: scroll;
   display: flex;
-  justify-content: flex-start; // Align to the left
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
+
+  @media (min-width: 1024px) {
+    background-attachment: fixed;
+  }
 
   .overlay {
     position: absolute;
@@ -20,7 +23,7 @@
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start; // Align content to the left
+    justify-content: flex-start;
   }
 
   .content {
@@ -28,121 +31,118 @@
     z-index: 2;
     color: #fff;
     text-align: left;
-    padding: 40px; // Padding for breathing room
-    width: 100%; // Full width of the overlay
+    padding: 40px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; // Align items to the left
+    align-items: flex-start;
 
     h2 {
       font-size: 2.5rem;
-      margin-bottom: 30px; // Space below heading
-      text-align: center; // Center the title
-      width: 80%; // Match the text container width
-      max-width: 800px; // Cap the width to match textContainer
-      align-self: flex-start; // Align with the left edge of textContainer
-      margin-left: 10%; // Offset to center within the 80% width
+      margin-bottom: 30px;
+      text-align: center;
+      width: 80%;
+      max-width: 800px;
+      align-self: flex-start;
+      margin-left: 10%;
     }
   }
 
   .textContainer {
-    width: 80%; // Text takes up 80% of the page width
-    max-width: 800px; // Cap the width to prevent overflow
+    width: 80%;
+    max-width: 800px;
     display: flex;
-    flex-direction: column; // Stack text vertically
-    gap: 20px; // Space between paragraphs
+    flex-direction: column;
+    gap: 20px;
 
     p {
       font-size: 1.2rem;
-      margin: 0; // Remove default margins
-      line-height: 1.6; // Better readability
+      margin: 0;
+      line-height: 1.6;
       text-indent: 20px;
     }
   }
 
-  /* Intermediate Breakpoint (between desktop and mobile) */
   @media (max-width: 1100px) and (min-width: 769px) {
     .content {
-      padding: 30px; // Slightly reduce padding
+      padding: 30px;
 
       h2 {
-        width: 90%; // Match text container width
-        max-width: 650px; // Adjust max-width
-        font-size: 2.2rem; // Slightly smaller title
-        margin-left: 5%; // Adjust offset for narrower width
+        width: 90%;
+        max-width: 650px;
+        font-size: 2.2rem;
+        margin-left: 5%;
       }
     }
 
     .textContainer {
-      width: 90%; // Slightly wider to adapt
-      max-width: 650px; // Adjust max-width
+      width: 90%;
+      max-width: 650px;
 
       p {
-        font-size: 1.1rem; // Slightly smaller text
+        font-size: 1.1rem;
       }
     }
   }
 
-  /* Mobile Styles (768px and below) */
   @media (max-width: 768px) {
-    min-height: 700px; // Reduce min-height for smaller screens
+    min-height: 700px;
     height: auto;
     justify-content: center;
     text-align: center;
 
     .content {
-      padding: 20px 10px; // Adjust padding: more top/bottom, less left/right
-      align-items: center; // Center items on mobile
+      padding: 20px 10px;
+      align-items: center;
 
       h2 {
-        font-size: 2rem; // Smaller title on mobile
-        width: 90%; // Match text container width on mobile
-        max-width: 100%; // Full width within padding
-        margin-bottom: 20px; // Reduce space below
-        margin-left: 0; // No offset, fully centered
+        font-size: 2rem;
+        width: 90%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0;
       }
     }
 
     .textContainer {
-      width: 90%; // Wider on mobile for readability
-      max-width: 100%; // Full width within padding
-      gap: 15px; // Smaller gap on mobile
+      width: 90%;
+      max-width: 100%;
+      gap: 15px;
 
       p {
-        font-size: 1rem; // Smaller text on mobile
-        text-indent: 10px; // Smaller indent on mobile
+        font-size: 1rem;
+        text-indent: 10px;
       }
     }
   }
 
-  /* Extra Small Screens (below 590px) */
   @media (max-width: 590px) {
-    min-height: 650px; // Reduce height to adapt to content
-    height: auto; // Let the section grow with content
-    padding-top: 20px; // Add top padding to ensure title visibility
-    align-items: flex-start; // Start content from the top
+    min-height: 650px;
+    height: auto;
+    padding-top: 20px;
+    align-items: flex-start;
 
     .overlay {
-      align-items: flex-start; // Start from the top
+      align-items: flex-start;
     }
 
     .content {
-      padding: 15px 10px; // Further reduce padding
-      min-height: unset; // Remove any inherited min-height
+      padding: 15px 10px;
+      min-height: unset;
 
       h2 {
-        font-size: 1.8rem; // Even smaller title
-        margin-bottom: 15px; // Less space below
-        margin-left: 0; // No offset, fully centered
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        margin-left: 0;
       }
     }
 
     .textContainer {
-      gap: 10px; // Smaller gap for tighter layout
+      gap: 10px;
 
       p {
-        font-size: 0.9rem; // Smaller text
-        text-indent: 5px; // Minimal indent
+        font-size: 0.9rem;
+        text-indent: 5px;
       }
     }
   }

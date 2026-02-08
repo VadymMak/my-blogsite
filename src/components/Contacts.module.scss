@@ -1,11 +1,15 @@
 .contacts {
   position: relative;
   padding: 60px 0;
-  background: url("../../public/images/contact-us.webp") no-repeat center center
-    fixed;
+  background: url("../../public/images/contact-us.webp") no-repeat center center;
   background-size: cover;
-  color: #eee; // Set a default text color
+  background-attachment: scroll;
+  color: #eee;
   text-align: center;
+
+  @media (min-width: 1024px) {
+    background-attachment: fixed;
+  }
 
   &::before {
     content: "";
@@ -53,11 +57,11 @@
 
   p,
   a {
-    color: inherit; // Use inherited color for consistency
+    color: inherit;
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline; // Underline on hover for accessibility
+      text-decoration: underline;
     }
   }
 }

@@ -2,7 +2,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import React, { useState } from "react";
-import { Helmet } from "react-helmet"; // Import Helmet for SEO
 import Slider from "react-slick";
 import styles from "./Carousel.module.scss";
 import Modal from "./Modal";
@@ -51,7 +50,6 @@ const Carousel: React.FC = () => {
 
   return (
     <section className={styles.productSection} aria-label={t("ourProducts")}>
-      
       <div className={styles.sectionTitle}>
         <h2>{t("ourProducts")}</h2>
         <p>{t("exploreProducts")}</p>
@@ -76,17 +74,6 @@ const Carousel: React.FC = () => {
             </div>
           ))}
         </Slider>
-        {selectedProduct && (
-          <Helmet>
-            <title>{selectedProduct.name[i18n.language as LanguageKey]}</title>
-            <meta
-              name="description"
-              content={`Discover more about ${
-                selectedProduct.name[i18n.language as LanguageKey]
-              }.`}
-            />
-          </Helmet>
-        )}
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}

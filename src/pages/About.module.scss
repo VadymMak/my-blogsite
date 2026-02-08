@@ -2,16 +2,20 @@
   background: linear-gradient(black, transparent),
     url("../../public/images/about-us.webp") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   padding: 150px 20px 20px 20px;
   text-align: center;
   color: gold;
+
+  @media (min-width: 1024px) {
+    background-attachment: fixed;
+  }
 
   .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
   }
 
@@ -19,7 +23,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #ffd700; /* Gold color */
+    color: #ffd700;
   }
 
   .intro {
@@ -46,7 +50,7 @@
       line-height: 1.8;
       text-align: left;
       text-indent: 20px;
-      color: #ffffff; /* White text for readability */
+      color: #ffffff;
     }
 
     ul {
@@ -62,13 +66,12 @@
 
   .valuesList {
     li::before {
-      content: "•";
-      color: #ffd700; /* Gold bullet point */
+      content: "\2022";
+      color: #ffd700;
       margin-right: 10px;
     }
   }
 
-  // Media query for mobile screens
   @media (max-width: 768px) {
     padding: 130px 15px 15px 15px;
 

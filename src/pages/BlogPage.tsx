@@ -6,7 +6,6 @@ import { RootState, AppDispatch } from "../store/store";
 import { fetchPosts, setLanguage } from "../store/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
-import { Helmet } from "react-helmet"; // Import Helmet for SEO
 
 const BlogPage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -50,31 +49,6 @@ const BlogPage: React.FC = () => {
 
   return (
     <div className={styles.blogPageWrapper}>
-      {/* SEO Metadata */}
-      <Helmet>
-        <title>Our Blog - Insights and Updates from UB Market</title>
-        <meta
-          name="description"
-          content="Stay updated with the latest insights and news from UB Market. Explore our blog for articles on quality products and market trends."
-        />
-        <meta
-          name="keywords"
-          content="UB Market, blog, quality products, market trends, insights, news"
-        />
-        <meta property="og:title" content="Our Blog - UB Market" />
-        <meta
-          property="og:description"
-          content="Explore articles, insights, and updates from UB Market. Discover quality products and market trends."
-        />
-        <meta
-          property="og:image"
-          content="https://ub-market.com/images/logo.webp"
-        />
-        <meta property="og:url" content="https://ub-market.com/blog" />
-        <meta property="og:type" content="website" />
-        
-      </Helmet>
-
       <div className={styles.blogTitle}>
         <h1>Our Blog</h1>
       </div>

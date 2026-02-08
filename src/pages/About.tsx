@@ -1,55 +1,12 @@
 import React from "react";
 import styles from "./About.module.scss";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className={styles.aboutPage}>
-      <Helmet>
-        <title>{t("aboutUs")} - Your Company Name</title>
-        <meta
-          name="description"
-          content={t(
-            "We are a leading provider of high-quality food products including mayonnaise, vegetable oil, milk, margarine, and powdered goods."
-          )}
-        />
-        <meta
-          name="keywords"
-          content="mayonnaise, vegetable oil, milk, margarine, food products"
-        />
-        <meta property="og:title" content={t("aboutUs")} />
-        <meta
-          property="og:description"
-          content={t(
-            "We are a leading provider of high-quality food products including mayonnaise, vegetable oil, milk, margarine, and powdered goods."
-          )}
-        />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "UB Market LTD",
-            url: "https://ub-market.com",
-            logo: "https://yourwebsite.com/images/logo.webp",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+1-234-567-890",
-              contactType: "Customer Service",
-              areaServed: "Global",
-              availableLanguage: ["English", "Bulgarian", "Ukrainian"],
-            },
-            sameAs: [
-              "https://www.facebook.com/yourpage",
-              "https://twitter.com/yourpage",
-              "https://www.instagram.com/yourpage",
-            ],
-          })}
-        </script>
-      </Helmet>
       <div className={styles.container}>
         <section className={styles.section}>
           <h1 className={styles.title}>{t("aboutUs")}</h1>
